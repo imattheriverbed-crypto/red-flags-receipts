@@ -58,7 +58,7 @@ export default function ComingSoon() {
             className="w-full border-2 border-primary" />
             
             <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/30 text-center mt-4">
-              Made with Printify · 100% woven polyester · White fringe trim
+
             </p>
           </div>
         </div>
