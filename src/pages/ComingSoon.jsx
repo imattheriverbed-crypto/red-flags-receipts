@@ -25,8 +25,8 @@ export default function ComingSoon() {
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50">Est. August 01</span>
           <button
             onClick={scrollToSignup}
-            className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment border border-parchment/40 px-4 py-2 hover:bg-primary hover:border-primary hover:text-parchment transition-colors"
-          >
+            className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment border border-parchment/40 px-4 py-2 hover:bg-primary hover:border-primary hover:text-parchment transition-colors">
+            
             Get Notified
           </button>
         </div>
@@ -52,11 +52,11 @@ export default function ComingSoon() {
             </p>
           </div>
           <div className="max-w-2xl mx-auto">
-            <img
-              src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/4841f04e4_light-scarf-red-flag-lightweight-fashion-scarf.jpg"
-              alt="The signature red flag scarf"
-              className="w-full border-2 border-primary"
-            />
+            <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/33753acf0_ChatGPT_Image_Jul_14__2026__07_07_36_PM.png"
+
+            alt="The signature red flag scarf"
+            className="w-full border-2 border-primary" />
+            
             <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/30 text-center mt-4">
               Made with Printify · 100% woven polyester · White fringe trim
             </p>
@@ -69,6 +69,6 @@ export default function ComingSoon() {
       <TickerTape variant="dark" />
 
       <SiteFooter />
-    </div>
-  );
+    </div>);
+
 }
