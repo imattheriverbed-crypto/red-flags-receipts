@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowDown } from 'lucide-react';
 import CountdownClock from './CountdownClock';
 
-const HERO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/bfd269dd0_download.png';
+const HERO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/7778709a7_generated_image.png';
 const MACRO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/2f18d7d79_generated_image.png';
 
 export default function Hero({ onCtaClick }) {
