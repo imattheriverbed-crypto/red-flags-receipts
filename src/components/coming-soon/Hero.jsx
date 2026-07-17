@@ -23,7 +23,7 @@ export default function Hero({ onCtaClick }) {
             </span>
           </div>
 
-          <h1 className="font-display font-black leading-[0.95] mb-6 max-w-4xl text-2xl sm:text-2xl lg:text-2xl text-[hsl(var(--foreground))]">Look at the  outLook at the  o
+          <h1 className="font-display font-black leading-[0.95] mb-6 max-w-4xl text-2xl sm:text-2xl lg:text-2xl text-[hsl(var(--foreground))]">Look at the  o
 
 
 
