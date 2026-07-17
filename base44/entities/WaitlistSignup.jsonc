@@ -1,0 +1,35 @@
+{
+  "name": "WaitlistSignup",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Signup email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Signup phone number for SMS alerts"
+    },
+    "contact_method": {
+      "type": "string",
+      "enum": [
+        "email",
+        "sms"
+      ],
+      "default": "email"
+    },
+    "source": {
+      "type": "string",
+      "default": "hero",
+      "description": "Which section the signup came from"
+    },
+    "interested_traits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Specific red flag traits the user wants drop alerts for"
+    }
+  }
+}
