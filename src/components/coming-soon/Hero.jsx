@@ -15,7 +15,7 @@ export default function Hero({ onCtaClick }) {
       </div>
 
       {/* Content */}
-      <div className="relative z-30 flex flex-col justify-end min-h-screen px-6 sm:px-12 pb-16 pt-32">
+      <div className="relative z-30 flex flex-col justify-end min-h-screen px-6 sm:px-12 pb-16 pt-32 bg-[#0f0f0f]">
         <div className="max-w-5xl">
           <div className="inline-block mb-6">
             <span className="font-mono-flag text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary border border-primary/50 px-4 py-2 bg-ink/60 backdrop-blur-sm">
@@ -29,7 +29,7 @@ export default function Hero({ onCtaClick }) {
 
           </h1>
 
-          <p className="font-body text-base sm:text-lg text-parchment/70 max-w-xl leading-relaxed mb-10">Every excuse. Every warning. Every suspicious little sentence—woven into the signature print that started it all. Made with Printify. Sold little by little.
+          <p className="font-body text-base sm:text-lg text-parchment/70 max-w-xl leading-relaxed mb-10">Every excuse. Every warning. Every suspicious little sentence—woven into the signature print that started it all.
 
           </p>
 
