@@ -18,7 +18,7 @@ export default function Hero({ onCtaClick }) {
       <div className="relative z-30 flex flex-col justify-end min-h-screen px-6 sm:px-12 pb-16 pt-32 bg-[#0f0f0f]">
         <div className="max-w-5xl">
           <div className="inline-block mb-6">
-            <span className="font-mono-flag text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary border border-primary/50 px-4 py-2 bg-ink/60 backdrop-blur-sm opacity-100">THE AUGUST 01 COLLECTION
+            <span className="font-mono-flag uppercase tracking-[0.3em] text-primary border border-primary/50 px-4 py-2 bg-ink/60 backdrop-blur-sm opacity-100 text-sm sm:text-sm">THE AUGUST 01 COLLECTION
 
             </span>
           </div>
