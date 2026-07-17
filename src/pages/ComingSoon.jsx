@@ -4,7 +4,6 @@ import TickerTape from '@/components/coming-soon/TickerTape';
 import Hero from '@/components/coming-soon/Hero';
 import LeadCapture from '@/components/coming-soon/LeadCapture';
 import ProductGallery from '@/components/coming-soon/ProductGallery';
-import ScarfWeave from '@/components/coming-soon/ScarfWeave';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 
 export default function ComingSoon() {
@@ -53,7 +52,11 @@ export default function ComingSoon() {
             </p>
           </div>
           <div className="max-w-2xl mx-auto">
-            <ScarfWeave />
+            <img
+              src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/4841f04e4_light-scarf-red-flag-lightweight-fashion-scarf.jpg"
+              alt="The signature red flag scarf"
+              className="w-full border-2 border-primary"
+            />
             <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/30 text-center mt-4">
               Made with Printify · 100% woven polyester · White fringe trim
             </p>

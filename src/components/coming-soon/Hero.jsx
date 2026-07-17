@@ -1,55 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import CountdownClock from './CountdownClock';
 
-const HERO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/7778709a7_generated_image.png';
-const MACRO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/2f18d7d79_generated_image.png';
+const HERO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/bfd269dd0_download.png';
 
 export default function Hero({ onCtaClick }) {
-  const [lens, setLens] = useState({ x: 0, y: 0, visible: false });
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setLens({ x: e.clientX - rect.left, y: e.clientY - rect.top, visible: true });
-  };
-
   return (
-    <section
-      className="relative min-h-screen w-full overflow-hidden bg-ink grain-overlay"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => setLens((p) => ({ ...p, visible: false }))}
-    >
+    <section className="relative min-h-screen w-full overflow-hidden bg-ink grain-overlay">
       {/* Background model image */}
       <div className="absolute inset-0">
         <img src={HERO_IMG} alt="Model wearing the red flag signature scarf" className="w-full h-full object-cover object-center opacity-70" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/40" />
       </div>
-
-      {/* Macro lens reveal */}
-      {lens.visible && (
-        <div
-          className="absolute pointer-events-none z-20 hidden md:block"
-          style={{
-            left: lens.x,
-            top: lens.y,
-            transform: 'translate(-50%, -50%)',
-            width: '320px',
-            height: '320px',
-            borderRadius: '50%',
-            overflow: 'hidden',
-            border: '2px solid #E2211C',
-            boxShadow: '0 0 60px rgba(226,33,28,0.4), inset 0 0 30px rgba(0,0,0,0.5)',
-          }}
-        >
-          <img
-            src={MACRO_IMG}
-            alt=""
-            className="w-full h-full object-cover"
-            style={{ width: '100vw', height: '100vh', maxWidth: 'none', objectFit: 'cover' }}
-          />
-        </div>
-      )}
 
       {/* Content */}
       <div className="relative z-30 flex flex-col justify-end min-h-screen px-6 sm:px-12 pb-16 pt-32">
