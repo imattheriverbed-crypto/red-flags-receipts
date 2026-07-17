@@ -23,10 +23,10 @@ export default function Hero({ onCtaClick }) {
             </span>
           </div>
 
-          <h1 className="font-display font-black text-4xl sm:text-7xl lg:text-8xl leading-[0.95] text-parchment mb-6 max-w-4xl">
-            Look at this scarf<br />
-            I made from all<br />
-            <span className="text-primary italic">YOUR RED FLAGS.</span>
+          <h1 className="font-display font-black leading-[0.95] text-parchment mb-6 max-w-4xl text-2xl sm:text-2xl lg:text-2xl">Look at this scarf
+I made from all
+YOUR RED FLAGS.
+
           </h1>
 
           <p className="font-body text-base sm:text-lg text-parchment/70 max-w-xl leading-relaxed mb-10">
@@ -39,8 +39,8 @@ export default function Hero({ onCtaClick }) {
 
           <button
             onClick={onCtaClick}
-            className="group inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300"
-          >
+            className="group inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300">
+            
             Get the Discount
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
           </button>
@@ -52,6 +52,6 @@ export default function Hero({ onCtaClick }) {
         <span className="font-mono-flag text-[9px] uppercase tracking-[0.3em] text-parchment/40 [writing-mode:vertical-rl]">Scroll</span>
         <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
       </div>
-    </section>
-  );
+    </section>);
+
 }
