@@ -23,9 +23,9 @@ export default function Hero({ onCtaClick }) {
             </span>
           </div>
 
-          <h1 className="font-display font-black leading-[0.95] text-parchment mb-6 max-w-4xl text-2xl sm:text-2xl lg:text-2xl">Look at this scarf
-I made from all
-YOUR RED FLAGS.
+          <h1 className="font-display font-black leading-[0.95] text-parchment mb-6 max-w-4xl text-2xl sm:text-2xl lg:text-2xl">Look at this scarf I made from all YOUR RED FLAGS.
+
+
 
           </h1>
 
