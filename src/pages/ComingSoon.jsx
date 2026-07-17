@@ -52,7 +52,7 @@ export default function ComingSoon() {
             </p>
           </div>
           <div className="max-w-2xl mx-auto">
-            <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/33753acf0_ChatGPT_Image_Jul_14__2026__07_07_36_PM.png"
+            <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/d5659f46b_Website_hero_banner_collage_concept.PNG"
 
             alt="The signature red flag scarf"
             className="w-full border-2 border-primary" />
