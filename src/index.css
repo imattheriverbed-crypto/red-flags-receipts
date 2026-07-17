@@ -112,3 +112,35 @@
   }
   .flag-wave { animation: flag-wave 3s ease-in-out infinite; }
 }
+
+/* === Printable Business Card === */
+.business-card {
+  width: 3.5in;
+  height: 2in;
+  border: 1px solid rgba(226, 33, 28, 0.2);
+}
+.card-content {
+  height: 2in;
+  box-sizing: border-box;
+}
+
+@media print {
+  @page {
+    size: 3.5in 2in;
+    margin: 0;
+  }
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  .business-card {
+    page-break-after: always;
+    border: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .business-card:last-child {
+    page-break-after: auto;
+  }
+}
