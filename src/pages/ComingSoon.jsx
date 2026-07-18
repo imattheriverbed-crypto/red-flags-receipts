@@ -12,7 +12,7 @@ export default function ComingSoon() {
   };
 
   return (
-    <div className="dark bg-ink text-parchment min-h-screen relative">
+    <div className="dark bg-ink text-parchment min-h-screen relative opacity-100">
       <RibbonCursor />
 
       {/* Nav bar */}
