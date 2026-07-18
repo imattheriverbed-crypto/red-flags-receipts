@@ -8,6 +8,7 @@ export default function LeadCapture() {
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [error, setError] = useState('');
   const [flagNote, setFlagNote] = useState('');
+  const [confirmValue, setConfirmValue] = useState('');
 
   const activated = value.trim().length > 0;
 
@@ -25,6 +26,14 @@ export default function LeadCapture() {
     }
     if (method === 'sms' && !phoneRegex.test(value)) {
       setError('That number looks off. Try again.');
+      setStatus('error');
+      return;
+    }
+
+    if (value.trim() !== confirmValue.trim()) {
+      setError(method === 'email'
+        ? "Emails don't match. Classic commitment issue."
+        : "Numbers don't match. Did your thumbs ghost you?");
       setStatus('error');
       return;
     }
@@ -61,7 +70,7 @@ export default function LeadCapture() {
             The warning arrives August 01.
           </p>
           <p className="font-body text-ink/60 text-sm">
-            Your priority access discount is locked in. We'll {method === 'email' ? 'email' : 'text'} you the moment the collection drops.
+            Your priority access discount is locked in. We'll {method === 'email' ? 'email' : 'text'} you the moment the collection drops — and unlike your ex, we actually follow through.
           </p>
         </div>
       </section>
@@ -87,21 +96,21 @@ export default function LeadCapture() {
         </h2>
 
         <p className={`font-body text-sm sm:text-base mb-10 max-w-md mx-auto ${activated ? 'text-ink/70' : 'text-ink/60'}`}>
-          Sign up now for an exclusive launch-day discount on the signature Red Flag scarf. No spam—just the drop.
+          Sign up for exclusive launch-day access to the Red Flag scarf. We promise not to leave you on read — just the drop, then we ghost.
         </p>
 
         {/* Method toggle */}
         <div className={`inline-flex border-2 ${activated ? 'border-ink' : 'border-ink'} mb-6`}>
           <button
             type="button"
-            onClick={() => { setMethod('email'); setValue(''); }}
+            onClick={() => { setMethod('email'); setValue(''); setConfirmValue(''); }}
             className={`flex items-center gap-2 px-6 py-2 font-mono-flag text-xs uppercase tracking-[0.15em] transition-colors ${method === 'email' ? 'bg-ink text-parchment' : 'text-ink'}`}
           >
             <Mail className="w-3.5 h-3.5" /> Email
           </button>
           <button
             type="button"
-            onClick={() => { setMethod('sms'); setValue(''); }}
+            onClick={() => { setMethod('sms'); setValue(''); setConfirmValue(''); }}
             className={`flex items-center gap-2 px-6 py-2 font-mono-flag text-xs uppercase tracking-[0.15em] transition-colors ${method === 'sms' ? 'bg-ink text-parchment' : 'text-ink'}`}
           >
             <MessageSquare className="w-3.5 h-3.5" /> SMS
@@ -114,7 +123,7 @@ export default function LeadCapture() {
               type="text"
               value={value}
               onChange={(e) => { setValue(e.target.value); setStatus('idle'); setError(''); }}
-              placeholder={method === 'email' ? 'your@email.com' : '(555) 555-5555'}
+              placeholder={method === 'email' ? 'the.email.you.actually.check@gmail.com' : 'the number you actually pick up'}
               className={`flex-1 px-6 py-5 text-lg sm:text-xl font-mono-flag bg-transparent border-2 ${activated ? 'border-ink text-ink placeholder-ink/40' : 'border-ink text-ink placeholder-ink/30'} focus:outline-none focus:ring-0`}
             />
             <button
@@ -128,9 +137,16 @@ export default function LeadCapture() {
           </div>
           <input
             type="text"
+            value={confirmValue}
+            onChange={(e) => { setConfirmValue(e.target.value); setStatus('idle'); setError(''); }}
+            placeholder={method === 'email' ? "type it again — we have trust issues" : 'again, in case your thumbs ghosted you'}
+            className={`w-full px-6 py-4 text-sm font-mono-flag bg-transparent border-2 ${activated ? 'border-ink text-ink placeholder-ink/35' : 'border-ink text-ink placeholder-ink/25'} focus:outline-none focus:ring-0`}
+          />
+          <input
+            type="text"
             value={flagNote}
             onChange={(e) => { setFlagNote(e.target.value); setStatus('idle'); setError(''); }}
-            placeholder="Add your own red flag... (e.g. 'I'll text you back.')"
+            placeholder="confess your own red flag... (e.g. 'I read at 2:17 PM and reply at 2:17 AM')"
             maxLength={120}
             className={`w-full px-6 py-4 text-sm font-mono-flag bg-transparent border-2 ${activated ? 'border-ink/60 text-ink placeholder-ink/35' : 'border-ink/60 text-ink placeholder-ink/25'} focus:outline-none focus:ring-0`}
           />
