@@ -7,6 +7,7 @@ export default function LeadCapture() {
   const [value, setValue] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [error, setError] = useState('');
+  const [flagNote, setFlagNote] = useState('');
 
   const activated = value.trim().length > 0;
 
@@ -37,6 +38,7 @@ export default function LeadCapture() {
         phone: method === 'sms' ? value : null,
         contact_method: method,
         source: 'lead-capture',
+        red_flag_note: flagNote.trim() || null,
       });
       setStatus('success');
     } catch (err) {
@@ -106,22 +108,32 @@ export default function LeadCapture() {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-3">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="text"
+              value={value}
+              onChange={(e) => { setValue(e.target.value); setStatus('idle'); setError(''); }}
+              placeholder={method === 'email' ? 'your@email.com' : '(555) 555-5555'}
+              className={`flex-1 px-6 py-5 text-lg sm:text-xl font-mono-flag bg-transparent border-2 ${activated ? 'border-ink text-ink placeholder-ink/40' : 'border-ink text-ink placeholder-ink/30'} focus:outline-none focus:ring-0`}
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="group inline-flex items-center justify-center gap-3 bg-ink text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-5 hover:bg-ink/80 transition-colors disabled:opacity-50 whitespace-nowrap"
+            >
+              {status === 'loading' ? 'Sending...' : 'Get the Discount'}
+              {status !== 'loading' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+            </button>
+          </div>
           <input
             type="text"
-            value={value}
-            onChange={(e) => { setValue(e.target.value); setStatus('idle'); setError(''); }}
-            placeholder={method === 'email' ? 'your@email.com' : '(555) 555-5555'}
-            className={`flex-1 px-6 py-5 text-lg sm:text-xl font-mono-flag bg-transparent border-2 ${activated ? 'border-ink text-ink placeholder-ink/40' : 'border-ink text-ink placeholder-ink/30'} focus:outline-none focus:ring-0`}
+            value={flagNote}
+            onChange={(e) => { setFlagNote(e.target.value); setStatus('idle'); setError(''); }}
+            placeholder="Add your own red flag... (e.g. 'I'll text you back.')"
+            maxLength={120}
+            className={`w-full px-6 py-4 text-sm font-mono-flag bg-transparent border-2 ${activated ? 'border-ink/60 text-ink placeholder-ink/35' : 'border-ink/60 text-ink placeholder-ink/25'} focus:outline-none focus:ring-0`}
           />
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            className="group inline-flex items-center justify-center gap-3 bg-ink text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-5 hover:bg-ink/80 transition-colors disabled:opacity-50 whitespace-nowrap"
-          >
-            {status === 'loading' ? 'Sending...' : 'Get the Discount'}
-            {status !== 'loading' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
-          </button>
         </form>
 
         {error && (

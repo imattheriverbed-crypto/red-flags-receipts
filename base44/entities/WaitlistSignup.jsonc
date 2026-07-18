@@ -30,6 +30,11 @@
       },
       "default": [],
       "description": "Specific red flag traits the user wants drop alerts for"
+    },
+    "red_flag_note": {
+      "type": "string",
+      "description": "Custom red flag note submitted with the waitlist signup"
     }
-  }
+  },
+  "required": []
 }
