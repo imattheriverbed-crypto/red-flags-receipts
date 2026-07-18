@@ -43,7 +43,7 @@ export default function RibbonCursor() {
   return (
     <svg
       ref={svgRef}
-      className="fixed inset-0 w-full h-full pointer-events-none z-[60] hidden"
+      className="fixed inset-0 w-full h-full pointer-events-none z-[60] hidden opacity-100"
       style={{ mixBlendMode: 'screen' }}>
       
       <defs>
