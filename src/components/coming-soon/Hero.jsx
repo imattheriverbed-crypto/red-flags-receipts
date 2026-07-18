@@ -16,7 +16,7 @@ export default function Hero({ onCtaClick }) {
 
       {/* Content */}
       <div className="relative z-30 flex flex-col justify-end min-h-screen px-6 sm:px-12 pb-16 pt-32 opacity-100">
-        <div className="max-w-5xl opacity-100">
+        <div className="max-w-5xl opacity-100 rounded-xl px-8">
           <div className="inline-block mb-6">
             <span className="uppercase tracking-[0.3em] text-primary border border-primary/50 px-4 py-2 bg-ink/60 backdrop-blur-sm opacity-100 text-sm sm:text-sm text-center [font-family:'Bungee',_system-ui]">THE AUGUST 01 COLLECTION
 
