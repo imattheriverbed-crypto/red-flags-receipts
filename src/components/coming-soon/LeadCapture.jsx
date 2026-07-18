@@ -7,9 +7,6 @@ export default function LeadCapture() {
   const [value, setValue] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [error, setError] = useState('');
-  const [flagNote, setFlagNote] = useState('');
-  const [confirmValue, setConfirmValue] = useState('');
-
   const activated = value.trim().length > 0;
 
   const handleSubmit = async (e) => {
@@ -30,14 +27,6 @@ export default function LeadCapture() {
       return;
     }
 
-    if (value.trim() !== confirmValue.trim()) {
-      setError(method === 'email'
-        ? "Emails don't match. Classic commitment issue."
-        : "Numbers don't match. Did your thumbs ghost you?");
-      setStatus('error');
-      return;
-    }
-
     setStatus('loading');
     setError('');
 
@@ -47,7 +36,6 @@ export default function LeadCapture() {
         phone: method === 'sms' ? value : null,
         contact_method: method,
         source: 'lead-capture',
-        red_flag_note: flagNote.trim() || null,
       });
 
       // Best-effort notification email (recipient must be a registered app user)
@@ -55,7 +43,7 @@ export default function LeadCapture() {
         await base44.integrations.Core.SendEmail({
           to: 'longbeachlocal17@gmail.com',
           subject: '🚩 New Red Flag Waitlist Signup',
-          body: `Someone just joined the waitlist!\n\nContact: ${value}\nMethod: ${method}\nRed Flag Note: ${flagNote.trim() || 'None'}\nSource: lead-capture`,
+          body: `Someone just joined the waitlist!\n\nContact: ${value}\nMethod: ${method}\nSource: lead-capture`,
         });
       } catch (e) { /* notification is best-effort */ }
 
@@ -113,53 +101,38 @@ export default function LeadCapture() {
         <div className={`inline-flex border-2 ${activated ? 'border-ink' : 'border-ink'} mb-6`}>
           <button
             type="button"
-            onClick={() => { setMethod('email'); setValue(''); setConfirmValue(''); }}
+            onClick={() => { setMethod('email'); setValue(''); }}
             className={`flex items-center gap-2 px-6 py-2 font-mono-flag text-xs uppercase tracking-[0.15em] transition-colors ${method === 'email' ? 'bg-ink text-parchment' : 'text-ink'}`}
           >
             <Mail className="w-3.5 h-3.5" /> Email
           </button>
           <button
             type="button"
-            onClick={() => { setMethod('sms'); setValue(''); setConfirmValue(''); }}
+            onClick={() => { setMethod('sms'); setValue(''); }}
             className={`flex items-center gap-2 px-6 py-2 font-mono-flag text-xs uppercase tracking-[0.15em] transition-colors ${method === 'sms' ? 'bg-ink text-parchment' : 'text-ink'}`}
           >
             <MessageSquare className="w-3.5 h-3.5" /> SMS
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-3">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
               value={value}
               onChange={(e) => { setValue(e.target.value); setStatus('idle'); setError(''); }}
               placeholder={method === 'email' ? 'the.email.you.actually.check@gmail.com' : 'the number you actually pick up'}
-              className={`flex-1 px-6 py-5 text-lg sm:text-xl font-mono-flag bg-transparent border-2 ${activated ? 'border-ink text-ink placeholder-ink/40' : 'border-ink text-ink placeholder-ink/30'} focus:outline-none focus:ring-0`}
+              className="flex-1 px-6 py-5 text-lg sm:text-xl font-mono-flag bg-ink text-parchment border-2 border-ink placeholder-parchment/40 focus:outline-none focus:ring-0"
             />
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="group inline-flex items-center justify-center gap-3 bg-ink text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-5 hover:bg-ink/80 transition-colors disabled:opacity-50 whitespace-nowrap"
+              className="group inline-flex items-center justify-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-5 hover:bg-parchment hover:text-ink transition-colors disabled:opacity-50 whitespace-nowrap"
             >
               {status === 'loading' ? 'Sending...' : 'Get the Discount'}
               {status !== 'loading' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
             </button>
           </div>
-          <input
-            type="text"
-            value={confirmValue}
-            onChange={(e) => { setConfirmValue(e.target.value); setStatus('idle'); setError(''); }}
-            placeholder={method === 'email' ? "type it again — we have trust issues" : 'again, in case your thumbs ghosted you'}
-            className={`w-full px-6 py-4 text-sm font-mono-flag bg-transparent border-2 ${activated ? 'border-ink text-ink placeholder-ink/35' : 'border-ink text-ink placeholder-ink/25'} focus:outline-none focus:ring-0`}
-          />
-          <input
-            type="text"
-            value={flagNote}
-            onChange={(e) => { setFlagNote(e.target.value); setStatus('idle'); setError(''); }}
-            placeholder="confess your own red flag... (e.g. 'I read at 2:17 PM and reply at 2:17 AM')"
-            maxLength={120}
-            className={`w-full px-6 py-4 text-sm font-mono-flag bg-transparent border-2 ${activated ? 'border-ink/60 text-ink placeholder-ink/35' : 'border-ink/60 text-ink placeholder-ink/25'} focus:outline-none focus:ring-0`}
-          />
         </form>
 
         {error && (
