@@ -29,7 +29,7 @@ export default function Hero({ onCtaClick }) {
 
           </h1>
 
-          <p className="font-body text-base sm:text-lg text-parchment/70 max-w-xl leading-relaxed mb-10">Every excuse. 
+          <p className="text-base sm:text-lg text-parchment/70 max-w-xl leading-relaxed mb-10 [font-family:'Montserrat',_sans-serif]">Every excuse. 
 Every warning. 
 Every suspicious little sentence....
 woven into the signature print that started it all.
