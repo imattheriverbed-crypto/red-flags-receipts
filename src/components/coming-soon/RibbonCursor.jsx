@@ -40,20 +40,20 @@ export default function RibbonCursor() {
     };
   }, []);
 
-  return (
-    <svg
-      ref={svgRef}
-      className="fixed inset-0 w-full h-full pointer-events-none z-[60] hidden opacity-100"
-      style={{ mixBlendMode: 'screen' }}>
-      
-      <defs>
-        <linearGradient id="ribbon-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#E2211C" stopOpacity="0" />
-          <stop offset="50%" stopColor="#E2211C" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#FF0000" stopOpacity="1" />
-        </linearGradient>
-      </defs>
-      <path id="ribbon-path" d="" fill="none" stroke="url(#ribbon-grad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>);
+  return null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
