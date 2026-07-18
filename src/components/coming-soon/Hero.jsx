@@ -31,15 +31,15 @@ export default function Hero({ onCtaClick }) {
 
           <p className="font-body text-base sm:text-lg text-parchment/70 max-w-xl leading-relaxed mb-10">Every excuse. 
 Every warning. 
-Every suspicious little sentence.woven into the signature print that started it all.</p>
+Every suspicious little sentence....
+woven into the signature print that started it all.
+</p>
 
           <div className="mb-12">
             <CountdownClock />
           </div>
 
-          <button
-            onClick={onCtaClick}
-            className="group inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300">
+          <button onClick={onCtaClick} className="group inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300">
             
             Get the Discount
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
