@@ -38,6 +38,16 @@ function DropCard({ drop, index }) {
         source: `gallery-drop-${index}`,
         interested_traits: [drop.trait],
       });
+
+      // Best-effort notification email (recipient must be a registered app user)
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: 'longbeachlocal17@gmail.com',
+          subject: '🚩 New Drop Reminder Set',
+          body: `Someone set a drop reminder!\n\nEmail: ${email}\nTrait: ${drop.trait}\nSource: gallery-drop-${index}`,
+        });
+      } catch (e) { /* best-effort */ }
+
       setReminded(true);
       setShowPrompt(false);
     } catch (err) {

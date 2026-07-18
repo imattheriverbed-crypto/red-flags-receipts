@@ -49,6 +49,16 @@ export default function LeadCapture() {
         source: 'lead-capture',
         red_flag_note: flagNote.trim() || null,
       });
+
+      // Best-effort notification email (recipient must be a registered app user)
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: 'longbeachlocal17@gmail.com',
+          subject: '🚩 New Red Flag Waitlist Signup',
+          body: `Someone just joined the waitlist!\n\nContact: ${value}\nMethod: ${method}\nRed Flag Note: ${flagNote.trim() || 'None'}\nSource: lead-capture`,
+        });
+      } catch (e) { /* notification is best-effort */ }
+
       setStatus('success');
     } catch (err) {
       setError('Something went wrong. Try again.');
