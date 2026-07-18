@@ -15,8 +15,8 @@ export default function BusinessCard() {
         </Link>
         <button
           onClick={handlePrint}
-          className="inline-flex items-center gap-2 bg-primary text-parchment font-mono-flag text-xs uppercase tracking-[0.2em] px-6 py-3 hover:bg-parchment hover:text-ink transition-colors"
-        >
+          className="inline-flex items-center gap-2 bg-primary text-parchment font-mono-flag text-xs uppercase tracking-[0.2em] px-6 py-3 hover:bg-parchment hover:text-ink transition-colors">
+          
           <Printer className="w-4 h-4" /> Print Cards
         </button>
       </div>
@@ -58,7 +58,7 @@ export default function BusinessCard() {
 
         {/* Card Back */}
         <div className="business-card relative bg-ink overflow-hidden">
-          <div className="card-content h-full p-2">
+          <div className="card-content h-full px-1">
             <ScarfWeave />
           </div>
           <div className="absolute bottom-1 right-2">
@@ -71,6 +71,6 @@ export default function BusinessCard() {
       <p className="print:hidden font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment/30 mt-12 text-center max-w-xs">
         Standard 3.5" × 2" card stock · 2-sided · Set margins to "None" in print dialog
       </p>
-    </div>
-  );
+    </div>);
+
 }
