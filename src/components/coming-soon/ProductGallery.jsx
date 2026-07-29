@@ -10,7 +10,7 @@ const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0ee
 const DROPS = [
   { trait: 'CEO OF ME', desc: 'I hired me. I trust me. I choose me. For the one who left, leveled up, and built a life they love.', img: EMPOWERMENT_IMG, drop: 'Aug 01', tone: 'empower' },
   { trait: 'PETS.', desc: 'Ramsey approved. Because they love you unconditionally — outfit your sidekick in apparel that speaks their language.', img: PETS_IMG, drop: 'Aug 08', tone: 'pets' },
-  { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 15', tone: 'bags' },
+  { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 15', tone: 'bags', fit: true },
   { trait: '50 LANGUAGES × BLESS YOUR HEART', desc: 'Two ways to close the chapter — "go fuck yourself" in 50 languages, or "bless your heart" with a smile. Distressed screen print. Choose your goodbye.', img: LANGUAGES_IMG, drop: 'Aug 22', fit: true },
 ];
 
