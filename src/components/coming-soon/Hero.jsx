@@ -46,7 +46,7 @@ export default function Hero({ onCtaClick }) {
               className="group inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300"
             >
               <Bell className="w-4 h-4" />
-              Get Notified
+              Shop Now
             </button>
           </div>
         </div>
