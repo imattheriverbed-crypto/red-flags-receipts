@@ -24,7 +24,7 @@ export default function AboutFounder() {
           className="absolute inset-0 w-full h-full opacity-35 object-cover object-top translate-y-40 pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent pointer-events-none" />
         <div className="relative z-10 max-w-3xl">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Founder ◆</span>
           <h1 className="font-display font-black text-5xl sm:text-7xl text-parchment leading-[0.95] mb-6">
