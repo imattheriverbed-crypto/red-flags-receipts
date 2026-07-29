@@ -44,9 +44,9 @@ export default function Hero({ onCtaClick }) {
             </div>
             <button
               onClick={() => navigate('/shop')}
-              className="group inline-flex items-center justify-center gap-2 bg-transparent border border-primary/50 text-parchment font-mono-flag text-[10px] uppercase tracking-[0.18em] px-4 py-1.5 hover:bg-primary hover:border-primary hover:text-parchment transition-colors duration-300 whitespace-nowrap backdrop-blur-sm"
+              className="group inline-flex items-center justify-center gap-1.5 bg-transparent border border-primary/50 text-parchment font-mono-flag text-[8px] uppercase tracking-[0.16em] px-3 py-1 hover:bg-primary hover:border-primary hover:text-parchment transition-colors duration-300 whitespace-nowrap backdrop-blur-sm"
             >
-              <Bell className="w-3.5 h-3.5 flex-shrink-0" />
+              <Bell className="w-3 h-3 flex-shrink-0" />
               Shop The Signature Collection Now
             </button>
           </div>
