@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Quote } from 'lucide-react';
+import { Image } from '@/components/ui/image';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 import ScarfWeave from '@/components/coming-soon/ScarfWeave';
 import TickerTape from '@/components/coming-soon/TickerTape';
+
+const FOUNDER_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9741b8ed2_wm-30Yrs-Old-American-Escort-Brunette-Hazel-Eyes-D-Cup-Size-8-159CM-Tall-Long-Beach-CA-776362-4.jpg';
 
 export default function AboutFounder() {
   return (
@@ -23,6 +26,30 @@ export default function AboutFounder() {
             She moved to Los Angeles with high hopes.<br />
             The city had other plans.
           </p>
+        </div>
+      </section>
+
+      {/* Founder portrait */}
+      <section className="px-6 sm:px-12 pb-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden border border-primary/20">
+            <Image
+              src={FOUNDER_IMG}
+              alt="AJ, founder of Red Flags & Receipts"
+              fittingType="fill"
+              focalPointY={0.3}
+              className="w-full h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/80 block mb-2">
+                ◆ The woman behind the warnings ◆
+              </span>
+              <p className="font-display italic text-xl text-parchment leading-snug">
+                "Smart enough to know better. Brave enough to wear it anyway."
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
