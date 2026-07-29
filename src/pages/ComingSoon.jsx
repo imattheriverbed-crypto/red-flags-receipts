@@ -31,12 +31,10 @@ export default function ComingSoon() {
         </div>
       </nav>
 
-      <Hero onCtaClick={scrollToSignup} />
-
       {/* Scarf weave showcase */}
-      <section className="bg-ink py-20 sm:py-28 px-6 sm:px-12">
+      <section className="bg-ink pt-24 sm:pt-28 pb-12 px-6 sm:px-12">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">◆ The Signature Print ◆</span>
             <h2 className="font-display font-black text-3xl sm:text-5xl text-parchment leading-tight mb-4">
               36 red flags.<br />
@@ -48,6 +46,8 @@ export default function ComingSoon() {
           </div>
         </div>
       </section>
+
+      <Hero onCtaClick={scrollToSignup} />
 
       <TickerTape variant="red" />
 
