@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function SiteNav() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-12 py-4 bg-ink/80 backdrop-blur-md border-b border-primary/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-12 py-4 bg-transparent">
       <Link to="/" className="flex items-center gap-3">
         <img
           src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f69e0d30b_red-flags-receipts.png"
