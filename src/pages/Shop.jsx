@@ -5,30 +5,30 @@ import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
 
 const PRODUCTS = [
-  { tag: 'Apparel', title: 'Red Flag Pattern Pencil Skirt', price: '$48.00' },
-  { tag: 'Stationery', title: 'The Receipts Spiral Journal — Red Flag Minimalist Notebook', price: '$22.00' },
-  { tag: 'Apparel', title: 'Signature Red Flags Pencil Skirt', price: '$52.00' },
-  { tag: 'Tops', title: 'Baby Tee — "Red Flags Match My Outfit" Graphic Crop Top', price: '$34.00' },
-  { tag: 'Outerwear', title: "Women's Varsity Jacket — Minimal Tiny Flag Pattern AOP Jacket", price: '$88.00' },
-  { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', price: '$28.00' },
-  { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', price: '$28.00' },
+  { tag: 'Apparel', title: 'Red Flag Pattern Pencil Skirt', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086338523303' },
+  { tag: 'Stationery', title: 'The Receipts Spiral Journal — Red Flag Minimalist Notebook', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086264959143' },
+  { tag: 'Apparel', title: 'Signature Red Flags Pencil Skirt', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086263058599' },
+  { tag: 'Tops', title: 'Baby Tee — "Red Flags Match My Outfit" Graphic Crop Top', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086261289127' },
+  { tag: 'Outerwear', title: "Copy of Women's Varsity Jacket — Minimal Tiny Flag Pattern AOP Jacket", href: 'https://admin.shopify.com/store/red-flag-society-2/products/11075746300071' },
+  { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11075731816615' },
+  { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11075727458471' },
 ];
 
 function ProductCard({ product }) {
   return (
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
-      <div className="relative aspect-[4/3] w-full bg-ink flex items-center justify-center overflow-hidden">
-        <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/30">Product Image</span>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-      </div>
-      <div className="p-5 flex flex-col flex-grow">
-        <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-2">{product.tag}</span>
-        <h3 className="font-display text-lg text-parchment leading-tight mb-4">{product.title}</h3>
-        <div className="mt-auto pt-4 flex items-center justify-between">
-          <span className="font-mono-flag text-lg text-parchment">{product.price}</span>
-          <button className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-primary border border-primary px-4 py-2 hover:bg-primary hover:text-parchment transition-colors">
-            View Product
-          </button>
+      <div className="p-6 flex flex-col flex-grow">
+        <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{product.tag}</span>
+        <h3 className="font-display text-lg text-parchment leading-tight mb-6">{product.title}</h3>
+        <div className="mt-auto pt-4 flex items-center justify-end">
+          <a
+            href={product.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono-flag text-[10px] uppercase tracking-[0.2em] bg-primary text-parchment px-4 py-2 hover:bg-parchment hover:text-ink transition-colors"
+          >
+            Edit in Shopify
+          </a>
         </div>
       </div>
     </div>
