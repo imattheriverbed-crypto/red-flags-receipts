@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
-const SCARF_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a9f97a152_light-scarf-red-flag-lightweight-fashion-scarf.jpg';
+const DROP4_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/c3fdfff85_6bfda656-0039-48c5-b5b0-2b2d9e796443.png';
 const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9cac8a48c_Copilot_20260729_101403.png';
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
 const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/92a01dd29_Copilot_20260729_125659.png';
@@ -11,7 +11,7 @@ const DROPS = [
   { trait: 'CEO OF ME', desc: 'I hired me. I trust me. I choose me. For the one who left, leveled up, and built a life they love.', img: EMPOWERMENT_IMG, drop: 'Aug 01', tone: 'empower' },
   { trait: 'PETS.', desc: 'Ramsey approved. Because they love you unconditionally — outfit your sidekick in apparel that speaks their language.', img: PETS_IMG, drop: 'Aug 08', tone: 'pets' },
   { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 15', tone: 'bags' },
-  { trait: 'THE FULL SCARF', desc: 'All 36 flags. One piece. The signature print that started it all. Limited run.', img: SCARF_IMG, drop: 'Aug 22' },
+  { trait: 'BLESS YOUR HEART', desc: 'Soft waterbase print on a comfort-colors tee. The Southern send-off you wear with a smile. The finale drop.', img: DROP4_IMG, drop: 'Aug 22' },
 ];
 
 function DropCard({ drop, index }) {
