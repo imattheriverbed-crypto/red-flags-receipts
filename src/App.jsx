@@ -11,6 +11,7 @@ import ComingSoon from './pages/ComingSoon';
 import AboutFounder from './pages/AboutFounder';
 import Contact from './pages/Contact';
 import BusinessCard from './pages/BusinessCard';
+import Shop from './pages/Shop';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -43,6 +44,7 @@ const AuthenticatedApp = () => {
     <Route path="/about" element={<AboutFounder />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/business-card" element={<BusinessCard />} />
+    <Route path="/shop" element={<Shop />} />
     <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
