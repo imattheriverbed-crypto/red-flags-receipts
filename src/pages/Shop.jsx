@@ -46,10 +46,10 @@ export default function Shop() {
         <div className="relative z-10 max-w-3xl mx-auto">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ First Drop · Aug 01 ◆</span>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-parchment leading-[0.95] mb-6 uppercase">
-            Featured Signature<br />Collection
+            Pre-Drop Signature<br />Line
           </h1>
           <p className="font-body text-sm uppercase tracking-[0.25em] text-primary mb-10">
-            First Drop from Red Flags &amp; Receipts
+            Pre-Drop from Red Flags &amp; Receipts
           </p>
           <a
             href="#collection"
@@ -65,7 +65,7 @@ export default function Shop() {
       {/* Collection */}
       <main id="collection" className="max-w-6xl mx-auto px-6 sm:px-12 py-20 sm:py-24">
         <h2 className="font-display font-black text-3xl sm:text-4xl text-parchment uppercase text-center mb-12">
-          The First Drop
+          The Pre-Drop Signature Line
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {PRODUCTS.map((p, i) => (
