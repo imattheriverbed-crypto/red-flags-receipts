@@ -14,10 +14,8 @@ const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0ee
 const DROPS = [
   { trait: 'CEO OF ME', desc: 'I hired me. I trust me. I choose me. For the one who left, leveled up, and built a life they love.', img: EMPOWERMENT_IMG, drop: 'Aug 01', tone: 'empower' },
   { trait: 'PETS.', desc: 'Ramsey approved. Because they love you unconditionally — outfit your sidekick in apparel that speaks their language.', img: PETS_IMG, drop: 'Aug 08', tone: 'pets' },
-  { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 22', tone: 'bags' },
-  { trait: 'ALWAYS THE VICTIM', desc: 'They walked away. The scarf stays.', img: WALKING_IMG, drop: 'Aug 15' },
-  { trait: 'THE FULL SCARF', desc: 'All 36 flags. One piece. Limited run.', img: SCARF_IMG, drop: 'Aug 01' },
-  { trait: "RED'S WORLD", desc: 'Meet Red. Red sees everything.', img: RED_WORLD_IMG, drop: 'Aug 22' },
+  { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 15', tone: 'bags' },
+  { trait: 'THE FULL SCARF', desc: 'All 36 flags. One piece. The signature print that started it all. Limited run.', img: SCARF_IMG, drop: 'Aug 22' },
 ];
 
 function DropCard({ drop, index }) {
@@ -69,7 +67,7 @@ function DropCard({ drop, index }) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
         <div className="absolute top-4 left-4 flex items-center gap-2">
           <span className="font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-primary px-3 py-1">
-            {drop.tone === 'empower' ? 'Empowerment Drop' : drop.tone === 'pets' ? 'Pet Drop' : `Drop ${drop.drop}`}
+            {drop.tone === 'empower' ? 'Empowerment Drop' : drop.tone === 'pets' ? 'Pet Drop' : drop.tone === 'bags' ? 'Bag Drop' : `Drop ${drop.drop}`}
           </span>
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-5">
