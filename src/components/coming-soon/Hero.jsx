@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowDown, ShoppingBag } from 'lucide-react';
 import CountdownClock from './CountdownClock';
 
-const MODEL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/aa6428b37_generated_image.png';
+const MODEL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/47a214a82_generated_image.png';
 
 export default function Hero({ onCtaClick }) {
   return (
