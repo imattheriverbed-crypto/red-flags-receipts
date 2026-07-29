@@ -18,6 +18,12 @@ export default function SiteNav() {
         <Link to="/contact" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
           Contact
         </Link>
+        <Link
+          to="/shop"
+          className="font-mono-flag text-[9px] uppercase tracking-[0.16em] text-parchment border border-primary/50 px-3 py-1.5 hover:bg-primary hover:border-primary hover:text-parchment transition-colors backdrop-blur-sm"
+        >
+          Shop The Signature Collection Now
+        </Link>
         <a
           href="/#signup"
           className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment border border-parchment/40 px-4 py-2 hover:bg-primary hover:border-primary hover:text-parchment transition-colors"

@@ -35,20 +35,13 @@ export default function Hero({ onCtaClick }) {
           </p>
 
           {/* Countdown to the first drop, overlaid on the photo */}
-          <div className="mb-10 flex flex-col sm:flex-row sm:items-stretch gap-4 max-w-2xl">
-            <div className="bg-ink/40 backdrop-blur-sm px-6 py-5 border border-primary/20">
+          <div className="mb-10">
+            <div className="bg-ink/40 backdrop-blur-sm px-6 py-5 inline-block border border-primary/20">
               <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/60 block mb-3">
                 ◆ First Drop · Aug 01 ◆
               </span>
               <CountdownClock variant="inline" />
             </div>
-            <button
-              onClick={() => navigate('/shop')}
-              className="group flex-1 inline-flex items-center justify-center gap-1.5 bg-transparent border border-primary/50 text-parchment font-mono-flag text-[9px] uppercase tracking-[0.16em] px-3 hover:bg-primary hover:border-primary hover:text-parchment transition-colors duration-300 backdrop-blur-sm min-h-[44px]"
-            >
-              <Bell className="w-3 h-3 flex-shrink-0" />
-              Shop The Signature Collection Now
-            </button>
           </div>
         </div>
       </div>
