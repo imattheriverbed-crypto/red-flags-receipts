@@ -8,14 +8,14 @@ export default function SiteNav() {
       <Link to="/" aria-label="Red Flags & Receipts — Home" className="flex items-center">
         <Logo />
       </Link>
-      <div className="hidden sm:flex items-center gap-6">
-        <Link to="/" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
+      <div className="flex items-center gap-3 sm:gap-6">
+        <Link to="/" className="hidden sm:block font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
           Home
         </Link>
-        <Link to="/about" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
+        <Link to="/about" className="hidden sm:block font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
           Founder
         </Link>
-        <Link to="/contact" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
+        <Link to="/contact" className="hidden sm:block font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
           Contact
         </Link>
         <Link
@@ -26,7 +26,7 @@ export default function SiteNav() {
         </Link>
         <a
           href="/#signup"
-          className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment border border-parchment/40 px-4 py-2 hover:bg-primary hover:border-primary hover:text-parchment transition-colors"
+          className="hidden sm:inline-block font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment border border-parchment/40 px-4 py-2 hover:bg-primary hover:border-primary hover:text-parchment transition-colors"
         >
           Get Notified
         </a>
