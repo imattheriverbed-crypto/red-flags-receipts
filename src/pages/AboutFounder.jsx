@@ -16,13 +16,13 @@ export default function AboutFounder() {
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center px-6 sm:px-12 pt-32 pb-16 grain-overlay overflow-hidden">
-        <Image
-          src={FOUNDER_IMG}
-          alt=""
-          fittingType="fill"
-          focalPointY={0.3}
-          className="absolute inset-0 w-full h-full opacity-35 object-cover object-top translate-y-40 pointer-events-none"
-        />
+        <Image src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/b974ecee9_generated_image.png"
+
+        alt=""
+        fittingType="fill"
+        focalPointY={0.3}
+        className="absolute inset-0 w-full h-full opacity-35 object-cover object-top translate-y-40 pointer-events-none" />
+        
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent pointer-events-none" />
         <div className="relative z-10 max-w-3xl">
@@ -113,13 +113,13 @@ export default function AboutFounder() {
         </h2>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300"
-        >
+          className="inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300">
+          
           Contact AJ <ArrowRight className="w-4 h-4" />
         </Link>
       </section>
 
       <SiteFooter />
-    </div>
-  );
+    </div>);
+
 }
