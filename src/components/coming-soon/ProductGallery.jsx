@@ -59,7 +59,7 @@ function DropCard({ drop, index }) {
   return (
     <div className="flex-shrink-0 w-[80vw] sm:w-[380px] snap-center group">
       <div className="relative aspect-[3/4] overflow-hidden bg-ink border border-primary/20">
-        <img src={drop.img} alt={drop.trait} className={`w-full h-full ${drop.fit ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-105`} />
+        <img src={drop.img} alt={drop.trait} className={`w-full h-full ${drop.fit ? 'object-contain object-top' : 'object-cover'} transition-transform duration-700 group-hover:scale-105`} />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
         <div className="absolute top-4 left-4 flex items-center gap-2">
           <span className="font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-primary px-3 py-1">
