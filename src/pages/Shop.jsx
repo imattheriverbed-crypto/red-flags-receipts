@@ -16,6 +16,14 @@ const PRODUCTS = [
 function ProductCard({ product }) {
   return (
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
+      <div className="relative aspect-[4/3] w-full bg-ink flex items-center justify-center overflow-hidden">
+        <img
+          src="https://ciekr2-j1.myshopify.com/cdn/shop/files/red-flags-receipts.png?v=1785332600&width=3840"
+          alt={product.title}
+          className="w-full h-full object-contain p-6"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
+      </div>
       <div className="p-6 flex flex-col flex-grow">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{product.tag}</span>
         <h3 className="font-display text-lg text-parchment leading-tight mb-6">
