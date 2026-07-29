@@ -21,7 +21,7 @@ export default function AboutFounder() {
           alt=""
           fittingType="fill"
           focalPointY={0.3}
-          className="absolute inset-0 w-full h-full opacity-15 object-cover pointer-events-none"
+          className="absolute inset-0 w-full h-full opacity-35 object-cover object-bottom pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/80 pointer-events-none" />
