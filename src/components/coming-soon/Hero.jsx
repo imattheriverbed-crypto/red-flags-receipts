@@ -2,14 +2,14 @@ import React from 'react';
 import { ArrowDown, ShoppingBag } from 'lucide-react';
 import CountdownClock from './CountdownClock';
 
-const MODEL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/bdd6343f3_generated_image.png';
+const MODEL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/aa6428b37_generated_image.png';
 
 export default function Hero({ onCtaClick }) {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-ink grain-overlay">
       {/* Background model image */}
       <div className="absolute inset-0">
-        <img src={MODEL_IMG} alt="Model wearing the Red Flags collection" className="w-full h-full object-cover object-top" />
+        <img src={MODEL_IMG} alt="Women wearing the Red Flags collection" className="w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent" />
       </div>
