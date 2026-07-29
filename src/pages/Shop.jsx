@@ -17,7 +17,7 @@ const PRODUCTS = [
 function ProductCard({ product }) {
   return (
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
-      <div className="relative aspect-[4/5] w-full bg-ink flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-[4/3] w-full bg-ink flex items-center justify-center overflow-hidden">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/30">Product Image</span>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
       </div>
