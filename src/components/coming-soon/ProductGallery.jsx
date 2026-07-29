@@ -3,7 +3,7 @@ import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const DROP4_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/c3fdfff85_6bfda656-0039-48c5-b5b0-2b2d9e796443.png';
-const LANGUAGES_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/482f7dfd5_26da9bf4-bea5-4d2d-a1df-6be5cb7ad382.png';
+const LANGUAGES_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/006d07154_generated_image.png';
 const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9cac8a48c_Copilot_20260729_101403.png';
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
 const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/92a01dd29_Copilot_20260729_125659.png';
