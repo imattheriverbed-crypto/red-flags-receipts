@@ -38,6 +38,10 @@ export default function SiteFooter() {
                 <span className="font-mono-flag text-xs text-parchment/60">50 LANGUAGES TEE</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 22</span>
               </li>
+              <li className="flex justify-between gap-4">
+                <span className="font-mono-flag text-xs text-parchment/60">BLESS YOUR HEART</span>
+                <span className="font-mono-flag text-xs text-primary">Aug 29</span>
+              </li>
             </ul>
           </div>
 

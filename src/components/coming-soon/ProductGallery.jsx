@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
+const DROP4_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/c3fdfff85_6bfda656-0039-48c5-b5b0-2b2d9e796443.png';
 const LANGUAGES_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6df07dbb7_38bf0d10-9897-4f90-81d3-0ee9b46ac015.png';
 const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9cac8a48c_Copilot_20260729_101403.png';
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
@@ -12,6 +13,7 @@ const DROPS = [
   { trait: 'PETS.', desc: 'Ramsey approved. Because they love you unconditionally — outfit your sidekick in apparel that speaks their language.', img: PETS_IMG, drop: 'Aug 08', tone: 'pets' },
   { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 15', tone: 'bags' },
   { trait: '50 LANGUAGES TEE', desc: '"Go fuck yourself" in 50 languages. Distressed screen print, full front. The universal goodbye.', img: LANGUAGES_IMG, drop: 'Aug 22', fit: true },
+  { trait: 'BLESS YOUR HEART', desc: 'For the less aggressive. Soft waterbase print on a comfort-colors tee. The Southern send-off you wear with a smile.', img: DROP4_IMG, drop: 'Aug 29', fit: true },
 ];
 
 function DropCard({ drop, index }) {
