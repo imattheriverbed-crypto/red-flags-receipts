@@ -3,7 +3,7 @@ import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const SCARF_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a9f97a152_light-scarf-red-flag-lightweight-fashion-scarf.jpg';
-const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/e04bb928b_generated_image.png';
+const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9cac8a48c_Copilot_20260729_101403.png';
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
 const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/de490e9ed_RedFlagsProductConcept2-HealingJourneyToteBag1.png';
 
