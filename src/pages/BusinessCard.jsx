@@ -30,16 +30,10 @@ export default function BusinessCard() {
 
           <div className="card-content flex flex-col justify-between h-full pt-5 pb-4 px-5">
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-4 h-2.5 bg-primary flag-wave inline-block" />
+              <div className="flex items-center gap-2 mb-2">
                 <span className="font-mono-flag text-[7px] uppercase tracking-[0.25em] text-parchment/50">Est. August 2026</span>
               </div>
-              <h1 className="font-display font-black text-[20px] leading-[1] text-parchment">
-                RED FLAG
-              </h1>
-              <p className="font-display italic text-[11px] text-primary leading-tight mt-0.5">
-                Scarf Co.
-              </p>
+              <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f69e0d30b_red-flags-receipts.png" alt="Red Flags & Receipts" className="w-full max-w-[150px] object-contain mb-1" />
             </div>
 
             <p className="font-mono-flag text-[6.5px] uppercase tracking-[0.15em] text-parchment/40 leading-relaxed">

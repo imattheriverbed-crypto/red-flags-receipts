@@ -18,8 +18,7 @@ export default function ComingSoon() {
       {/* Nav bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-12 py-4 bg-ink/80 backdrop-blur-md border-b border-primary/20">
         <div className="flex items-center gap-3">
-          <span className="w-6 h-4 bg-primary flag-wave inline-block" />
-          <span className="font-display font-black text-lg text-parchment tracking-tight">RED FLAG</span>
+          <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f69e0d30b_red-flags-receipts.png" alt="Red Flags & Receipts" className="h-10 w-auto object-contain" />
         </div>
         <div className="hidden sm:flex items-center gap-6">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50">Est. August 01</span>

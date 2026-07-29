@@ -9,6 +9,7 @@ export default function SiteFooter() {
 
           {/* Manifesto */}
           <div>
+            <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f69e0d30b_red-flags-receipts.png" alt="Red Flags & Receipts" className="h-16 w-auto object-contain mb-5" />
             <h4 className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">The Manifesto</h4>
             <p className="font-display text-lg text-parchment/80 leading-snug italic">
               "Look at this scarf made of all the red flags you gave me."
