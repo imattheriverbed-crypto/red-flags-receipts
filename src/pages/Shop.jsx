@@ -6,13 +6,13 @@ import TickerTape from '@/components/coming-soon/TickerTape';
 import { Image } from '@/components/ui/image';
 
 const PRODUCTS = [
-  { tag: 'Bottoms', title: 'Red Flag Pattern Pencil Skirt', price: '$69.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a61d481d1_generated_image.png', href: 'https://redflagsociety.com/products/red-flag-pattern-pencil-skirt', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086338523303' },
-  { tag: 'Stationery', title: 'The Receipts Spiral Journal', price: '$19.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/bb7e66736_generated_image.png', href: 'https://redflagsociety.com/products/the-receipts-spiral-journal-red-flag-minimalist-notebook', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086264959143' },
-  { tag: 'Bottoms', title: 'Signature Red Flags Pencil Skirt', price: '$53.68', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/87fd9fcd1_generated_image.png', href: 'https://redflagsociety.com/products/signature-red-flags-pencil-skirt', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086263058599' },
-  { tag: 'Tops', title: 'Baby Tee — Graphic Crop Top', price: '$39.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/b11e93f2e_generated_image.png', href: 'https://redflagsociety.com/products/baby-tee-red-flags-match-my-outfit-graphic-crop-top', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086261289127' },
-  { tag: 'Outerwear', title: "Women's Varsity Jacket", price: '$74.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/dcd334046_generated_image.png', href: 'https://redflagsociety.com/products/womens-varsity-jacket-minimal-tiny-flag-pattern-aop-jacket', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086261289127' },
-  { tag: 'Accessories', title: 'Lightweight Red & Black Scarf', price: '$39.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a60a4725c_generated_image.png', href: 'https://redflagsociety.com/products/lightweight-red-and-black-checker-scarf', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11075731816615' },
-  { tag: 'Accessories', title: 'Signature Red Flag Scarf', price: '$39.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/360ec7111_generated_image.png', href: 'https://redflagsociety.com/products/signature-lightweight-red-flag-fashion-scarf', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11075727458471' },
+  { tag: 'Bottoms', title: 'Red Flag Pattern Pencil Skirt', price: '$69.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a61d481d1_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/red-flag-pattern-pencil-skirt-womens-mid-waist-graphic-skirt' },
+  { tag: 'Stationery', title: 'The Receipts Spiral Journal — Red Flag Minimalist Notebook', price: '$19.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/bb7e66736_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/the-receipts-spiral-journal-red-flag-minimalist-notebook' },
+  { tag: 'Bottoms', title: 'Signature Red Flags Pencil Skirt', price: '$53.68', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/87fd9fcd1_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/signature-red-flags-pencil-skirt' },
+  { tag: 'Tops', title: 'Baby Tee — "Red Flags Match My Outfit" Graphic Crop Top', price: '$39.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/b11e93f2e_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/baby-tee-red-flags-match-my-outfit-graphic-crop-top' },
+  { tag: 'Outerwear', title: "Women's Varsity Jacket", price: '$74.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/dcd334046_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/womens-varsity-jacket-minimal-tiny-flag-pattern-aop-jacket' },
+  { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', price: '$39.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a60a4725c_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/lightweight-red-black-checker-scarf-modern-geometric-knit' },
+  { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', price: '$39.99', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/360ec7111_generated_image.png', href: 'https://ciekr2-j1.myshopify.com/products/light-scarf-red-flag-lightweight-fashion-scarf' },
 ];
 
 function ProductCard({ product }) {
@@ -42,15 +42,7 @@ function ProductCard({ product }) {
             View Product
           </a>
         </div>
-        <a
-          href={product.admin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 self-end font-mono-flag text-[10px] uppercase tracking-[0.15em] text-parchment/40 hover:text-parchment transition-colors"
-        >
-          Edit in Admin ⚙️
-        </a>
-      </div>
+        </div>
     </div>
   );
 }
