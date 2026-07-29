@@ -37,6 +37,10 @@ export default function ComingSoon() {
 
       <LeadCapture />
 
+      <ProductGallery />
+
+      <TickerTape variant="dark" />
+
       {/* Scarf weave showcase */}
       <section className="bg-ink py-20 sm:py-28 px-6 sm:px-12">
         <div className="max-w-6xl mx-auto">
@@ -62,10 +66,6 @@ export default function ComingSoon() {
           </div>
         </div>
       </section>
-
-      <ProductGallery />
-
-      <TickerTape variant="dark" />
 
       <SiteFooter />
     </div>);
