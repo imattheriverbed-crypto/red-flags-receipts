@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RibbonCursor from '@/components/coming-soon/RibbonCursor';
 import TickerTape from '@/components/coming-soon/TickerTape';
 import Hero from '@/components/coming-soon/Hero';
@@ -21,6 +22,8 @@ export default function ComingSoon() {
           <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f69e0d30b_red-flags-receipts.png" alt="Red Flags & Receipts" className="h-10 w-auto object-contain" />
         </div>
         <div className="hidden sm:flex items-center gap-6">
+          <Link to="/about" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">Founder</Link>
+          <Link to="/contact" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">Contact</Link>
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50">Est. August 01</span>
           <button
             onClick={scrollToSignup}
