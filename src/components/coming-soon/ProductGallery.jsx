@@ -3,10 +3,6 @@ import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const SCARF_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a9f97a152_light-scarf-red-flag-lightweight-fashion-scarf.jpg';
-const MACRO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/2f18d7d79_generated_image.png';
-const WALKING_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/82b054b6d_generated_image.png';
-const PORTRAIT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6b81e8853_generated_image.png';
-const RED_WORLD_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/4f64cb9a3_sdfsd.PNG';
 const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/e04bb928b_generated_image.png';
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
 const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/de490e9ed_RedFlagsProductConcept2-HealingJourneyToteBag1.png';
@@ -129,13 +125,6 @@ export default function ProductGallery() {
         {DROPS.map((drop, i) => (
           <DropCard key={i} drop={drop} index={i} />
         ))}
-        <div className="flex-shrink-0 w-4" />
-      </div>
-
-      <div className="px-6 sm:px-12 mt-8">
-        <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/30">
-          ← Scroll to see all drops →
-        </p>
       </div>
     </section>
   );
