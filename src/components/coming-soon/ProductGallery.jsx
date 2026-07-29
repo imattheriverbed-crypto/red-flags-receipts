@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bell, Check, Crown } from 'lucide-react';
+import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const SCARF_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a9f97a152_light-scarf-red-flag-lightweight-fashion-scarf.jpg';
@@ -8,10 +8,12 @@ const WALKING_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf
 const PORTRAIT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6b81e8853_generated_image.png';
 const RED_WORLD_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/4f64cb9a3_sdfsd.PNG';
 const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/e04bb928b_generated_image.png';
+const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
 
 const DROPS = [
   { trait: 'CEO OF ME', desc: 'I hired me. I trust me. I choose me. For the one who left, leveled up, and built a life they love.', img: EMPOWERMENT_IMG, drop: 'Aug 01', tone: 'empower' },
-  { trait: 'EMOTIONALLY UNAVAILABLE', desc: 'The weave they never gave you.', img: MACRO_IMG, drop: 'Aug 08' },
+  { trait: 'PETS.', desc: 'Ramsey approved. Because they love you unconditionally — outfit your sidekick in apparel that speaks their language.', img: PETS_IMG, drop: 'Aug 08', tone: 'pets' },
+  { trait: 'EMOTIONALLY UNAVAILABLE', desc: 'The weave they never gave you.', img: MACRO_IMG, drop: 'Aug 15' },
   { trait: 'ALWAYS THE VICTIM', desc: 'They walked away. The scarf stays.', img: WALKING_IMG, drop: 'Aug 15' },
   { trait: 'THE FULL SCARF', desc: 'All 36 flags. One piece. Limited run.', img: SCARF_IMG, drop: 'Aug 01' },
   { trait: "RED'S WORLD", desc: 'Meet Red. Red sees everything.', img: RED_WORLD_IMG, drop: 'Aug 22' },
@@ -66,12 +68,13 @@ function DropCard({ drop, index }) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
         <div className="absolute top-4 left-4 flex items-center gap-2">
           <span className="font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-primary px-3 py-1">
-            {drop.tone === 'empower' ? 'Empowerment Drop' : `Drop ${drop.drop}`}
+            {drop.tone === 'empower' ? 'Empowerment Drop' : drop.tone === 'pets' ? 'Pet Drop' : `Drop ${drop.drop}`}
           </span>
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-5">
           <h3 className="font-display font-black text-xl sm:text-2xl text-parchment leading-tight mb-1 flex items-center gap-2">
             {drop.tone === 'empower' && <Crown className="w-5 h-5 text-primary" />}
+            {drop.tone === 'pets' && <PawPrint className="w-5 h-5 text-primary" />}
             {drop.trait}
           </h3>
           <p className="font-body text-xs text-parchment/60 mb-4">{drop.desc}</p>
