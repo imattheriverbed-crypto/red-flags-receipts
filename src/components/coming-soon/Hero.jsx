@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, ShoppingBag } from 'lucide-react';
+import { ArrowDown, Bell } from 'lucide-react';
 import CountdownClock from './CountdownClock';
 
 const MODEL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png';
@@ -45,8 +45,8 @@ export default function Hero({ onCtaClick }) {
               onClick={onCtaClick}
               className="group inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300"
             >
-              <ShoppingBag className="w-4 h-4" />
-              Shop Now
+              <Bell className="w-4 h-4" />
+              Get Notified
             </button>
           </div>
         </div>
