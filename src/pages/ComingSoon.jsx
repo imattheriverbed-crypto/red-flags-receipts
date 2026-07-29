@@ -33,14 +33,6 @@ export default function ComingSoon() {
 
       <Hero onCtaClick={scrollToSignup} />
 
-      <TickerTape variant="red" />
-
-      <LeadCapture />
-
-      <ProductGallery />
-
-      <TickerTape variant="dark" />
-
       {/* Scarf weave showcase */}
       <section className="bg-ink py-20 sm:py-28 px-6 sm:px-12">
         <div className="max-w-6xl mx-auto">
@@ -54,18 +46,16 @@ export default function ComingSoon() {
               Every square is a warning you lived through. Woven together, they become the thing you wear out of the wreckage.
             </p>
           </div>
-          <div className="max-w-2xl mx-auto">
-            <img src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/d5659f46b_Website_hero_banner_collage_concept.PNG"
-
-            alt="The signature red flag scarf"
-            className="w-full border-2 border-primary" />
-            
-            <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/30 text-center mt-4">
-
-            </p>
-          </div>
         </div>
       </section>
+
+      <TickerTape variant="red" />
+
+      <LeadCapture />
+
+      <ProductGallery />
+
+      <TickerTape variant="dark" />
 
       <SiteFooter />
     </div>);
