@@ -17,7 +17,7 @@ export default function AboutFounder() {
         <div className="relative z-10 max-w-4xl">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Founder ◆</span>
           <h1 className="font-display font-black text-5xl sm:text-7xl text-parchment leading-[0.95] mb-6">
-            Amy <span className="text-primary italic">"AJ"</span>
+            Amy <span className="text-primary not-italic" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>"AJ"</span>
           </h1>
           <p className="font-body text-sm sm:text-base uppercase tracking-[0.25em] text-parchment/60 max-w-xl leading-relaxed">
             She moved to Los Angeles with high hopes.<br />
