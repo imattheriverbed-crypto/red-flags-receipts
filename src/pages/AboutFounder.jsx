@@ -16,31 +16,24 @@ export default function AboutFounder() {
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center px-6 sm:px-12 pt-32 pb-16 grain-overlay overflow-hidden">
+        <Image
+          src={FOUNDER_IMG}
+          alt=""
+          fittingType="fill"
+          focalPointY={0.3}
+          className="absolute inset-0 w-full h-full opacity-15 object-cover pointer-events-none"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
-        <div className="relative z-10 max-w-5xl flex flex-col sm:flex-row items-center sm:items-end gap-8">
-          <div className="flex-1">
-            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Founder ◆</span>
-            <h1 className="font-display font-black text-5xl sm:text-7xl text-parchment leading-[0.95] mb-6">
-              Amy <span className="text-primary not-italic" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>"AJ"</span>
-            </h1>
-            <p className="font-body text-sm sm:text-base uppercase tracking-[0.25em] text-parchment/60 max-w-xl leading-relaxed">
-              She moved to Los Angeles with high hopes.<br />
-              The city had other plans.
-            </p>
-          </div>
-          <div className="w-40 sm:w-56 shrink-0">
-            <div className="relative aspect-[3/4] overflow-hidden">
-              <Image
-                src={FOUNDER_IMG}
-                alt="AJ, founder of Red Flags & Receipts"
-                fittingType="fill"
-                focalPointY={0.3}
-                className="w-full h-full"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent pointer-events-none" />
-            </div>
-            <p className="font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment/50 mt-2 text-center">◆ AJ ◆</p>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/80 pointer-events-none" />
+        <div className="relative z-10 max-w-3xl">
+          <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Founder ◆</span>
+          <h1 className="font-display font-black text-5xl sm:text-7xl text-parchment leading-[0.95] mb-6">
+            Amy <span className="text-primary not-italic" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>"AJ"</span>
+          </h1>
+          <p className="font-body text-sm sm:text-base uppercase tracking-[0.25em] text-parchment/60 max-w-xl leading-relaxed">
+            She moved to Los Angeles with high hopes.<br />
+            The city had other plans.
+          </p>
         </div>
       </section>
 
