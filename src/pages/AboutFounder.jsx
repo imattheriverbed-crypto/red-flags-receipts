@@ -29,35 +29,26 @@ export default function AboutFounder() {
         </div>
       </section>
 
-      {/* Founder portrait */}
-      <section className="px-6 sm:px-12 pb-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden border border-primary/20">
-            <Image
-              src={FOUNDER_IMG}
-              alt="AJ, founder of Red Flags & Receipts"
-              fittingType="fill"
-              focalPointY={0.3}
-              className="w-full h-full"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/80 block mb-2">
-                ◆ The woman behind the warnings ◆
-              </span>
-              <p className="font-display italic text-xl text-parchment leading-snug">
-                "Smart enough to know better. Brave enough to wear it anyway."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <TickerTape variant="red" />
 
       {/* Story */}
       <section className="px-6 sm:px-12 py-20 sm:py-28">
         <div className="max-w-3xl mx-auto space-y-14">
+          <figure className="float-right ml-6 mb-4 w-40 sm:w-52">
+            <div className="relative aspect-[3/4] overflow-hidden">
+              <Image
+                src={FOUNDER_IMG}
+                alt="AJ, founder of Red Flags & Receipts"
+                fittingType="fill"
+                focalPointY={0.3}
+                className="w-full h-full"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent pointer-events-none" />
+            </div>
+            <figcaption className="font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment/50 mt-2 text-center">
+              ◆ AJ ◆
+            </figcaption>
+          </figure>
           <div>
             <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">◆ Chapter One ◆</span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-parchment leading-tight mb-6">High hopes.</h2>
