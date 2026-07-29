@@ -17,7 +17,7 @@ const PRODUCTS = [
 function ProductCard({ product }) {
   return (
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
-      <div className="relative aspect-[4/5] w-full bg-ink flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden">
         <Image
           src={product.img}
           alt={product.title}
