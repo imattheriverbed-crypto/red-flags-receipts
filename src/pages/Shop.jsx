@@ -17,14 +17,14 @@ const PRODUCTS = [
 function ProductCard({ product }) {
   return (
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
-      <div className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden">
+      <a href={product.href} target="_blank" rel="noopener noreferrer" className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden block group-hover:opacity-90 transition-opacity">
         <Image
           src={product.img}
           alt={product.title}
           fittingType="fit"
           className="w-full h-full"
         />
-      </div>
+      </a>
       <div className="p-6 flex flex-col flex-grow">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{product.tag}</span>
         <h3 className="font-display text-lg text-parchment leading-tight mb-6">
