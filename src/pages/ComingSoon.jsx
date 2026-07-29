@@ -4,7 +4,6 @@ import TickerTape from '@/components/coming-soon/TickerTape';
 import Hero from '@/components/coming-soon/Hero';
 import LeadCapture from '@/components/coming-soon/LeadCapture';
 import ProductGallery from '@/components/coming-soon/ProductGallery';
-import EmpowermentDrop from '@/components/coming-soon/EmpowermentDrop';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 
 export default function ComingSoon() {
@@ -64,8 +63,6 @@ export default function ComingSoon() {
           </div>
         </div>
       </section>
-
-      <EmpowermentDrop />
 
       <ProductGallery />
 

@@ -7,11 +7,14 @@ const MACRO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0e
 const WALKING_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/82b054b6d_generated_image.png';
 const PORTRAIT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6b81e8853_generated_image.png';
 const RED_WORLD_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/4f64cb9a3_sdfsd.PNG';
+const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/e04bb928b_generated_image.png';
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
+const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/de490e9ed_RedFlagsProductConcept2-HealingJourneyToteBag1.png';
 
 const DROPS = [
+  { trait: 'CEO OF ME', desc: 'I hired me. I trust me. I choose me. For the one who left, leveled up, and built a life they love.', img: EMPOWERMENT_IMG, drop: 'Aug 01', tone: 'empower' },
   { trait: 'PETS.', desc: 'Ramsey approved. Because they love you unconditionally — outfit your sidekick in apparel that speaks their language.', img: PETS_IMG, drop: 'Aug 08', tone: 'pets' },
-  { trait: 'EMOTIONALLY UNAVAILABLE', desc: 'The weave they never gave you.', img: MACRO_IMG, drop: 'Aug 15' },
+  { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 22', tone: 'bags' },
   { trait: 'ALWAYS THE VICTIM', desc: 'They walked away. The scarf stays.', img: WALKING_IMG, drop: 'Aug 15' },
   { trait: 'THE FULL SCARF', desc: 'All 36 flags. One piece. Limited run.', img: SCARF_IMG, drop: 'Aug 01' },
   { trait: "RED'S WORLD", desc: 'Meet Red. Red sees everything.', img: RED_WORLD_IMG, drop: 'Aug 22' },
