@@ -23,20 +23,24 @@ export default function SiteFooter() {
             <h4 className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">The Drop Schedule</h4>
             <ul className="space-y-2">
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">Walking Red Flag</span>
+                <span className="font-mono-flag text-xs text-parchment/60">CEO OF ME</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 01</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">Emotionally Unavailable</span>
+                <span className="font-mono-flag text-xs text-parchment/60">PETS.</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 08</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">Always the Victim</span>
+                <span className="font-mono-flag text-xs text-parchment/60">BAGS.</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 15</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">Red's World</span>
+                <span className="font-mono-flag text-xs text-parchment/60">BLESS YOUR HEART</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 22</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span className="font-mono-flag text-xs text-parchment/60">50 LANGUAGES TEE</span>
+                <span className="font-mono-flag text-xs text-primary">Aug 29</span>
               </li>
             </ul>
           </div>
