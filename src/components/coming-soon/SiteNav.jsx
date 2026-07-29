@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 export default function SiteNav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-12 py-4 bg-transparent">
-      <Link to="/" className="flex items-center gap-3">
-        <img
-          src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f69e0d30b_red-flags-receipts.png"
-          alt="Red Flags & Receipts"
-          className="h-10 w-auto object-contain"
-        />
+      <Link to="/" aria-label="Red Flags & Receipts — Home" className="flex items-center">
+        <Logo />
       </Link>
       <div className="hidden sm:flex items-center gap-6">
         <Link to="/" className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 hover:text-parchment transition-colors">
