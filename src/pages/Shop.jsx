@@ -5,13 +5,12 @@ import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
 
 const PRODUCTS = [
-  { tag: 'Apparel', title: 'Red Flag Pattern Pencil Skirt', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086338523303' },
-  { tag: 'Stationery', title: 'The Receipts Spiral Journal — Red Flag Minimalist Notebook', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086264959143' },
-  { tag: 'Apparel', title: 'Signature Red Flags Pencil Skirt', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086263058599' },
-  { tag: 'Tops', title: 'Baby Tee — "Red Flags Match My Outfit" Graphic Crop Top', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11086261289127' },
-  { tag: 'Outerwear', title: "Copy of Women's Varsity Jacket — Minimal Tiny Flag Pattern AOP Jacket", href: 'https://admin.shopify.com/store/red-flag-society-2/products/11075746300071' },
-  { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11075731816615' },
-  { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', href: 'https://admin.shopify.com/store/red-flag-society-2/products/11075727458471' },
+  { tag: 'Bottoms', title: 'Red Flag Pattern Pencil Skirt', price: '$69.99', href: 'https://ciekr2-j1.myshopify.com/products/red-flag-pattern-pencil-skirt-womens-mid-waist-graphic-skirt', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086338523303' },
+  { tag: 'Stationery', title: 'The Receipts Spiral Journal — Red Flag Minimalist Notebook', price: '$19.99', href: 'https://ciekr2-j1.myshopify.com/products/the-receipts-spiral-journal-red-flag-minimalist-notebook', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086264959143' },
+  { tag: 'Bottoms', title: 'Signature Red Flags Pencil Skirt', price: '$53.68', href: 'https://ciekr2-j1.myshopify.com/products/signature-red-flags-pencil-skirt', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086263058599' },
+  { tag: 'Tops', title: 'Baby Tee — "Red Flags Match My Outfit" Graphic Crop Top', price: '$39.99', href: 'https://ciekr2-j1.myshopify.com/products/baby-tee-red-flags-match-my-outfit-graphic-crop-top', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11086261289127' },
+  { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', price: '$39.99', href: 'https://ciekr2-j1.myshopify.com/products/lightweight-red-black-checker-scarf-modern-geometric-knit', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11075731816615' },
+  { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', price: '$39.99', href: 'https://ciekr2-j1.myshopify.com/products/light-scarf-red-flag-lightweight-fashion-scarf', admin: 'https://admin.shopify.com/store/red-flag-society-2/products/11075727458471' },
 ];
 
 function ProductCard({ product }) {
@@ -19,17 +18,28 @@ function ProductCard({ product }) {
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
       <div className="p-6 flex flex-col flex-grow">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{product.tag}</span>
-        <h3 className="font-display text-lg text-parchment leading-tight mb-6">{product.title}</h3>
-        <div className="mt-auto pt-4 flex items-center justify-end">
+        <h3 className="font-display text-lg text-parchment leading-tight mb-6">
+          <a href={product.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{product.title}</a>
+        </h3>
+        <div className="mt-auto pt-4 border-t border-primary/15 flex items-center justify-between">
+          <span className="font-mono-flag text-xl text-parchment">{product.price}</span>
           <a
             href={product.href}
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono-flag text-[10px] uppercase tracking-[0.2em] bg-primary text-parchment px-4 py-2 hover:bg-parchment hover:text-ink transition-colors"
           >
-            Edit in Shopify
+            View Product
           </a>
         </div>
+        <a
+          href={product.admin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 self-end font-mono-flag text-[10px] uppercase tracking-[0.15em] text-parchment/40 hover:text-parchment transition-colors"
+        >
+          Edit in Admin ⚙️
+        </a>
       </div>
     </div>
   );
