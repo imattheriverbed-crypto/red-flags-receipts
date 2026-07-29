@@ -1,9 +1,9 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import CountdownClock from './CountdownClock';
+import HeroBanner from './HeroBanner';
 
 const HERO_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/4841f04e4_light-scarf-red-flag-lightweight-fashion-scarf.jpg';
-const BANNER_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a52424196_Screenshot2026-07-29133450.png';
 
 export default function Hero({ onCtaClick }) {
   return (
@@ -48,9 +48,7 @@ woven into the signature print that started it all.
         </div>
 
         {/* Home of the Red Flags Collection banner */}
-        <div className="hidden lg:block w-[400px] xl:w-[460px] flex-shrink-0 mb-16">
-          <img src={BANNER_IMG} alt="Home of the Red Flags Collection" className="w-full border border-primary/30 object-cover" />
-        </div>
+        <HeroBanner onCtaClick={onCtaClick} />
       </div>
 
       {/* Scroll indicator */}
