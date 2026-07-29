@@ -1,5 +1,4 @@
 import React from 'react';
-import { Instagram, Music2 } from 'lucide-react';
 
 export default function SiteFooter() {
   return (
@@ -17,21 +16,6 @@ export default function SiteFooter() {
             <p className="font-body text-xs text-parchment/40 mt-4 leading-relaxed">
               Every warning you ignored, woven into wearable art. Not a deterrent—a badge of resilience. Made with Printify. Sold little by little.
             </p>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h4 className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">Follow the Flags</h4>
-            <div className="flex flex-col gap-3">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-parchment/60 hover:text-primary transition-colors">
-                <Instagram className="w-4 h-4" />
-                <span className="font-mono-flag text-xs uppercase tracking-wider">Instagram</span>
-              </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-parchment/60 hover:text-primary transition-colors">
-                <Music2 className="w-4 h-4" />
-                <span className="font-mono-flag text-xs uppercase tracking-wider">TikTok</span>
-              </a>
-            </div>
           </div>
 
           {/* Drop Schedule */}
