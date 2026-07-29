@@ -7,7 +7,7 @@ import SiteFooter from '@/components/coming-soon/SiteFooter';
 import ScarfWeave from '@/components/coming-soon/ScarfWeave';
 import TickerTape from '@/components/coming-soon/TickerTape';
 
-const FOUNDER_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a103ab000_generated_image.png';
+const FOUNDER_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/fe63bd653_generated_image.png';
 
 export default function AboutFounder() {
   return (
