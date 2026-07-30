@@ -10,12 +10,12 @@ const SURVIVED_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091b
 const LANG_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6df07dbb7_38bf0d10-9897-4f90-81d3-0ee9b46ac015.png';
 
 const FEATURED = {
-  name: 'CEO OF ME',
-  date: 'Aug 01, 2026',
-  status: '◆ Next Drop ◆',
+  name: 'Signature Collection',
+  date: 'Available Now',
+  status: '◆ Available Now ◆',
   statusStyle: 'bg-primary text-parchment',
-  desc: 'The opening chapter. An empowerment capsule for the ones who took themselves back. Signature red flag scarves, cut for the comeback.',
-  img: EMPOWERMENT_IMG,
+  desc: 'Skirts, scarves, journals and the receipts to match. The first chapter — live and shipping now via our Printify store.',
+  img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/6717550338414912274_2048.jpg?v=1785328351',
 };
 
 const UPCOMING = [
