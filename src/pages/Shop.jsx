@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Lock } from 'lucide-react';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
@@ -6,7 +6,7 @@ import TickerTape from '@/components/coming-soon/TickerTape';
 import CountdownClock from '@/components/coming-soon/CountdownClock';
 import ScarfGallery from '@/components/coming-soon/ScarfGallery';
 import { Image } from '@/components/ui/image';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { PRODUCTS, CATEGORIES } from '@/data/products';
 
 function ProductCard({ product }) {
@@ -41,7 +41,13 @@ function ProductCard({ product }) {
 }
 
 export default function Shop() {
+  const [searchParams] = useSearchParams();
+  const cat = searchParams.get('cat');
   const [active, setActive] = useState('All');
+  useEffect(() => {
+    if (cat && CATEGORIES.includes(cat)) setActive(cat);
+    else if (!cat) setActive('All');
+  }, [cat]);
   const visible = active === 'All' ? PRODUCTS : PRODUCTS.filter((p) => p.tag === active);
 
   return (
