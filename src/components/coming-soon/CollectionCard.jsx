@@ -36,7 +36,7 @@ export default function CollectionCard({ collection, large = false, to = '/shop'
             <p className="font-body text-sm text-parchment/70 max-w-md leading-relaxed">{collection.desc}</p>
           )}
           <div className="flex items-center gap-1.5 mt-3 font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/60 group-hover:text-primary transition-colors">
-            Shop collection <ArrowUpRight className="w-3.5 h-3.5" />
+            Preview the drop <ArrowUpRight className="w-3.5 h-3.5" />
           </div>
         </div>
       </Link>

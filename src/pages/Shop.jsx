@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Lock } from 'lucide-react';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
+import CountdownClock from '@/components/coming-soon/CountdownClock';
 import { Image } from '@/components/ui/image';
 
 const PRODUCTS = [
@@ -19,29 +20,25 @@ const CATEGORIES = ['All', ...Array.from(new Set(PRODUCTS.map((p) => p.tag)))];
 function ProductCard({ product }) {
   return (
     <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
-      <a href={product.href} target="_blank" rel="noopener noreferrer" className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden block group-hover:opacity-90 transition-opacity">
+      <div className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden">
         <Image
           src={product.img}
           alt={product.title}
           fittingType="fit"
-          className="w-full h-full"
+          className="w-full h-full group-hover:opacity-90 transition-opacity"
         />
-      </a>
+        <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-ink/70 border border-primary/40 px-2.5 py-1">
+          <Lock className="w-3 h-3" /> Drops Aug 01
+        </span>
+      </div>
       <div className="p-6 flex flex-col flex-grow">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{product.tag}</span>
-        <h3 className="font-display text-lg text-parchment leading-tight mb-6">
-          <a href={product.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{product.title}</a>
-        </h3>
+        <h3 className="font-display text-lg text-parchment leading-tight mb-6">{product.title}</h3>
         <div className="mt-auto pt-4 border-t border-primary/15 flex items-center justify-between">
           <span className="font-mono-flag text-xl text-parchment">{product.price}</span>
-          <a
-            href={product.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono-flag text-[10px] uppercase tracking-[0.2em] bg-primary text-parchment px-4 py-2 hover:bg-parchment hover:text-ink transition-colors"
-          >
-            View Product
-          </a>
+          <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/50 border border-parchment/20 px-4 py-2">
+            Not For Sale Yet
+          </span>
         </div>
       </div>
     </div>
@@ -64,14 +61,17 @@ export default function Shop() {
           <h1 className="font-display font-black text-4xl sm:text-6xl text-parchment leading-[0.95] mb-6 uppercase">
             Featured Signature<br />Collection
           </h1>
-          <p className="font-body text-sm uppercase tracking-[0.25em] text-primary mb-10">
-            First Drop from Red Flags &amp; Receipts
+          <p className="font-body text-sm uppercase tracking-[0.25em] text-primary mb-8">
+            Nothing sells until August 1st
           </p>
+          <div className="mb-6 flex justify-center">
+            <CountdownClock variant="boxed" target={new Date('2026-08-01T00:00:00')} />
+          </div>
           <a
             href="#collection"
             className="inline-flex items-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-parchment hover:text-ink transition-colors duration-300"
           >
-            <ShoppingBag className="w-4 h-4" /> Shop The Drop
+            <ShoppingBag className="w-4 h-4" /> Preview The Drop
           </a>
         </div>
       </header>

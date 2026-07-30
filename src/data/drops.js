@@ -5,11 +5,13 @@ const LANG_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0ee
 const JOURNAL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6d8774117_RedFlagsreceiptsjournalmockup.png';
 
 export const FEATURED = {
+  slug: 'signature-collection',
   name: 'Signature Collection',
-  date: 'Available Now',
-  status: '◆ Available Now ◆',
+  date: 'Aug 01',
+  dateISO: '2026-08-01T00:00:00',
+  status: '◆ Drops Aug 01 ◆',
   statusStyle: 'bg-primary text-parchment',
-  desc: 'Skirts, scarves, journals and the receipts to match. The first chapter — live and shipping now via our Printify store.',
+  desc: 'Skirts, scarves, journals and the receipts to match. The first chapter drops August 1st — nothing sells until then. Join the waitlist and be first in line.',
   img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/6717550338414912274_2048.jpg?v=1785328351',
 };
 
