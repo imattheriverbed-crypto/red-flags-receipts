@@ -5,34 +5,11 @@ import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
 import { Image } from '@/components/ui/image';
-
-const FEATURED = {
-  img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/ffb611f5a_generated_image.png',
-  date: 'Field Note 01',
-  title: 'The Receipts We Kept',
-  excerpt: 'Every text you didn’t answer, every promise that expired, every apology that came with conditions. We kept them all — not as evidence against you, but as proof we survived. The journal opens with the receipts.',
-  tag: 'Founder’s Letter',
-};
-
-const ENTRIES = [
-  {
-    date: 'Field Note 02',
-    title: 'Thirty-Six Warnings, One Scarf',
-    excerpt: 'How the signature print became a wearable archive of every red flag we lived through — woven, not warned.',
-  },
-  {
-    date: 'Field Note 03',
-    title: 'Narc-Free, Always',
-    excerpt: 'The pivot that turned the wreckage into a wardrobe. A celebration, not a deterrent.',
-  },
-  {
-    date: 'Field Note 04',
-    title: 'The Drop Schedule',
-    excerpt: 'Why we release little by little — and why the next warning is always already on the loom.',
-  },
-];
+import { JOURNAL_ENTRIES } from '@/data/journalEntries';
 
 export default function Journal() {
+  const [featured, ...rest] = JOURNAL_ENTRIES;
+
   return (
     <div className="dark bg-ink text-parchment min-h-screen">
       <SiteNav />
@@ -54,17 +31,17 @@ export default function Journal() {
 
       {/* Featured entry */}
       <section className="max-w-6xl mx-auto px-6 sm:px-12 py-20 sm:py-24">
-        <Link to="/journal" className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
+        <Link to={`/journal/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
           <div className="relative aspect-[4/3] w-full bg-card overflow-hidden border border-primary/15">
-            <Image src={FEATURED.img} alt={FEATURED.title} fittingType="fill" className="w-full h-full group-hover:scale-[1.03] transition-transform duration-700" />
+            <Image src={featured.hero} alt={featured.title} fittingType="fill" className="w-full h-full group-hover:scale-[1.03] transition-transform duration-700" />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">{FEATURED.tag} · {FEATURED.date}</span>
+            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">{featured.tag} · {featured.date}</span>
             <h3 className="font-display font-black text-2xl sm:text-4xl text-parchment leading-tight mb-5 group-hover:text-primary transition-colors">
-              {FEATURED.title}
+              {featured.title}
             </h3>
             <p className="font-body text-sm sm:text-base text-parchment/60 leading-relaxed mb-8 max-w-lg">
-              {FEATURED.excerpt}
+              {featured.excerpt}
             </p>
             <span className="inline-flex items-center gap-2 font-mono-flag text-[11px] uppercase tracking-[0.25em] text-parchment group-hover:text-primary transition-colors">
               Read The Entry <ArrowRight className="w-4 h-4" />
@@ -74,8 +51,11 @@ export default function Journal() {
 
         {/* Secondary entries */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-primary/15 pt-12">
-          {ENTRIES.map((e) => (
-            <Link key={e.title} to="/journal" className="group border-t border-primary/20 pt-6">
+          {rest.map((e) => (
+            <Link key={e.slug} to={`/journal/${e.slug}`} className="group">
+              <div className="relative aspect-[4/3] w-full bg-card overflow-hidden border border-primary/15 mb-5">
+                <Image src={e.hero} alt={e.title} fittingType="fill" className="w-full h-full group-hover:scale-[1.03] transition-transform duration-500" />
+              </div>
               <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary/80 mb-3 block">{e.date}</span>
               <h4 className="font-display text-xl sm:text-2xl text-parchment leading-tight mb-3 group-hover:text-primary transition-colors">{e.title}</h4>
               <p className="font-body text-sm text-parchment/50 leading-relaxed">{e.excerpt}</p>

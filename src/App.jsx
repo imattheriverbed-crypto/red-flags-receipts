@@ -14,6 +14,7 @@ import BusinessCard from './pages/BusinessCard';
 import Shop from './pages/Shop';
 import Collections from './pages/Collections';
 import Journal from './pages/Journal';
+import JournalEntry from './pages/JournalEntry';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -49,6 +50,7 @@ const AuthenticatedApp = () => {
     <Route path="/shop" element={<Shop />} />
     <Route path="/collections" element={<Collections />} />
     <Route path="/journal" element={<Journal />} />
+    <Route path="/journal/:slug" element={<JournalEntry />} />
     <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
