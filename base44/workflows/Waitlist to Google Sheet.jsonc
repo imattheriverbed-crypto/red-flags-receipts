@@ -1,0 +1,45 @@
+{
+  "name": "Waitlist to Google Sheet",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "entity",
+      "events": [
+        "create"
+      ],
+      "entity_name": "WaitlistSignup"
+    }
+  },
+  "description": "Appends every new waitlist signup to the tracking Google Sheet",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "waitlist_to_sheet",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "append_row": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "syncWaitlistToSheet",
+            "args": {
+              "email": "${ .trigger.data.email }",
+              "phone": "${ .trigger.data.phone }",
+              "contact_method": "${ .trigger.data.contact_method }",
+              "source": "${ .trigger.data.source }",
+              "interested_traits": "${ .trigger.data.interested_traits }",
+              "red_flag_note": "${ .trigger.data.red_flag_note }"
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Append signup to Google Sheet",
+            "description": "New WaitlistSignup row"
+          }
+        }
+      }
+    ]
+  }
+}
