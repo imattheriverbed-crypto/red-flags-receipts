@@ -23,7 +23,7 @@ export default function Logo({ className = '', height = 'h-10' }) {
         <span className="font-display font-black tracking-[0.04em] text-parchment" style={{ fontSize: '0.95rem', lineHeight: 1 }}>
           RED FLAGS
         </span>
-        <span className="font-mono-flag tracking-[0.42em] text-primary/90 [-webkit-text-stroke:0.5px_hsl(var(--parchment))]" style={{ fontSize: '0.5rem', lineHeight: 1.4 }}>
+        <span className="font-mono-flag tracking-[0.42em] text-primary/90 [-webkit-text-stroke:0.3px_hsl(var(--parchment))]" style={{ fontSize: '0.5rem', lineHeight: 1.4 }}>
           &amp; RECEIPTS
         </span>
       </span>
