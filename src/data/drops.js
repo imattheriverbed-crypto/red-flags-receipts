@@ -24,6 +24,7 @@ export const UPCOMING = [
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/86e0cee69_generated_image.png',
     desc: 'Ramsey approved. Apparel for the ones who love you unconditionally — outfit your sidekick in pieces that speak their language.',
+    products: ['Signature Bandana', 'Sidekick Tee', 'Good Boy Hoodie', 'Collar Charm'],
   },
   {
     slug: 'bags',
@@ -33,6 +34,7 @@ export const UPCOMING = [
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/8f33092b5_generated_image.png',
     desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.',
+    products: ['Receipts Tote', 'Warning Crossbody', '36-Flag Backpack', 'Carry-On Flag'],
   },
   {
     slug: '50-lang',
@@ -42,6 +44,7 @@ export const UPCOMING = [
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
     img: LANG_IMG,
     desc: 'Two ways to close the chapter — "go fuck yourself" in 50 languages, or "bless your heart" with a smile. Distressed screen print. Choose your goodbye.',
+    products: ['50 Languages Tee', 'Bless Your Heart Tee', 'GFY Hoodie', 'Goodbye Cap'],
   },
   {
     slug: 'receipts-journal',
@@ -51,6 +54,7 @@ export const UPCOMING = [
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
     img: JOURNAL_IMG,
     desc: 'An exclusive, extensive recorder of receipts. Track the patterns, save the evidence, protect your peace — 100+ pages designed to help you see it clear and take your power back.',
+    products: ['Receipts Journal', 'Evidence Notebook', 'Pattern Tracker', 'Red Flag Pen Set'],
   },
 ];
 
