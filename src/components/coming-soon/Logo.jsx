@@ -25,7 +25,7 @@ export default function Logo({ className = '', height = 'h-16' }) {
         aria-label="Red Flags & Receipts"
       >
         {/* Outer ring */}
-        <circle cx="50" cy="50" r="49" fill="#000000" stroke="#D32F2F" strokeWidth="1.5" />
+        <circle cx="50" cy="50" r="49" fill="none" stroke="#D32F2F" strokeWidth="1.5" />
         {/* Inner ring */}
         <circle cx="50" cy="50" r="44" fill="none" stroke="#D32F2F" strokeWidth="0.5" opacity="0.5" />
 
