@@ -67,9 +67,9 @@ function cta(label) {
 export function buildWelcomeEmail({ firstDrop = 'August 01, 2026' } = {}) {
   return shell({
     preheader: "You're on the list. The warning arrives August 01.",
-    hero: `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.3em;color:${ACCENT};text-transform:uppercase;margin-bottom:14px;">YOU&rsquo;RE ON THE LIST</div>
-      <div style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:34px;color:${PARCHMENT};line-height:1.0;">THE WARNING<br>ARRIVES <span style="color:${ACCENT};font-style:italic;">SOON</span>.</div>`,
-    body: `<p style="margin:0 0 18px;">Priority access is locked in. The first drop of the Red Flag scarf collection opens <strong style="color:${PARCHMENT};">${firstDrop}</strong> &mdash; and unlike your ex, we actually follow through.</p>
+    hero: `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.3em;color:${ACCENT};text-transform:uppercase;margin-bottom:14px;">&#10003;&nbsp; PRE-LAUNCH SPOT CONFIRMED</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:34px;color:${PARCHMENT};line-height:1.0;">YOU&rsquo;RE ON<br>THE <span style="color:${ACCENT};font-style:italic;">LIST</span>.</div>`,
+    body: `<p style="margin:0 0 18px;">Your pre-launch spot is officially reserved. The first drop of the Red Flag scarf collection opens <strong style="color:${PARCHMENT};">${firstDrop}</strong> &mdash; you&rsquo;ll get priority access and a launch-day discount before anyone else.</p>
       <p style="margin:0 0 28px;">No spam, no games, no leaving you on read. Just the drop, then we ghost.</p>
       ${cta('Shop The Drop')}
       <p style="margin:28px 0 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,236,0.5);">Priority access &middot; Launch discount &middot; ${firstDrop}</p>`,
