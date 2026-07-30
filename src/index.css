@@ -115,6 +115,27 @@
     50% { transform: skewX(3deg) rotate(1deg); }
   }
   .flag-wave { animation: flag-wave 3s ease-in-out infinite; }
+
+  /* Wind-flapping fabric: each vertical slice travels as a sine wave */
+  @keyframes flag-flap {
+    0%   { transform: translateY(0) skewY(0deg) scaleX(1); filter: brightness(1); }
+    25%  { transform: translateY(-16px) skewY(-5deg) scaleX(0.97); filter: brightness(1.2); }
+    50%  { transform: translateY(0) skewY(0deg) scaleX(1); filter: brightness(0.85); }
+    75%  { transform: translateY(16px) skewY(5deg) scaleX(0.97); filter: brightness(0.7); }
+    100% { transform: translateY(0) skewY(0deg) scaleX(1); filter: brightness(1); }
+  }
+  .flag-slice {
+    animation: flag-flap 2.4s ease-in-out infinite;
+    transform-origin: left center;
+    will-change: transform, filter;
+  }
+
+  /* gentle whole-flag sway from the pole */
+  @keyframes flag-sway {
+    0%, 100% { transform: rotate(-1.2deg); }
+    50% { transform: rotate(1.2deg); }
+  }
+  .flag-sway { animation: flag-sway 5s ease-in-out infinite; transform-origin: left center; }
 }
 
 /* === Printable Business Card === */
