@@ -91,7 +91,7 @@ function DropCard({ drop, index }) {
             {drop.tone === 'journal' && <ReceiptText className="w-5 h-5 text-primary" />}
             {drop.trait}
           </h3>
-          <p className="font-body text-xs text-parchment/60 mb-4">{drop.desc}</p>
+          <p className="font-body text-xs text-parchment/85 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">{drop.desc}</p>
 
           {showPrompt ? (
             <form onSubmit={handleSubmit} className="flex gap-2">
