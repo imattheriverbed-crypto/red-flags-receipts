@@ -1,0 +1,90 @@
+// Beautiful brand-styled HTML email templates for Red Flags & Receipts.
+// NOTE: SendEmail only delivers to registered app users — see platform docs.
+
+const BRAND_MARK = 'RED FLAGS &amp; RECEIPTS';
+const ACCENT = '#E2211C';
+const INK = '#0A0A0A';
+const PARCHMENT = '#F5F2EC';
+
+function shell({ preheader, hero, body, footerQuote }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>${BRAND_MARK}</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+</style>
+</head>
+<body style="margin:0;padding:0;background:${INK};font-family:Georgia,'Times New Roman',serif;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:${PARCHMENT};">${preheader}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${INK};">
+    <tr><td align="center" style="padding:24px 16px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:${INK};border:1px solid ${ACCENT};">
+        <!-- Top warning tape -->
+        <tr><td style="height:6px;background:repeating-linear-gradient(45deg,${INK},${INK} 16px,${ACCENT} 16px,${ACCENT} 32px);font-size:0;line-height:0;">&nbsp;</td></tr>
+        <!-- Brand mark -->
+        <tr><td align="center" style="padding:40px 32px 8px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.35em;color:${ACCENT};text-transform:uppercase;">&#9670;&nbsp;&nbsp;FIRST DROP&nbsp;&nbsp;&#9670;</div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:26px;color:${PARCHMENT};letter-spacing:0.02em;margin-top:14px;line-height:1.05;">${BRAND_MARK}</div>
+        </tr>
+        <!-- Hero -->
+        <tr><td align="center" style="padding:24px 32px 20px;">
+          ${hero}
+        </td></tr>
+        <!-- Body -->
+        <tr><td style="padding:0 32px 24px;color:${PARCHMENT};font-family:'Playfair Display',Georgia,serif;font-size:16px;line-height:1.7;">
+          ${body}
+        </td></tr>
+        <!-- Footer quote -->
+        <tr><td align="center" style="padding:28px 32px;border-top:1px solid rgba(245,242,236,0.12);">
+          <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:rgba(245,242,236,0.75);line-height:1.5;">
+            &ldquo;Look at this scarf made of all the red flags you gave me.&rdquo;
+          </div>
+        </td></tr>
+        <!-- CTA strip -->
+        <tr><td align="center" style="padding:0 32px 36px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;color:rgba(245,242,236,0.4);text-transform:uppercase;">
+            WARNING: WEARING THIS SCARF MAY CAUSE UNRESOLVED EXES TO TEXT YOU.
+          </div>
+        </td></tr>
+        <!-- Bottom warning tape -->
+        <tr><td style="height:6px;background:repeating-linear-gradient(45deg,${INK},${INK} 16px,${ACCENT} 16px,${ACCENT} 32px);font-size:0;line-height:0;">&nbsp;</td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+}
+
+function cta(label) {
+  return `<a href="https://redflagsandreceipts.com" target="_blank" style="display:inline-block;padding:14px 32px;background:${ACCENT};color:${PARCHMENT};font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">${label}</a>`;
+}
+
+// Welcome email sent to the person who just signed up
+export function buildWelcomeEmail({ firstDrop = 'August 01, 2026' } = {}) {
+  return shell({
+    preheader: "You're on the list. The warning arrives August 01.",
+    hero: `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.3em;color:${ACCENT};text-transform:uppercase;margin-bottom:14px;">YOU&rsquo;RE ON THE LIST</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:34px;color:${PARCHMENT};line-height:1.0;">THE WARNING<br>ARRIVES <span style="color:${ACCENT};font-style:italic;">SOON</span>.</div>`,
+    body: `<p style="margin:0 0 18px;">Priority access is locked in. The first drop of the Red Flag scarf collection opens <strong style="color:${PARCHMENT};">${firstDrop}</strong> &mdash; and unlike your ex, we actually follow through.</p>
+      <p style="margin:0 0 28px;">No spam, no games, no leaving you on read. Just the drop, then we ghost.</p>
+      ${cta('Shop The Drop')}
+      <p style="margin:28px 0 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,236,0.5);">Priority access &middot; Launch discount &middot; ${firstDrop}</p>`,
+  });
+}
+
+// Owner notification email (sent to the brand inbox)
+export function buildOwnerNotificationEmail({ title, lines = [] }) {
+  const rows = lines.map((l) =>
+    `<tr><td style="padding:10px 0;border-bottom:1px solid rgba(245,242,236,0.08);font-family:'JetBrains Mono',monospace;font-size:12px;color:${PARCHMENT};vertical-align:top;"><strong style="color:${ACCENT};text-transform:uppercase;letter-spacing:0.1em;">${l.label}</strong></td><td style="padding:10px 0 10px 18px;border-bottom:1px solid rgba(245,242,236,0.08);font-family:'Playfair Display',Georgia,serif;font-size:15px;color:${PARCHMENT};line-height:1.5;">${l.value}</td></tr>`
+  ).join('');
+  return shell({
+    preheader: title,
+    hero: `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.3em;color:${ACCENT};text-transform:uppercase;margin-bottom:14px;">NEW SIGNAL</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:30px;color:${PARCHMENT};line-height:1.05;">${title}</div>`,
+    body: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;">${rows}</table>`,
+  });
+}

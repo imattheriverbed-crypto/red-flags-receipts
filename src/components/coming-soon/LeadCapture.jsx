@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, Mail, MessageSquare } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTemplates';
 
 export default function LeadCapture() {
   const [method, setMethod] = useState('email');
@@ -38,12 +39,29 @@ export default function LeadCapture() {
         source: 'lead-capture',
       });
 
-      // Best-effort notification email (recipient must be a registered app user)
+      // Best-effort welcome reply to the signer (recipient must be a registered app user)
+      if (method === 'email') {
+        try {
+          await base44.integrations.Core.SendEmail({
+            to: value,
+            subject: "🚩 You're on the list — Red Flags & Receipts",
+            body: buildWelcomeEmail(),
+          });
+        } catch (e) { /* reply is best-effort */ }
+      }
+      // Best-effort owner notification (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
           to: 'shopredflags@proton.me',
-          subject: '🚩 New Red Flag Waitlist Signup',
-          body: `Someone just joined the waitlist!\n\nContact: ${value}\nMethod: ${method}\nSource: lead-capture`,
+          subject: '🚩 New Waitlist Signup',
+          body: buildOwnerNotificationEmail({
+            title: 'New Waitlist Signup',
+            lines: [
+              { label: 'Contact', value: value },
+              { label: 'Method', value: method.toUpperCase() },
+              { label: 'Source', value: 'Lead Capture (homepage)' },
+            ],
+          }),
         });
       } catch (e) { /* notification is best-effort */ }
 

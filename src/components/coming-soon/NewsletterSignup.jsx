@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
+import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTemplates';
 import { ArrowRight } from 'lucide-react';
 
 export default function NewsletterSignup() {
@@ -22,12 +23,26 @@ export default function NewsletterSignup() {
         contact_method: 'email',
         source: 'footer-newsletter',
       });
-      // Best-effort notification email (recipient must be a registered app user)
+      // Best-effort welcome reply to the subscriber (recipient must be a registered app user)
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: email,
+          subject: "🚩 You're on the list — Red Flags & Receipts",
+          body: buildWelcomeEmail(),
+        });
+      } catch (e) { /* reply is best-effort */ }
+      // Best-effort owner notification (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
           to: 'shopredflags@proton.me',
           subject: '🚩 New Newsletter Signup',
-          body: `A new subscriber joined the newsletter.\n\nEmail: ${email}\nSource: footer-newsletter`,
+          body: buildOwnerNotificationEmail({
+            title: 'New Newsletter Signup',
+            lines: [
+              { label: 'Email', value: email },
+              { label: 'Source', value: 'Footer newsletter' },
+            ],
+          }),
         });
       } catch (e) { /* notification is best-effort */ }
       setStatus('done');

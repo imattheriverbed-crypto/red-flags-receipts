@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Bell, Check, Crown, PawPrint } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTemplates';
 
 const LANGUAGES_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6df07dbb7_38bf0d10-9897-4f90-81d3-0ee9b46ac015.png';
 const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9cac8a48c_Copilot_20260729_101403.png';
@@ -37,12 +38,27 @@ function DropCard({ drop, index }) {
         interested_traits: [drop.trait],
       });
 
-      // Best-effort notification email (recipient must be a registered app user)
+      // Best-effort welcome reply to the subscriber (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
-          to: 'longbeachlocal17@gmail.com',
+          to: email,
+          subject: "🚩 You're on the list — Red Flags & Receipts",
+          body: buildWelcomeEmail(),
+        });
+      } catch (e) { /* reply is best-effort */ }
+      // Best-effort owner notification (recipient must be a registered app user)
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: 'shopredflags@proton.me',
           subject: '🚩 New Drop Reminder Set',
-          body: `Someone set a drop reminder!\n\nEmail: ${email}\nTrait: ${drop.trait}\nSource: gallery-drop-${index}`,
+          body: buildOwnerNotificationEmail({
+            title: 'New Drop Reminder',
+            lines: [
+              { label: 'Email', value: email },
+              { label: 'Drop', value: drop.trait },
+              { label: 'Source', value: `Gallery drop #${index + 1}` },
+            ],
+          }),
         });
       } catch (e) { /* best-effort */ }
 

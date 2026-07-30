@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MessageSquare, Send, Check, Instagram } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTemplates';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 
@@ -24,15 +25,29 @@ export default function Contact() {
         source: 'contact',
         red_flag_note: `${name || 'Anonymous'}: ${message}`,
       });
+      // Best-effort welcome reply to the sender (recipient must be a registered app user)
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: email,
+          subject: '🚩 Message received — Red Flags & Receipts',
+          body: buildWelcomeEmail(),
+        });
+      } catch (_) { /* reply is best-effort */ }
+      // Best-effort owner notification (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
           to: 'shopredflags@proton.me',
           subject: '🚩 New Contact Message',
-          body: `Name: ${name || 'Anonymous'}\nEmail: ${email}\n\n${message}`,
+          body: buildOwnerNotificationEmail({
+            title: 'New Contact Message',
+            lines: [
+              { label: 'Name', value: name || 'Anonymous' },
+              { label: 'Email', value: email },
+              { label: 'Message', value: message },
+            ],
+          }),
         });
-      } catch (_) {
-        /* best-effort */
-      }
+      } catch (_) { /* best-effort */ }
       setSent(true);
     } catch (err) {
       setError('Something went wrong. Please try again.');
