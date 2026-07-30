@@ -38,12 +38,12 @@ export default function ScarfGallery() {
               </span>
             </div>
             <div className="p-4 sm:p-5 flex flex-col flex-grow">
-              <h3 className="font-display text-sm sm:text-base text-parchment leading-tight mb-4">{item.title}</h3>
+              <h3 className="font-display text-sm sm:text-base text-parchment leading-tight mb-4 [-webkit-text-stroke:0.3px_hsl(var(--parchment))]">{item.title}</h3>
               <div className="mt-auto pt-3 border-t border-primary/15 flex items-center justify-between">
-                <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/40">
+                <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/40 [-webkit-text-stroke:0.3px_hsl(var(--parchment))]">
                   Price TBD
                 </span>
-                <span className="font-mono-flag text-sm text-primary/70">$00.00</span>
+                <span className="font-mono-flag text-sm text-primary/70 [-webkit-text-stroke:0.3px_hsl(var(--parchment))]">$00.00</span>
               </div>
             </div>
           </div>
