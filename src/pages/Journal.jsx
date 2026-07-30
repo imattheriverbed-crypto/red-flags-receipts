@@ -14,11 +14,7 @@ export default function Journal() {
     <div className="dark bg-ink text-parchment min-h-screen">
       <SiteNav />
 
-      <div className="pt-[88px]">
-        <TickerTape variant="red" />
-      </div>
-
-      <header className="relative pt-16 pb-20 px-6 sm:px-12 text-center overflow-hidden grain-overlay">
+      <header className="relative pt-40 pb-20 px-6 sm:px-12 text-center overflow-hidden grain-overlay">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-ink pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Journal ◆</span>
@@ -30,6 +26,8 @@ export default function Journal() {
           </p>
         </div>
       </header>
+
+      <TickerTape variant="red" />
 
       {/* Featured entry */}
       <section className="max-w-6xl mx-auto px-6 sm:px-12 py-20 sm:py-24">
