@@ -72,7 +72,7 @@ export const UPCOMING = [
     date: 'Sep 12',
     status: 'Upcoming',
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/cc16e0482_generated_image.png',
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f8d3eb67f_generated_image.png',
     desc: 'Activewear for the comeback. Sports bras, leggings & wraps built for the version of you that trains through the heartbreak. Sweat out the receipts.',
     products: ['Power Sports Bra', 'Flag Sash Leggings', 'Survival Hoodie', 'Reset Cap'],
   },
