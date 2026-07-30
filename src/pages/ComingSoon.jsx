@@ -1,6 +1,7 @@
 import React from 'react';
 import RibbonCursor from '@/components/coming-soon/RibbonCursor';
 import TickerTape from '@/components/coming-soon/TickerTape';
+import Hero from '@/components/coming-soon/Hero';
 
 import InstagramFeed from '@/components/coming-soon/InstagramFeed';
 import LeadCapture from '@/components/coming-soon/LeadCapture';
@@ -20,6 +21,8 @@ export default function ComingSoon() {
       <SiteNav />
 
       <SectionTracker />
+
+      <Hero />
 
       <InstagramFeed />
 
