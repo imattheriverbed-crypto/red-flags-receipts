@@ -96,7 +96,7 @@ export default function LeadCapture() {
   return (
     <section
       id="signup"
-      className={`relative min-h-[80vh] flex items-center justify-center px-6 py-20 transition-colors duration-700 ${activated ? 'bg-primary' : 'bg-parchment'}`}
+      className={`relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center px-6 py-16 sm:py-20 transition-colors duration-700 ${activated ? 'bg-primary' : 'bg-parchment'}`}
     >
       {/* Warning tape top border */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-[repeating-linear-gradient(45deg,#0A0A0A,#0A0A0A_20px,#E2211C_20px,#E2211C_40px)]" />
@@ -111,7 +111,7 @@ export default function LeadCapture() {
           Where should we<br />send the warning?
         </h2>
 
-        <p className={`font-body text-sm sm:text-base mb-10 max-w-md mx-auto ${activated ? 'text-ink/70' : 'text-ink/60'}`}>
+        <p className={`font-body text-sm sm:text-base mb-8 sm:mb-10 max-w-md mx-auto ${activated ? 'text-ink/70' : 'text-ink/60'}`}>
           Sign up for exclusive launch-day access to the Red Flag scarf. We promise not to leave you on read — just the drop, then we ghost.
         </p>
 
