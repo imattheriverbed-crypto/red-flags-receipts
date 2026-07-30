@@ -20,7 +20,7 @@ export default function ComingSoon() {
       <InstagramFeed />
 
       {/* Scarf weave showcase */}
-      <section className="bg-ink py-20 sm:py-28 px-6 sm:px-12">
+      <section className="bg-ink sm:py-28 px-6 sm:px-12 py-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">◆ The Signature Print ◆</span>
