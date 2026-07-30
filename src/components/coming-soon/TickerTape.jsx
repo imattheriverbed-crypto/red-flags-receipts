@@ -3,7 +3,7 @@ import React from 'react';
 const PHRASE = 'LOOK AT THIS SCARF MADE OF ALL THE RED FLAGS YOU GAVE ME';
 
 export default function TickerTape({ variant = 'dark' }) {
-  const bg = variant === 'red' ? 'bg-primary text-ink' : 'bg-ink text-parchment';
+  const bg = variant === 'red' ? 'bg-primary text-parchment' : 'bg-ink text-parchment';
   const items = Array.from({ length: 6 });
 
   return (
