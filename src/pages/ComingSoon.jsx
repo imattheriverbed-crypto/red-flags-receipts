@@ -2,7 +2,7 @@ import React from 'react';
 import RibbonCursor from '@/components/coming-soon/RibbonCursor';
 import TickerTape from '@/components/coming-soon/TickerTape';
 import Hero from '@/components/coming-soon/Hero';
-import JournalPreview from '@/components/coming-soon/JournalPreview';
+import InstagramFeed from '@/components/coming-soon/InstagramFeed';
 import LeadCapture from '@/components/coming-soon/LeadCapture';
 import ProductGallery from '@/components/coming-soon/ProductGallery';
 import SiteNav from '@/components/coming-soon/SiteNav';
@@ -17,7 +17,7 @@ export default function ComingSoon() {
 
       <Hero />
 
-      <JournalPreview />
+      <InstagramFeed />
 
       {/* Scarf weave showcase */}
       <section className="bg-ink py-20 sm:py-28 px-6 sm:px-12">
