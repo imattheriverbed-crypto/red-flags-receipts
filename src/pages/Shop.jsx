@@ -20,7 +20,12 @@ const CATEGORIES = ['All', ...Array.from(new Set(PRODUCTS.map((p) => p.tag)))];
 
 function ProductCard({ product }) {
   return (
-    <div className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary">
+    <a
+      href={product.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary"
+    >
       <div className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden">
         <Image
           src={product.img}
@@ -37,12 +42,12 @@ function ProductCard({ product }) {
         <h3 className="font-display text-lg text-parchment leading-tight mb-6">{product.title}</h3>
         <div className="mt-auto pt-4 border-t border-primary/15 flex items-center justify-between">
           <span className="font-mono-flag text-xl text-parchment">{product.price}</span>
-          <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-parchment/50 border border-parchment/20 px-4 py-2">
-            Not For Sale Yet
+          <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-primary border border-primary/40 px-4 py-2 group-hover:bg-primary group-hover:text-parchment transition-colors">
+            View Product →
           </span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
