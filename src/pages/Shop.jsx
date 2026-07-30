@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingBag } from 'lucide-react';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
@@ -13,6 +13,8 @@ const PRODUCTS = [
   { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', price: '$39.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/13460490385159931143_2048.jpg?v=1785329453', href: 'https://ciekr2-j1.myshopify.com/products/lightweight-red-black-checker-scarf-modern-geometric-knit' },
   { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', price: '$39.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/6717550338414912274_2048.jpg?v=1785328351', href: 'https://ciekr2-j1.myshopify.com/products/light-scarf-red-flag-lightweight-fashion-scarf' },
 ];
+
+const CATEGORIES = ['All', ...Array.from(new Set(PRODUCTS.map((p) => p.tag)))];
 
 function ProductCard({ product }) {
   return (
@@ -41,18 +43,21 @@ function ProductCard({ product }) {
             View Product
           </a>
         </div>
-        </div>
+      </div>
     </div>
   );
 }
 
 export default function Shop() {
+  const [active, setActive] = useState('All');
+  const visible = active === 'All' ? PRODUCTS : PRODUCTS.filter((p) => p.tag === active);
+
   return (
     <div className="dark bg-ink text-parchment min-h-screen">
       <SiteNav />
 
       {/* Hero */}
-      <header className="relative pt-40 pb-24 px-6 sm:px-12 text-center overflow-hidden grain-overlay">
+      <header className="relative pt-40 pb-20 px-6 sm:px-12 text-center overflow-hidden grain-overlay">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-ink pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ First Drop · Aug 01 ◆</span>
@@ -73,15 +78,57 @@ export default function Shop() {
 
       <TickerTape variant="red" />
 
-      {/* Collection */}
-      <main id="collection" className="max-w-6xl mx-auto px-6 sm:px-12 py-20 sm:py-24">
+      {/* Collection + left menu */}
+      <main id="collection" className="max-w-7xl mx-auto px-6 sm:px-12 py-20 sm:py-24">
         <h2 className="font-display font-black text-3xl sm:text-4xl text-parchment uppercase text-center mb-12">
           Featured Signature Collection
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PRODUCTS.map((p, i) => (
-            <ProductCard key={i} product={p} />
-          ))}
+        <div className="flex flex-col lg:flex-row gap-10">
+          {/* Left category menu */}
+          <aside className="lg:w-56 shrink-0">
+            <div className="lg:sticky lg:top-28">
+              <h3 className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 pb-3 border-b border-primary/25">
+                Browse
+              </h3>
+              <ul className="flex flex-row flex-wrap lg:flex-col gap-2">
+                {CATEGORIES.map((cat) => {
+                  const isActive = active === cat;
+                  const count = cat === 'All' ? PRODUCTS.length : PRODUCTS.filter((p) => p.tag === cat).length;
+                  return (
+                    <li key={cat} className="lg:w-full">
+                      <button
+                        onClick={() => setActive(cat)}
+                        className={`w-full text-left font-mono-flag text-[11px] uppercase tracking-[0.22em] px-4 py-3 transition-colors border ${
+                          isActive
+                            ? 'bg-primary text-parchment border-primary'
+                            : 'border-transparent text-parchment/70 hover:text-primary hover:border-primary/30'
+                        }`}
+                      >
+                        <span className="flex items-center justify-between gap-3">
+                          {cat}
+                          <span className={isActive ? 'text-parchment/70' : 'text-parchment/35'}>{count}</span>
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </aside>
+
+          {/* Product grid */}
+          <div className="flex-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+              {visible.map((p, i) => (
+                <ProductCard key={i} product={p} />
+              ))}
+            </div>
+            {visible.length === 0 && (
+              <p className="font-mono-flag text-xs uppercase tracking-[0.2em] text-parchment/50 text-center py-16">
+                No pieces in this category yet.
+              </p>
+            )}
+          </div>
         </div>
       </main>
 
