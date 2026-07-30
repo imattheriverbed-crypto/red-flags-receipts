@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Check, ExternalLink } from 'lucide-react';
-import ProductHeader from '@/components/coming-soon/ProductHeader';
+import SiteNav from '@/components/coming-soon/SiteNav';
 import NewsletterBanner from '@/components/coming-soon/NewsletterBanner';
 import ProductFooter from '@/components/coming-soon/ProductFooter';
 import { Image } from '@/components/ui/image';
@@ -39,8 +39,8 @@ export default function ProductPage() {
   if (!product) {
     return (
       <div className="dark bg-[#050505] text-white font-body min-h-screen">
-        <ProductHeader />
-        <div className="max-w-3xl mx-auto px-6 py-32 text-center">
+        <SiteNav />
+        <div className="max-w-3xl mx-auto px-6 pt-32 pb-16 text-center">
           <h1 className="font-bebas text-5xl text-white mb-6">Product Not Found</h1>
           <Link
             to="/shop"
@@ -58,9 +58,9 @@ export default function ProductPage() {
 
   return (
     <div className="dark bg-[#050505] text-white font-body min-h-screen">
-      <ProductHeader />
+      <SiteNav />
 
-      <div className="w-[90%] max-w-[1600px] mx-auto py-12 sm:py-16">
+      <div className="w-[90%] max-w-[1600px] mx-auto pt-28 pb-16">
         {/* Product */}
         <section className="grid lg:grid-cols-[110px_1.2fr_0.9fr] gap-8 lg:gap-10">
           {/* Thumbnails */}
