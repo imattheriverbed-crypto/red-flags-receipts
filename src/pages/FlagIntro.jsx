@@ -19,7 +19,7 @@ export default function FlagIntro() {
         muted
         playsInline
         aria-hidden="true"
-        className="absolute inset-0 z-10 h-full w-[140%] -translate-x-[18%] object-cover mix-blend-screen"
+        className="absolute inset-0 z-10 h-full w-full object-cover mix-blend-screen"
       />
 
       {/* Prompt — overlaid in front of the flag */}
