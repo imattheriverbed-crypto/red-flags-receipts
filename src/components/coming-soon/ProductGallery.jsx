@@ -126,7 +126,7 @@ function DropCard({ drop, index }) {
 
 export default function ProductGallery() {
   return (
-    <section className="relative bg-ink py-20 sm:py-28 overflow-hidden">
+    <section id="upcoming-drops" className="relative bg-ink py-20 sm:py-28 overflow-hidden">
       <div className="px-6 sm:px-12 mb-12">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">◆ Little by Little ◆</span>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">

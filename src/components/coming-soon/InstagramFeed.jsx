@@ -13,7 +13,7 @@ const PHOTOS = [
 
 export default function InstagramFeed() {
   return (
-    <section className="bg-ink pt-28 pb-10 sm:py-28 px-6 sm:px-12 border-t border-primary/10">
+    <section id="hero" className="bg-ink pt-28 pb-10 sm:py-28 px-6 sm:px-12 border-t border-primary/10">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-display font-black text-2xl sm:text-4xl text-parchment uppercase tracking-wide mb-3">

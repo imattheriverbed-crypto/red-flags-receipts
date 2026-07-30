@@ -8,6 +8,7 @@ import ProductGallery from '@/components/coming-soon/ProductGallery';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 import ScrollWatermark from '@/components/coming-soon/ScrollWatermark';
+import SectionTracker from '@/components/coming-soon/SectionTracker';
 
 export default function ComingSoon() {
   return (
@@ -18,10 +19,12 @@ export default function ComingSoon() {
 
       <SiteNav />
 
+      <SectionTracker />
+
       <InstagramFeed />
 
       {/* Scarf weave showcase */}
-      <section className="bg-ink sm:py-28 px-6 sm:px-12 py-10">
+      <section id="signature-print" className="bg-ink sm:py-28 px-6 sm:px-12 py-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">◆ The Signature Print ◆</span>

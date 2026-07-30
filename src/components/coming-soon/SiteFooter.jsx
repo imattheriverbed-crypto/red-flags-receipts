@@ -4,7 +4,7 @@ import NewsletterSignup from './NewsletterSignup';
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-ink border-t border-primary/20 grain-overlay relative">
+    <footer id="footer" className="bg-ink border-t border-primary/20 grain-overlay relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
