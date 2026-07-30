@@ -34,7 +34,7 @@ export default function FlagIntro() {
 
         <button
           onClick={goHome}
-          className="group mt-10 inline-flex items-center gap-3 border border-[#ff0000] text-[#ff0000] font-mono-flag text-xs uppercase tracking-[0.3em] px-8 py-3.5 hover:bg-[#ff0000] hover:text-black transition-colors duration-300 backdrop-blur-sm bg-black/30"
+          className="group mt-10 inline-flex items-center gap-3 border border-white text-white font-mono-flag text-xs uppercase tracking-[0.3em] px-8 py-3.5 hover:bg-white hover:text-black transition-colors duration-300 backdrop-blur-sm bg-black/30"
         >
           Continue
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
