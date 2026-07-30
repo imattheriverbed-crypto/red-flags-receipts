@@ -39,20 +39,20 @@ export default function InstagramFeed() {
             )}
           </div>
 
-          <div className="bg-parchment flex flex-col items-center justify-center text-center px-6 py-8 lg:w-52 gap-4">
+          <div className="bg-ink border-t border-b border-neutral-700 flex flex-col items-center justify-center text-center px-6 py-8 lg:w-52 gap-4">
             <Crown className="w-6 h-6 text-primary" strokeWidth={1.5} />
-            <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.15em] text-primary leading-snug">
+            <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.15em] text-parchment leading-snug">
               Real People.<br />Real Style.<br />Real Stories.
             </p>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono-flag text-[10px] uppercase tracking-[0.2em] bg-primary text-parchment px-6 py-3 hover:bg-ink transition-colors duration-300 w-full justify-center"
+              className="inline-flex items-center gap-2 font-mono-flag text-[10px] uppercase tracking-[0.2em] bg-primary text-parchment px-6 py-3 hover:bg-neutral-800 transition-colors duration-300 w-full justify-center"
             >
               View The Feed <ArrowRight className="w-3.5 h-3.5" />
             </a>
-            <p className="font-script text-base text-primary/80 leading-snug">
+            <p className="font-script text-base text-parchment/80 leading-snug">
               Thank you for watching.
             </p>
           </div>
