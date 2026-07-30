@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import BusinessCard from './pages/BusinessCard';
 import Shop from './pages/Shop';
 import Collections from './pages/Collections';
+import Drop from './pages/Drop';
 import Journal from './pages/Journal';
 import JournalEntry from './pages/JournalEntry';
 
@@ -49,6 +50,7 @@ const AuthenticatedApp = () => {
     <Route path="/business-card" element={<BusinessCard />} />
     <Route path="/shop" element={<Shop />} />
     <Route path="/collections" element={<Collections />} />
+    <Route path="/collections/:slug" element={<Drop />} />
     <Route path="/journal" element={<Journal />} />
     <Route path="/journal/:slug" element={<JournalEntry />} />
     <Route path="*" element={<PageNotFound />} />

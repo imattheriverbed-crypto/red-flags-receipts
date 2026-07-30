@@ -4,51 +4,7 @@ import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
 import CollectionCard from '@/components/coming-soon/CollectionCard';
 
-const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/9cac8a48c_Copilot_20260729_101403.png';
-const PARTY_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png';
-const SURVIVED_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/ef6328d93_generated_image.png';
-const LANG_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6df07dbb7_38bf0d10-9897-4f90-81d3-0ee9b46ac015.png';
-const JOURNAL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6d8774117_RedFlagsreceiptsjournalmockup.png';
-
-const FEATURED = {
-  name: 'Signature Collection',
-  date: 'Available Now',
-  status: '◆ Available Now ◆',
-  statusStyle: 'bg-primary text-parchment',
-  desc: 'Skirts, scarves, journals and the receipts to match. The first chapter — live and shipping now via our Printify store.',
-  img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/6717550338414912274_2048.jpg?v=1785328351',
-};
-
-const UPCOMING = [
-  {
-    name: 'PETS.',
-    date: 'Aug 08',
-    status: 'Upcoming',
-    statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: PARTY_IMG,
-  },
-  {
-    name: 'BAGS.',
-    date: 'Aug 15',
-    status: 'Upcoming',
-    statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: SURVIVED_IMG,
-  },
-  {
-    name: '50 LANG × BLESS',
-    date: 'Aug 22',
-    status: 'Upcoming',
-    statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: LANG_IMG,
-  },
-  {
-    name: 'RECEIPTS JOURNAL',
-    date: 'Aug 29',
-    status: 'Upcoming',
-    statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: JOURNAL_IMG,
-  },
-];
+import { FEATURED, UPCOMING } from '@/data/drops';
 
 export default function Collections() {
   return (
@@ -83,7 +39,7 @@ export default function Collections() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {UPCOMING.map((c) => (
-            <CollectionCard key={c.name} collection={c} />
+            <CollectionCard key={c.name} collection={c} to={`/collections/${c.slug}`} />
           ))}
         </div>
       </section>

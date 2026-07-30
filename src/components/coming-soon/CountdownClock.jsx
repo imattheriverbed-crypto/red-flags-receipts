@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const LAUNCH_DATE = new Date('2026-08-01T00:00:00');
+const DEFAULT_LAUNCH = new Date('2026-08-01T00:00:00');
 
-function getRemaining() {
+function getRemaining(target = DEFAULT_LAUNCH) {
   const now = new Date();
-  const diff = LAUNCH_DATE - now;
+  const diff = new Date(target) - now;
   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, done: true };
   return {
     days: Math.floor(diff / 86400000),
@@ -15,13 +15,14 @@ function getRemaining() {
   };
 }
 
-export default function CountdownClock({ variant = 'floating' }) {
-  const [time, setTime] = useState(getRemaining());
+export default function CountdownClock({ variant = 'floating', target }) {
+  const targetDate = target ? new Date(target) : DEFAULT_LAUNCH;
+  const [time, setTime] = useState(getRemaining(targetDate));
 
   useEffect(() => {
-    const interval = setInterval(() => setTime(getRemaining()), 1000);
+    const interval = setInterval(() => setTime(getRemaining(targetDate)), 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
   const units = [
     { label: 'DAYS', value: time.days },

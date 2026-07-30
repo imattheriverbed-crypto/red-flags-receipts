@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
-export default function CollectionCard({ collection, large = false }) {
+export default function CollectionCard({ collection, large = false, to = '/shop' }) {
   const upcoming = collection.status === 'Upcoming';
 
   // Featured / available-now card: no flip
@@ -47,7 +47,7 @@ export default function CollectionCard({ collection, large = false }) {
   return (
     <div className="[perspective:1400px]">
       <Link
-        to="/shop"
+        to={to}
         className="group relative block aspect-[3/4] [transform-style:preserve-3d] transition-transform duration-700 [transform:rotateY(0deg)] group-hover:[transform:rotateY(180deg)]"
       >
         {/* Front */}
