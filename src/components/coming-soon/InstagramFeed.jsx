@@ -39,9 +39,9 @@ export default function InstagramFeed() {
             ))}
           </div>
 
-          <div className="bg-parchment flex flex-col items-center justify-center text-center px-8 py-10 lg:w-64 lg:py-0">
-            <Crown className="w-8 h-8 text-primary mb-4" strokeWidth={1.5} />
-            <p className="font-mono-flag text-sm sm:text-base uppercase tracking-[0.15em] text-primary leading-snug">
+          <div className="bg-parchment flex flex-col items-center justify-center text-center px-6 py-6 lg:w-48 lg:py-4">
+            <Crown className="w-6 h-6 text-primary mb-2" strokeWidth={1.5} />
+            <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.15em] text-primary leading-snug">
               Real People.<br />Real Style.<br />Real Stories.
             </p>
           </div>
