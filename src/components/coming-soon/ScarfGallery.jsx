@@ -8,6 +8,9 @@ const GALLERY_ITEMS = [
   { tag: 'Bottoms', title: 'Signature Pencil Skirt', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/20260729123551-1f18b4a0-862a-6112-9f0e-eedfab1cfadf.png?v=1785328776' },
   { tag: 'Tops', title: '"Match My Outfit" Baby Tee', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/9815999074877441377_2048.jpg?v=1785329349' },
   { tag: 'Bottoms', title: 'Red Flag Pattern Pencil Skirt', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/15244353897538709014_2048.jpg?v=1785329183' },
+  { tag: 'Tops', title: 'Red Flag Graphic Tee — Black', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/7c037bca0_generated_image.png' },
+  { tag: 'Tops', title: 'Oversized Charcoal Flag Tee', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f949fcb5b_generated_image.png' },
+  { tag: 'Tops', title: 'Warning Stripe White Tee', img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/b0c954876_generated_image.png' },
 ];
 
 export default function ScarfGallery() {
