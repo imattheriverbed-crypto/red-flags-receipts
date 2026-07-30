@@ -92,7 +92,16 @@ export default function ProductPage() {
     <div className="dark bg-black text-white min-h-screen font-body">
       <SiteNav />
 
-      <main className="max-w-7xl mx-auto px-6 sm:px-12 pt-28 pb-20">
+      <header className="bg-black border-b border-white/10 pt-28">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 py-10 text-center">
+          <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3 block">◆ The Shop ◆</span>
+          <h1 className="font-heading font-black text-3xl sm:text-4xl uppercase text-white leading-tight">
+            Red Flags &amp; Receipts
+          </h1>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-6 sm:px-12 pt-12 pb-20">
         <Link
           to="/shop"
           className="inline-flex items-center gap-2 font-mono-flag text-[11px] uppercase tracking-[0.25em] text-white/50 hover:text-primary transition-colors mb-8"
