@@ -28,8 +28,9 @@ export default function SiteNav() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-ink/85 backdrop-blur-md border-b border-primary/25' : 'bg-gradient-to-b from-ink/60 to-transparent'}`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-12 py-4">
-        <Link to="/" aria-label="Red Flags Society — Home" className="flex items-center shrink-0">
+      <div className="max-w-7xl mx-auto relative flex items-center justify-between px-5 sm:px-12 py-3">
+        {/* Centered logo */}
+        <Link to="/" aria-label="Red Flags Society — Home" className="absolute left-1/2 -translate-x-1/2 flex items-center shrink-0">
           <Logo />
         </Link>
 

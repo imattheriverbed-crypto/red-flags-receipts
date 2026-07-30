@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ORIGINAL_LOGO_URL = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/5b6cad098_ChatGPTImageJul30202611_25_22AM.png';
+const ORIGINAL_LOGO_URL = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/54dc4e552_generated_image.png';
 
 export const LOGO_URL = ORIGINAL_LOGO_URL;
 
