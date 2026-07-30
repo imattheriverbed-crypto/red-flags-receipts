@@ -62,7 +62,7 @@ export default function AboutFounder() {
             <h2 className="font-display font-black text-4xl sm:text-5xl leading-[0.95] mb-6">
               I WASN'T BROKEN.
               <br />
-              I WAS <span className="text-burgundy text-5xl sm:text-6xl border-b-[3px] border-burgundy pb-1">EDUCATED.</span>
+              I WAS <span className="text-transparent text-5xl sm:text-6xl [-webkit-text-stroke:2px_hsl(var(--parchment))]">EDUCATED.</span>
             </h2>
             <p className="font-body text-sm uppercase tracking-[0.2em] text-parchment/70 max-w-xs leading-relaxed mb-12">
               RED FLAGS EXISTS SO YOUR EDUCATION DOESN'T HAVE TO COST AS MUCH AS MINE.
