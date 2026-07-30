@@ -11,7 +11,7 @@ export default function FlagIntro() {
       {/* faint vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(180,0,0,0.14),transparent_62%)] pointer-events-none" />
 
-      {/* Flag — looping cloth animation */}
+      {/* Flag — looping cloth animation, pushed left so the pole sits off-frame */}
       <video
         src="https://media.base44.com/videos/public/6a5a113aa6cf7e3091bf0eec/658df0297_Flag_Loop.mp4"
         autoPlay
@@ -19,23 +19,22 @@ export default function FlagIntro() {
         muted
         playsInline
         aria-hidden="true"
-        className="relative z-10 w-full max-w-5xl h-auto mix-blend-screen"
+        className="absolute inset-0 z-10 h-full w-[140%] -translate-x-[18%] object-cover mix-blend-screen"
       />
 
-
-      {/* Prompt */}
-      <div className="relative z-10 text-center max-w-3xl mt-12 sm:mt-16">
-        <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.4em] text-[#ff0000] mb-5">
+      {/* Prompt — overlaid in front of the flag */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+        <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.4em] text-[#ff0000] mb-5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           A Question For You...
         </p>
-        <h1 className="font-display text-2xl sm:text-4xl lg:text-[2.8rem] leading-snug text-[#e0e0e0]">
+        <h1 className="font-display text-2xl sm:text-4xl lg:text-[2.8rem] leading-snug text-[#e0e0e0] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
           Have you ever ignored something... because you wanted the story to be{' '}
           <span className="italic text-[#ff0000]">different</span>?
         </h1>
 
         <button
           onClick={goHome}
-          className="group mt-10 inline-flex items-center gap-3 border border-[#ff0000] text-[#ff0000] font-mono-flag text-xs uppercase tracking-[0.3em] px-8 py-3.5 hover:bg-[#ff0000] hover:text-black transition-colors duration-300"
+          className="group mt-10 inline-flex items-center gap-3 border border-[#ff0000] text-[#ff0000] font-mono-flag text-xs uppercase tracking-[0.3em] px-8 py-3.5 hover:bg-[#ff0000] hover:text-black transition-colors duration-300 backdrop-blur-sm bg-black/30"
         >
           Continue
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
