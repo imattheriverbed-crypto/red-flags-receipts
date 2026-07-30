@@ -1,45 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import {
-  Lock, ArrowLeft, ExternalLink, Home, Shirt, Tag, Check, ChevronRight,
-} from 'lucide-react';
-import SiteNav from '@/components/coming-soon/SiteNav';
+import { Check, ExternalLink } from 'lucide-react';
+import ProductHeader from '@/components/coming-soon/ProductHeader';
 import NewsletterBanner from '@/components/coming-soon/NewsletterBanner';
 import ProductFooter from '@/components/coming-soon/ProductFooter';
 import { Image } from '@/components/ui/image';
 import { getProductBySlug, PRODUCTS } from '@/data/products';
 
 const COLORS = [
-  { name: 'Black', hex: '#0A0A0A' },
-  { name: 'Bone', hex: '#E8DCC4' },
+  { name: 'Black', hex: '#111' },
+  { name: 'Cream', hex: '#ddd' },
 ];
-
 const SIZES = ['S', 'M', 'L', 'XL', '2XL'];
-
-const FEATURES = [
-  { icon: Home, text: '100% Cotton – Premium Quality' },
-  { icon: Shirt, text: 'Oversized Unisex Fit' },
-  { icon: Tag, text: 'Vintage Washed for that lived-in feel' },
-  { icon: Lock, text: 'Limited Drop – Once it’s gone, it’s gone' },
-];
-
-const BULLETS = [
-  'DTG Printed',
-  'Pre-shrunk',
-  'Designed in California',
-  'Made to order',
-];
-
-const TABS = ['DESCRIPTION', 'DETAILS', 'SHIPPING & RETURNS'];
-
-function parsePrice(price) {
-  const n = parseFloat(String(price).replace(/[^0-9.]/g, ''));
-  return Number.isFinite(n) ? n : 0;
-}
-
-function formatMoney(n) {
-  return `$${n.toFixed(2)}`;
-}
+const FEATURES = ['100% Cotton', 'Oversized Vintage Fit', 'DTG Printed', 'Limited Quantity'];
 
 export default function ProductPage() {
   const { slug } = useParams();
@@ -47,7 +20,6 @@ export default function ProductPage() {
   const [activeImg, setActiveImg] = useState(0);
   const [color, setColor] = useState(0);
   const [size, setSize] = useState(null);
-  const [tab, setTab] = useState(0);
   const [related, setRelated] = useState([]);
 
   useEffect(() => {
@@ -61,22 +33,20 @@ export default function ProductPage() {
     setActiveImg(0);
     setColor(0);
     setSize(null);
-    setTab(0);
     window.scrollTo(0, 0);
   }, [slug, product]);
 
   if (!product) {
     return (
-      <div className="dark bg-ink text-parchment min-h-screen">
-        <SiteNav />
-        <div className="max-w-3xl mx-auto px-6 py-40 text-center">
-          <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">◆ 404 ◆</span>
-          <h1 className="font-display font-black text-4xl text-parchment uppercase mb-6">Product Not Found</h1>
+      <div className="dark bg-[#050505] text-white font-body min-h-screen">
+        <ProductHeader />
+        <div className="max-w-3xl mx-auto px-6 py-32 text-center">
+          <h1 className="font-bebas text-5xl text-white mb-6">Product Not Found</h1>
           <Link
             to="/shop"
-            className="inline-flex items-center gap-2 font-mono-flag text-xs uppercase tracking-[0.2em] bg-primary text-parchment px-6 py-3.5 hover:bg-parchment hover:text-ink transition-colors"
+            className="inline-block bg-[#b31313] text-white uppercase tracking-[0.15em] px-6 py-3.5 hover:bg-[#8f0d0d] transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Shop
+            Back to Shop
           </Link>
         </div>
         <ProductFooter />
@@ -85,221 +55,129 @@ export default function ProductPage() {
   }
 
   const images = [product.img];
-  const priceNum = parsePrice(product.price);
-  const install = priceNum / 4;
 
   return (
-    <div className="dark bg-black text-white min-h-screen font-body">
-      <SiteNav />
+    <div className="dark bg-[#050505] text-white font-body min-h-screen">
+      <ProductHeader />
 
-      <main className="max-w-7xl mx-auto px-6 sm:px-12 pt-28 pb-20">
-        <Link
-          to="/shop"
-          className="inline-flex items-center gap-2 font-mono-flag text-[11px] uppercase tracking-[0.25em] text-white/50 hover:text-primary transition-colors mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" /> Back to Shop
-        </Link>
-
-        {/* Product detail */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Gallery */}
-          <div className="flex flex-row gap-4">
-            {/* Thumbnails */}
-            <div className="hidden sm:flex flex-col gap-3 w-20 shrink-0">
-              {images.map((img, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveImg(i)}
-                  className={`relative aspect-square w-20 border overflow-hidden bg-[#111] transition-colors ${
-                    activeImg === i ? 'border-primary' : 'border-white/15 hover:border-white/40'
-                  }`}
-                >
-                  <Image src={img} alt="" fittingType="fit" className="w-full h-full" />
-                </button>
-              ))}
-            </div>
-
-            {/* Main image */}
-            <div className="flex-1">
-              <div className="relative aspect-square w-full bg-[#111] border border-white/10 overflow-hidden">
-                <Image src={images[activeImg]} alt={product.title} fittingType="fit" className="w-full h-full" />
-              </div>
-              <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-white/40 mt-3">
-                {activeImg + 1} / {images.length}
-              </p>
-            </div>
-          </div>
-
-          {/* Info */}
-          <div className="lg:pt-2">
-            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3 block">◆ Limited Drop ◆</span>
-            <h1 className="font-heading font-black text-2xl sm:text-3xl uppercase leading-tight mb-5 text-white">
-              {product.title}
-            </h1>
-            <p className="font-mono-flag text-xl text-white mb-2">{product.price} USD</p>
-            <p className="font-body text-xs text-white/45 mb-7">
-              or 4 interest-free payments of {formatMoney(install)} with <span className="text-white/70 font-medium">Shop Pay</span>. <a href="#" className="underline hover:text-primary">Learn more</a>
-            </p>
-
-            {/* Color */}
-            <div className="mb-6">
-              <p className="font-mono-flag text-[11px] uppercase tracking-[0.2em] text-white/60 mb-3">
-                Color: <span className="text-white">{COLORS[color].name}</span>
-              </p>
-              <div className="flex items-center gap-3">
-                {COLORS.map((c, i) => (
-                  <button
-                    key={c.name}
-                    onClick={() => setColor(i)}
-                    aria-label={c.name}
-                    className={`relative w-9 h-9 rounded-full transition-all ${
-                      color === i ? 'ring-2 ring-primary ring-offset-2 ring-offset-black' : 'ring-1 ring-white/20'
-                    }`}
-                    style={{ backgroundColor: c.hex }}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Size */}
-            <div className="mb-6">
-              <div className="flex items-center justify-between mb-3">
-                <p className="font-mono-flag text-[11px] uppercase tracking-[0.2em] text-white/60">
-                  Size: <span className="text-white">{size ? `Oversized Fit · ${size}` : 'Oversized Fit'}</span>
-                </p>
-                <a href="#" className="font-mono-flag text-[11px] uppercase tracking-[0.2em] text-primary hover:underline">Size Guide</a>
-              </div>
-              <div className="flex flex-wrap gap-2.5">
-                {SIZES.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => setSize(s)}
-                    className={`min-w-[3rem] px-4 py-3 font-mono-flag text-xs uppercase tracking-[0.15em] border transition-colors ${
-                      size === s
-                        ? 'bg-primary text-white border-primary'
-                        : 'bg-transparent text-white border-white/25 hover:border-primary hover:text-primary'
-                    }`}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col gap-3 mb-8">
-              <a
-                href={product.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-primary text-white font-mono-flag text-sm uppercase tracking-[0.2em] py-4 hover:bg-[#B91C1C] transition-colors"
-              >
-                Add to Cart
-              </a>
-              <a
-                href={product.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-transparent text-white font-mono-flag text-sm uppercase tracking-[0.2em] py-4 border border-white hover:border-primary hover:text-primary transition-colors"
-              >
-                Buy It Now <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-
-            <p className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-white/35 mb-8 leading-relaxed">
-              Checkout handled securely on Shopify. Nothing ships until Tuesday, August 4th at 9PM.
-            </p>
-
-            {/* Features */}
-            <ul className="border-t border-white/10 pt-6 space-y-3">
-              {FEATURES.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-3">
-                  <span className="flex items-center justify-center w-8 h-8 border border-primary/40 text-primary shrink-0">
-                    <Icon className="w-4 h-4" />
-                  </span>
-                  <span className="font-body text-sm text-white/80">{text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="mt-20 border-t border-white/10">
-          <div className="flex flex-wrap gap-6 sm:gap-10 border-b border-white/10">
-            {TABS.map((t, i) => (
+      <div className="w-[90%] max-w-[1600px] mx-auto py-12 sm:py-16">
+        {/* Product */}
+        <section className="grid lg:grid-cols-[110px_1.2fr_0.9fr] gap-8 lg:gap-10">
+          {/* Thumbnails */}
+          <div className="hidden lg:flex flex-col gap-4">
+            {images.map((img, i) => (
               <button
-                key={t}
-                onClick={() => setTab(i)}
-                className={`font-mono-flag text-xs uppercase tracking-[0.2em] py-4 -mb-px border-b-2 transition-colors ${
-                  tab === i ? 'border-primary text-white' : 'border-transparent text-white/45 hover:text-white'
+                key={i}
+                onClick={() => setActiveImg(i)}
+                className={`aspect-square w-full overflow-hidden bg-[#101010] border transition-colors ${
+                  activeImg === i ? 'border-primary' : 'border-white/25 hover:border-white/50'
                 }`}
               >
-                {t}
+                <Image src={img} alt="" fittingType="fit" className="w-full h-full" />
               </button>
             ))}
           </div>
 
-          <div className="py-8 max-w-3xl">
-            {tab === 0 && (
-              <div>
-                <p className="font-body text-sm text-white/75 leading-relaxed mb-6">{product.description}</p>
-                <ul className="space-y-2">
-                  {BULLETS.map((b) => (
-                    <li key={b} className="flex items-center gap-3 font-body text-sm text-white/75">
-                      <span className="w-1.5 h-1.5 bg-primary rotate-45 shrink-0" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {tab === 1 && (
-              <ul className="space-y-2">
-                {['Material: 100% combed ring-spun cotton', 'Fit: Oversized unisex', 'Weight: 7.5 oz/yd²', 'Print: DTG, water-based ink', 'Care: Machine wash cold, tumble dry low'].map((d) => (
-                  <li key={d} className="flex items-center gap-3 font-body text-sm text-white/75">
-                    <span className="w-1.5 h-1.5 bg-primary rotate-45 shrink-0" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            )}
-            {tab === 2 && (
-              <p className="font-body text-sm text-white/75 leading-relaxed">
-                Made to order and fulfilled through Printify. Production takes 2–5 business days, then ships via standard tracked mail (3–7 days domestic). Returns accepted within 14 days for unworn items with tags. As each piece is printed on demand, we cannot accept returns on items that have been washed or worn.
-              </p>
-            )}
+          {/* Main image */}
+          <div className="bg-[#101010] p-5 sm:p-6">
+            <div className="aspect-square w-full overflow-hidden">
+              <Image src={images[activeImg]} alt={product.title} fittingType="fit" className="w-full h-full" />
+            </div>
           </div>
-        </div>
 
-        {/* You may also like */}
-        {related.length > 0 && (
-          <section className="mt-16">
-            <h2 className="font-heading font-black text-2xl sm:text-3xl text-white uppercase mb-8 text-center">
-              You May Also Like
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {/* Info */}
+          <div>
+            <small className="block text-[#b91c1c] uppercase tracking-[0.25em] text-xs mb-2">Limited Drop</small>
+            <h1 className="font-bebas text-4xl sm:text-6xl lg:text-7xl leading-[0.95] my-2 mb-4">{product.title}</h1>
+            <div className="text-2xl mb-5">{product.price}</div>
+
+            <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-sm text-white/80 mb-2">Color</h4>
+            <div className="flex gap-3.5 mb-6">
+              {COLORS.map((c, i) => (
+                <button
+                  key={c.name}
+                  onClick={() => setColor(i)}
+                  aria-label={c.name}
+                  className={`w-9 h-9 rounded-full border-2 transition-colors ${
+                    color === i ? 'border-primary' : 'border-white hover:border-white/70'
+                  }`}
+                  style={{ backgroundColor: c.hex }}
+                />
+              ))}
+            </div>
+
+            <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-sm text-white/80 mb-2">Size</h4>
+            <div className="flex flex-wrap gap-2.5 mb-6">
+              {SIZES.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setSize(s)}
+                  className={`px-5 py-3 border text-sm uppercase tracking-[0.1em] transition-colors ${
+                    size === s
+                      ? 'border-primary text-primary'
+                      : 'border-white/30 text-white hover:border-white'
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+
+            <a
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-[#b31313] text-white uppercase tracking-[0.15em] py-4 text-center hover:bg-[#8f0d0d] transition-colors mb-3"
+            >
+              Add To Cart
+            </a>
+            <a
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full bg-transparent border border-white text-white uppercase tracking-[0.15em] py-4 hover:border-primary hover:text-primary transition-colors"
+            >
+              Buy It Now <ExternalLink className="w-4 h-4" />
+            </a>
+
+            <ul className="mt-7 space-y-3">
+              {FEATURES.map((f) => (
+                <li key={f} className="flex items-center gap-2.5 text-white/75 text-sm">
+                  <Check className="w-4 h-4 text-[#b31313] shrink-0" /> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Description + You May Also Like */}
+        <section className="grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-10 mt-16 sm:mt-20">
+          <div className="bg-[#0e0e0e] border border-[#202020] p-8 sm:p-10">
+            <h2 className="font-bebas text-3xl tracking-[0.05em] mb-5">Description</h2>
+            <p className="text-white/65 leading-[1.9]">{product.description}</p>
+          </div>
+          <div>
+            <h2 className="font-bebas text-3xl tracking-[0.05em] mb-5">You May Also Like</h2>
+            <div className="grid gap-5">
               {related.map((p) => (
                 <Link
                   key={p.slug}
                   to={`/shop/${p.slug}`}
-                  className="group bg-[#0A0A0A] border border-white/10 flex flex-col transition-colors hover:border-primary"
+                  className="group bg-[#111] border border-[#222] p-3 flex items-center gap-4 hover:border-primary hover:-translate-y-1 transition-all"
                 >
-                  <div className="relative aspect-square w-full bg-[#111] overflow-hidden">
-                    <Image src={p.img} alt={p.title} fittingType="fit" className="w-full h-full group-hover:opacity-90 transition-opacity" />
+                  <div className="w-20 h-20 shrink-0 bg-[#101010] overflow-hidden">
+                    <Image src={p.img} alt={p.title} fittingType="fit" className="w-full h-full group-hover:opacity-80 transition-opacity" />
                   </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="font-heading text-sm text-white leading-tight mb-3 uppercase">{p.title}</h3>
-                    <span className="mt-auto font-mono-flag text-sm text-white/70">{p.price}</span>
-                  </div>
+                  <h3 className="font-bebas text-lg tracking-wide leading-tight">{p.title}</h3>
                 </Link>
               ))}
             </div>
-          </section>
-        )}
-      </main>
+          </div>
+        </section>
 
-      <NewsletterBanner />
+        <NewsletterBanner />
+      </div>
+
       <ProductFooter />
     </div>
   );
