@@ -4,6 +4,7 @@ import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
 import CountdownClock from '@/components/coming-soon/CountdownClock';
+import ScarfGallery from '@/components/coming-soon/ScarfGallery';
 import { Image } from '@/components/ui/image';
 
 const PRODUCTS = [
@@ -131,6 +132,8 @@ export default function Shop() {
           </div>
         </div>
       </main>
+
+      <ScarfGallery />
 
       {/* Brand message */}
       <section className="border-t border-b border-primary/15 bg-card/40 py-16 px-6 text-center">
