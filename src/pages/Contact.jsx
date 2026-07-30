@@ -26,7 +26,7 @@ export default function Contact() {
       });
       try {
         await base44.integrations.Core.SendEmail({
-          to: 'longbeachlocal17@gmail.com',
+          to: 'shopredflags@proton.me',
           subject: '🚩 New Contact Message',
           body: `Name: ${name || 'Anonymous'}\nEmail: ${email}\n\n${message}`,
         });

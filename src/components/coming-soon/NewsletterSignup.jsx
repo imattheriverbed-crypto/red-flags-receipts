@@ -22,6 +22,14 @@ export default function NewsletterSignup() {
         contact_method: 'email',
         source: 'footer-newsletter',
       });
+      // Best-effort notification email (recipient must be a registered app user)
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: 'shopredflags@proton.me',
+          subject: '🚩 New Newsletter Signup',
+          body: `A new subscriber joined the newsletter.\n\nEmail: ${email}\nSource: footer-newsletter`,
+        });
+      } catch (e) { /* notification is best-effort */ }
       setStatus('done');
       setEmail('');
     } catch (err) {

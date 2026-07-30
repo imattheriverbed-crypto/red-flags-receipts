@@ -41,7 +41,7 @@ export default function LeadCapture() {
       // Best-effort notification email (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
-          to: 'longbeachlocal17@gmail.com',
+          to: 'shopredflags@proton.me',
           subject: '🚩 New Red Flag Waitlist Signup',
           body: `Someone just joined the waitlist!\n\nContact: ${value}\nMethod: ${method}\nSource: lead-capture`,
         });
