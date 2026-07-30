@@ -4,7 +4,8 @@ import {
   Lock, ArrowLeft, ExternalLink, Home, Shirt, Tag, Check, ChevronRight,
 } from 'lucide-react';
 import SiteNav from '@/components/coming-soon/SiteNav';
-import SiteFooter from '@/components/coming-soon/SiteFooter';
+import NewsletterBanner from '@/components/coming-soon/NewsletterBanner';
+import ProductFooter from '@/components/coming-soon/ProductFooter';
 import { Image } from '@/components/ui/image';
 import { getProductBySlug, PRODUCTS } from '@/data/products';
 
@@ -78,7 +79,7 @@ export default function ProductPage() {
             <ArrowLeft className="w-4 h-4" /> Back to Shop
           </Link>
         </div>
-        <SiteFooter />
+        <ProductFooter />
       </div>
     );
   }
@@ -298,7 +299,8 @@ export default function ProductPage() {
         )}
       </main>
 
-      <SiteFooter />
+      <NewsletterBanner />
+      <ProductFooter />
     </div>
   );
 }
