@@ -28,7 +28,7 @@ function ProductCard({ product }) {
           className="w-full h-full group-hover:opacity-90 transition-opacity"
         />
         <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-ink/70 border border-primary/40 px-2.5 py-1">
-          <Lock className="w-3 h-3" /> Drops Aug 01
+          <Lock className="w-3 h-3" /> Drops Aug 04 · 9PM
         </span>
       </div>
       <div className="p-6 flex flex-col flex-grow">
@@ -57,15 +57,15 @@ export default function Shop() {
       <header className="relative pt-40 pb-20 px-6 sm:px-12 text-center overflow-hidden grain-overlay">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-ink pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto">
-          <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ First Drop · Aug 01 ◆</span>
+          <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ First Drop · Aug 04 · 9PM ◆</span>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-parchment leading-[0.95] mb-6 uppercase">
             Featured Signature<br />Collection
           </h1>
           <p className="font-body text-sm uppercase tracking-[0.25em] text-primary mb-8">
-            Nothing sells until August 1st
+            Nothing sells until Tuesday, August 4th at 9PM
           </p>
           <div className="mb-6 flex justify-center">
-            <CountdownClock variant="boxed" target={new Date('2026-08-01T00:00:00')} />
+            <CountdownClock variant="boxed" target={new Date('2026-08-04T21:00:00')} />
           </div>
           <a
             href="#collection"
