@@ -6,24 +6,13 @@ import TickerTape from '@/components/coming-soon/TickerTape';
 import CountdownClock from '@/components/coming-soon/CountdownClock';
 import ScarfGallery from '@/components/coming-soon/ScarfGallery';
 import { Image } from '@/components/ui/image';
-
-const PRODUCTS = [
-  { tag: 'Bottoms', title: 'Red Flag Pattern Pencil Skirt', price: '$69.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/15244353897538709014_2048.jpg?v=1785329183', href: 'https://ciekr2-j1.myshopify.com/products/red-flag-pattern-pencil-skirt-womens-mid-waist-graphic-skirt' },
-  { tag: 'Stationery', title: 'The Receipts Spiral Journal — Red Flag Minimalist Notebook', price: '$19.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/15941908692174830345_2048.jpg?v=1785328444', href: 'https://ciekr2-j1.myshopify.com/products/the-receipts-spiral-journal-red-flag-minimalist-notebook' },
-  { tag: 'Bottoms', title: 'Signature Red Flags Pencil Skirt', price: '$53.68', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/20260729123551-1f18b4a0-862a-6112-9f0e-eedfab1cfadf.png?v=1785328776', href: 'https://ciekr2-j1.myshopify.com/products/signature-red-flags-pencil-skirt' },
-  { tag: 'Tops', title: 'Baby Tee — "Red Flags Match My Outfit" Graphic Crop Top', price: '$39.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/9815999074877441377_2048.jpg?v=1785329349', href: 'https://ciekr2-j1.myshopify.com/products/baby-tee-red-flags-match-my-outfit-graphic-crop-top' },
-  { tag: 'Accessories', title: 'Lightweight Red and Black Checker Scarf', price: '$39.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/13460490385159931143_2048.jpg?v=1785329453', href: 'https://ciekr2-j1.myshopify.com/products/lightweight-red-black-checker-scarf-modern-geometric-knit' },
-  { tag: 'Accessories', title: 'Signature Lightweight Red Flag Fashion Scarf', price: '$39.99', img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/6717550338414912274_2048.jpg?v=1785328351', href: 'https://ciekr2-j1.myshopify.com/products/light-scarf-red-flag-lightweight-fashion-scarf' },
-];
-
-const CATEGORIES = ['All', ...Array.from(new Set(PRODUCTS.map((p) => p.tag)))];
+import { Link } from 'react-router-dom';
+import { PRODUCTS, CATEGORIES } from '@/data/products';
 
 function ProductCard({ product }) {
   return (
-    <a
-      href={product.href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={`/shop/${product.slug}`}
       className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary"
     >
       <div className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden">
@@ -47,7 +36,7 @@ function ProductCard({ product }) {
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
