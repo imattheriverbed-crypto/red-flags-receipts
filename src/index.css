@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Abril+Fatface:wght@400&family=Bebas+Neue:wght@400&family=Bungee:wght@400&family=Geist:wght@300;400;500;600;700&family=Lilita+One:wght@400&family=Newsreader:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Abril+Fatface:wght@400&family=Bebas+Neue:wght@400&family=Bungee:wght@400&family=Geist:wght@300;400;500;600;700&family=Lilita+One:wght@400&family=Newsreader:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -34,6 +34,9 @@
     --absolute-ink: 0 0% 4%;
     --parchment: 0 0% 96%;
     --warning-tint: 0 100% 90%;
+    --cream: 32 18% 93%;
+    --burgundy: 355 63% 32%;
+    --font-script: 'Dancing Script', cursive;
   }
 
   .dark {
@@ -73,6 +76,7 @@
   .font-heading { font-family: var(--font-heading); }
   .font-display { font-family: var(--font-display); }
   .font-mono-flag { font-family: var(--font-mono); }
+  .font-script { font-family: var(--font-script); }
 
   .ticker-track {
     animation: ticker-scroll 30s linear infinite;

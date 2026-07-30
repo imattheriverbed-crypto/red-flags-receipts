@@ -47,6 +47,8 @@ module.exports = {
   			ink: 'hsl(var(--absolute-ink))',
   			parchment: 'hsl(var(--parchment))',
   			'warning-tint': 'hsl(var(--warning-tint))',
+  			cream: 'hsl(var(--cream))',
+  			burgundy: 'hsl(var(--burgundy))',
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
@@ -69,7 +71,8 @@ module.exports = {
   			heading: ['var(--font-heading)'],
   			body: ['var(--font-body)'],
   			display: ['var(--font-display)'],
-  			mono: ['var(--font-mono)']
+  			mono: ['var(--font-mono)'],
+  			script: ['var(--font-script)']
   		},
   		keyframes: {
   			'accordion-down': {
