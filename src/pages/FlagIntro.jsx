@@ -19,12 +19,12 @@ export default function FlagIntro() {
         muted
         playsInline
         aria-hidden="true"
-        className="absolute inset-0 z-10 h-full w-full object-cover mix-blend-screen"
+        className="absolute inset-0 z-10 h-full w-full object-cover mix-blend-screen scale-125"
       />
 
       {/* Prompt — overlaid in front of the flag */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
-        <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.4em] text-[#ff0000] mb-5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+        <p className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.4em] text-white mb-5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           A Question For You...
         </p>
         <h1 className="font-display text-2xl sm:text-4xl lg:text-[2.8rem] leading-snug text-[#e0e0e0] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
