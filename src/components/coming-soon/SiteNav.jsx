@@ -48,7 +48,7 @@ export default function SiteNav() {
         </div>
 
         {/* Centered logo */}
-        <Link to="/" aria-label="Red Flags Society — Home" className="absolute left-1/2 -translate-x-1/2 flex items-center shrink-0">
+        <Link to="/home" aria-label="Red Flags Society — Home" className="absolute left-1/2 -translate-x-1/2 flex items-center shrink-0">
           <Logo stampOnLoad />
         </Link>
 
