@@ -145,7 +145,7 @@ export default function LeadCapture() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="group inline-flex items-center justify-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-5 hover:bg-parchment hover:text-ink transition-colors disabled:opacity-50 whitespace-nowrap"
+              className="ghost-hover group inline-flex items-center justify-center gap-3 bg-primary text-parchment font-mono-flag text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-5 hover:bg-parchment hover:text-ink transition-colors disabled:opacity-50 whitespace-nowrap"
             >
               {status === 'loading' ? 'Sending...' : 'Get the Discount'}
               {status !== 'loading' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}

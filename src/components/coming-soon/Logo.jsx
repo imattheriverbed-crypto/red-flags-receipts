@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Logo({ className = '', height = 'h-16' }) {
+export default function Logo({ className = '', height = 'h-16', stampOnLoad = false }) {
   return (
     <span className={`inline-flex items-center ${className}`} aria-label="Red Flags & Receipts">
       <svg
         viewBox="0 0 200 200"
-        className={`${height} w-auto`}
+        className={`${height} w-auto ${stampOnLoad ? 'stamp-in' : ''}`}
         role="img"
         aria-label="Red Flags & Receipts"
       >

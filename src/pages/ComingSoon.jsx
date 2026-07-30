@@ -7,11 +7,14 @@ import LeadCapture from '@/components/coming-soon/LeadCapture';
 import ProductGallery from '@/components/coming-soon/ProductGallery';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
+import ScrollWatermark from '@/components/coming-soon/ScrollWatermark';
 
 export default function ComingSoon() {
   return (
     <div className="dark bg-ink text-parchment min-h-screen relative opacity-100">
       <RibbonCursor />
+
+      <ScrollWatermark />
 
       <SiteNav />
 
