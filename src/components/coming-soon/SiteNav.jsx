@@ -4,7 +4,7 @@ import { Menu, X, ShoppingBag } from 'lucide-react';
 import Logo from './Logo';
 
 const LEFT_ITEMS = [
-  { label: 'Home', to: '/' },
+  { label: 'Home', to: '/home' },
   { label: 'Shop', to: '/shop' },
   { label: 'Collections', to: '/collections' },
   { label: 'Journal', to: '/journal' },

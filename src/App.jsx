@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 // Add page imports here
 import ComingSoon from './pages/ComingSoon';
+import FlagIntro from './pages/FlagIntro';
 import AboutFounder from './pages/AboutFounder';
 import Contact from './pages/Contact';
 import BusinessCard from './pages/BusinessCard';
@@ -44,7 +45,8 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
     {/* Add your page Route elements here */}
-    <Route path="/" element={<ComingSoon />} />
+    <Route path="/" element={<FlagIntro />} />
+    <Route path="/home" element={<ComingSoon />} />
     <Route path="/about" element={<AboutFounder />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/business-card" element={<BusinessCard />} />

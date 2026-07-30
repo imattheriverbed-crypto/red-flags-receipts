@@ -1,7 +1,7 @@
 import React from 'react';
 import RibbonCursor from '@/components/coming-soon/RibbonCursor';
 import TickerTape from '@/components/coming-soon/TickerTape';
-import FlagHero from '@/components/coming-soon/FlagHero';
+
 import InstagramFeed from '@/components/coming-soon/InstagramFeed';
 import LeadCapture from '@/components/coming-soon/LeadCapture';
 import ProductGallery from '@/components/coming-soon/ProductGallery';
@@ -15,9 +15,6 @@ export default function ComingSoon() {
 
       <SiteNav />
 
-      <FlagHero />
-
-      <div id="after-flag" />
       <InstagramFeed />
 
       {/* Scarf weave showcase */}
