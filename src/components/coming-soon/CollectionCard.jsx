@@ -51,7 +51,7 @@ export default function CollectionCard({ collection, large = false, to = '/shop'
         className="group relative block aspect-[3/4] [transform-style:preserve-3d] transition-transform duration-700 [transform:rotateY(0deg)] group-hover:[transform:rotateY(180deg)]"
       >
         {/* Front */}
-        <div className="absolute inset-0 overflow-hidden bg-ink border border-primary/20 [backface-visibility:hidden]">
+        <div className="absolute inset-0 overflow-hidden bg-ink border-2 border-primary/70 [backface-visibility:hidden]">
           <img
             src={collection.img}
             alt={collection.name}
@@ -74,7 +74,7 @@ export default function CollectionCard({ collection, large = false, to = '/shop'
         </div>
 
         {/* Back */}
-        <div className="absolute inset-0 bg-ink border border-primary [transform:rotateY(180deg)] [backface-visibility:hidden] grain-overlay flex flex-col items-center justify-center p-6 text-center">
+        <div className="absolute inset-0 bg-ink border-2 border-primary [transform:rotateY(180deg)] [backface-visibility:hidden] grain-overlay flex flex-col items-center justify-center p-6 text-center">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-5">◆ Dropping ◆</span>
           <span className="font-display font-black text-4xl sm:text-5xl text-parchment leading-none mb-3">
             {collection.date}
