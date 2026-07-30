@@ -33,16 +33,24 @@ export default function SiteFooter() {
                 <span className="font-mono-flag text-xs text-primary">Aug 08</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">BAGS.</span>
+                <span className="font-mono-flag text-xs text-parchment/60">TRAVEL.</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 15</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">50 LANG × BLESS</span>
+                <span className="font-mono-flag text-xs text-parchment/60">FUCK YOU.</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 22</span>
               </li>
               <li className="flex justify-between gap-4">
                 <span className="font-mono-flag text-xs text-parchment/60">RECEIPTS JOURNAL</span>
                 <span className="font-mono-flag text-xs text-primary">Aug 29</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span className="font-mono-flag text-xs text-parchment/60">OUTERWEAR.</span>
+                <span className="font-mono-flag text-xs text-primary">Sep 05</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span className="font-mono-flag text-xs text-parchment/60">FITNESS.</span>
+                <span className="font-mono-flag text-xs text-primary">Sep 12</span>
               </li>
             </ul>
           </div>
