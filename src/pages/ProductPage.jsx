@@ -56,6 +56,12 @@ export default function ProductPage() {
 
   const images = [product.img];
 
+  const selected = [];
+  if (COLORS[color]) selected.push(['color', COLORS[color].name]);
+  if (size) selected.push(['size', size]);
+  const qs = new URLSearchParams(selected).toString();
+  const checkoutHref = qs ? `${product.href}${product.href.includes('?') ? '&' : '?'}${qs}` : product.href;
+
   return (
     <div className="dark bg-[#050505] text-white font-body min-h-screen">
       <SiteNav />
@@ -124,7 +130,7 @@ export default function ProductPage() {
             </div>
 
             <a
-              href={product.href}
+              href={checkoutHref}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-[#b31313] text-white uppercase tracking-[0.15em] py-4 text-center hover:bg-[#8f0d0d] transition-colors mb-3"
@@ -132,7 +138,7 @@ export default function ProductPage() {
               Add To Cart
             </a>
             <a
-              href={product.href}
+              href={checkoutHref}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full bg-transparent border border-white text-white uppercase tracking-[0.15em] py-4 hover:border-primary hover:text-primary transition-colors"
