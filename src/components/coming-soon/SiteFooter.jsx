@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
+import NewsletterSignup from './NewsletterSignup';
 
 export default function SiteFooter() {
   return (
@@ -40,6 +41,15 @@ export default function SiteFooter() {
                 <span className="font-mono-flag text-xs text-primary">Aug 22</span>
               </li>
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">Get The Updates</h4>
+            <p className="font-body text-xs text-parchment/50 leading-relaxed mb-4">
+              New drops, journal entries, and warnings — straight to your inbox. No spam, no exes.
+            </p>
+            <NewsletterSignup />
           </div>
 
           {/* Printify transparency */}
