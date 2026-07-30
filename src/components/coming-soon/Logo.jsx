@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LOGO_IMAGE_URL = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/7140eb6a9_CopyofScarfDesignSwap3.png';
+const LOGO_IMAGE_URL = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/8d3f5fce9_generated_image.png';
 
 export const LOGO_URL = LOGO_IMAGE_URL;
 
@@ -11,6 +11,7 @@ export default function Logo({ className = '', height = 'h-16' }) {
         src={LOGO_IMAGE_URL}
         alt="Red Flags & Receipts"
         className={`${height} w-auto rounded-full`}
+        style={{ mixBlendMode: 'screen' }}
       />
     </span>
   );
