@@ -4,6 +4,10 @@ import CountdownClock from './CountdownClock';
 
 const SLIDES = [
   {
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png',
+    headline: (<>THE WARNING BECOMES <span className="text-primary">THE PARTY</span>.</>),
+  },
+  {
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/66e1a3d73_generated_image.png',
     headline: (<>WEAR THE <span className="text-primary">WARNING</span>.</>),
   },
