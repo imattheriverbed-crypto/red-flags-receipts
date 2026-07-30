@@ -22,7 +22,7 @@ export const UPCOMING = [
     date: 'Aug 08',
     status: 'Upcoming',
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: PARTY_IMG,
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/86e0cee69_generated_image.png',
     desc: 'Ramsey approved. Apparel for the ones who love you unconditionally — outfit your sidekick in pieces that speak their language.',
   },
   {
@@ -31,7 +31,7 @@ export const UPCOMING = [
     date: 'Aug 15',
     status: 'Upcoming',
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
-    img: SURVIVED_IMG,
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/8f33092b5_generated_image.png',
     desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.',
   },
   {
