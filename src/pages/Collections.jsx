@@ -8,6 +8,7 @@ const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e30
 const PARTY_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png';
 const SURVIVED_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/ef6328d93_generated_image.png';
 const LANG_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6df07dbb7_38bf0d10-9897-4f90-81d3-0ee9b46ac015.png';
+const JOURNAL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6d8774117_RedFlagsreceiptsjournalmockup.png';
 
 const FEATURED = {
   name: 'Signature Collection',
@@ -39,6 +40,13 @@ const UPCOMING = [
     status: 'Upcoming',
     statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
     img: LANG_IMG,
+  },
+  {
+    name: 'RECEIPTS JOURNAL',
+    date: 'Aug 29',
+    status: 'Upcoming',
+    statusStyle: 'bg-ink/70 text-parchment border border-parchment/30',
+    img: JOURNAL_IMG,
   },
 ];
 
@@ -73,7 +81,7 @@ export default function Collections() {
           <h2 className="font-display font-black text-2xl sm:text-3xl text-parchment">Upcoming Drops</h2>
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/40">Little by little</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {UPCOMING.map((c) => (
             <CollectionCard key={c.name} collection={c} />
           ))}
