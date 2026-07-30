@@ -32,6 +32,19 @@ export default function CountdownClock({ variant = 'floating' }) {
 
   const pad = (n) => String(n).padStart(2, '0');
 
+  if (variant === 'boxed') {
+    return (
+      <div className="flex items-stretch gap-2 sm:gap-3">
+        {units.map((u) => (
+          <div key={u.label} className="border border-primary/30 bg-ink/40 backdrop-blur-sm px-3 sm:px-5 py-2.5 sm:py-3 text-center min-w-[64px] sm:min-w-[88px]">
+            <div className="font-display text-2xl sm:text-4xl font-black text-primary tabular-nums leading-none">{pad(u.value)}</div>
+            <div className="font-mono-flag text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-parchment/50 mt-1.5">{u.label}</div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   if (variant === 'inline') {
     return (
       <div className="flex items-center gap-4 sm:gap-6">

@@ -24,7 +24,7 @@ export default function Logo({ className = '', height = 'h-10' }) {
           RED FLAGS
         </span>
         <span className="font-mono-flag tracking-[0.42em] text-primary/90" style={{ fontSize: '0.5rem', lineHeight: 1.4 }}>
-          &amp; RECEIPTS
+          SOCIETY
         </span>
       </span>
     </span>
