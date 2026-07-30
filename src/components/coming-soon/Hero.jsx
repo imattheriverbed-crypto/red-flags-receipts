@@ -4,15 +4,15 @@ import CountdownClock from './CountdownClock';
 
 const SLIDES = [
   {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png',
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/66e1a3d73_generated_image.png',
     headline: (<>WEAR THE <span className="text-primary">WARNING</span>.</>),
   },
   {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a43b1a331_generated_image.png',
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/eed049deb_generated_image.png',
     headline: (<>NOT FOR <span className="text-primary">EVERYONE</span>. MADE FOR YOU.</>),
   },
   {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/189eb8221_generated_image.png',
+    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/ef6328d93_generated_image.png',
     headline: (<>SURVIVED <span className="text-primary">IT</span>. WEAR IT.</>),
   },
 ];
