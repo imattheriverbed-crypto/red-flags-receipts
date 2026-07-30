@@ -1,14 +1,24 @@
 import React from 'react';
 
-export const LOGO_URL = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/5b6cad098_ChatGPTImageJul30202611_25_22AM.png';
+const ORIGINAL_LOGO_URL = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/5b6cad098_ChatGPTImageJul30202611_25_22AM.png';
 
-export default function Logo({ className = '', height = 'h-10' }) {
+export const LOGO_URL = ORIGINAL_LOGO_URL;
+
+// Renders the official red-on-white badge as a white logo with a transparent
+// background: invert + grayscale turns the red art into light gray and the
+// white background into black, then mix-blend-mode:screen drops the black
+// (shows the dark page behind) and lifts the gray toward white.
+export default function Logo({ className = '', height = 'h-16' }) {
   return (
     <span className={`inline-flex items-center ${className}`}>
       <img
-        src={LOGO_URL}
+        src={ORIGINAL_LOGO_URL}
         alt="Red Flags & Receipts"
-        className={`${height} w-auto rounded-full bg-parchment`}
+        className={`${height} w-auto`}
+        style={{
+          filter: 'invert(1) grayscale(1) brightness(1.5) contrast(1.15)',
+          mixBlendMode: 'screen',
+        }}
       />
     </span>
   );
