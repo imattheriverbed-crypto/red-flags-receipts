@@ -2,11 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 
-const N = 22; // vertical slices
-const FLAG_W = 760;
-const FLAG_H = 440;
-const SLICE = FLAG_W / N;
-
 export default function FlagIntro() {
   const navigate = useNavigate();
   const goHome = () => navigate('/home');
@@ -16,37 +11,17 @@ export default function FlagIntro() {
       {/* faint vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(180,0,0,0.14),transparent_62%)] pointer-events-none" />
 
-      {/* Flag */}
-      <div className="relative flex items-start justify-center origin-bottom scale-[0.6] sm:scale-90 lg:scale-100">
-        {/* Pole */}
-        <div className="relative shrink-0" style={{ width: 12, height: FLAG_H + 170 }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#4a4a4a] via-[#d0d0d0] to-[#4a4a4a] rounded-full shadow-[0_0_24px_rgba(0,0,0,0.7)]" />
-          <div className="absolute -top-4 -left-1.5 w-6 h-6 rounded-full bg-gradient-to-br from-[#e8e8e8] to-[#7a7a7a] shadow-md" />
-        </div>
+      {/* Flag — looping cloth animation */}
+      <video
+        src="https://media.base44.com/videos/public/6a5a113aa6cf7e3091bf0eec/658df0297_Flag_Loop.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
+        className="relative z-10 w-full max-w-5xl h-auto mix-blend-screen"
+      />
 
-        {/* Fabric: vertical slices that wave */}
-        <div className="relative flag-sway" style={{ width: FLAG_W, height: FLAG_H, perspective: 800 }}>
-          {Array.from({ length: N }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute top-0 flag-slice"
-              style={{
-                left: i * SLICE,
-                width: SLICE + 1,
-                height: '100%',
-                backgroundImage:
-                  'repeating-linear-gradient(90deg, #a00000, #c40000 6%, #660000 12%, #9a0000 18%, #3d0000 24%, #b00000 30%)',
-                backgroundSize: `${FLAG_W}px ${FLAG_H}px`,
-                backgroundPositionX: `${-i * SLICE}px`,
-                backgroundRepeat: 'no-repeat',
-                animationDelay: `${-(i / N) * 2.4}s`,
-                boxShadow: 'inset 0 0 22px rgba(0,0,0,0.4)',
-              }}
-            />
-          ))}
-          <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-black/55 to-transparent" />
-        </div>
-      </div>
 
       {/* Prompt */}
       <div className="relative z-10 text-center max-w-3xl mt-12 sm:mt-16">
