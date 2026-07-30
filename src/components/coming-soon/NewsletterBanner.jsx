@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
-import { Image } from '@/components/ui/image';
 import { ArrowRight, Check } from 'lucide-react';
-
-const PORTRAIT = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/1935c46fe_generated_image.png';
 
 export default function NewsletterBanner() {
   const [email, setEmail] = useState('');
@@ -31,10 +28,7 @@ export default function NewsletterBanner() {
   return (
     <section className="bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2">
-        <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[380px] overflow-hidden bg-[#0a0a0a]">
-          <Image src={PORTRAIT} alt="Join the list" fittingType="fill" className="w-full h-full" />
-        </div>
-        <div className="flex flex-col justify-center px-6 sm:px-12 py-14">
+        <div className="flex flex-col justify-center px-6 sm:px-12 py-16 lg:py-20 lg:col-span-2 lg:items-center lg:text-center">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">◆ The List ◆</span>
           <h2 className="font-heading font-black text-3xl sm:text-4xl uppercase text-white leading-tight mb-4">
             Join The List.<br />Get The Receipts.
