@@ -86,7 +86,7 @@ export default function AboutFounder() {
           </div>
 
           <h1 className="font-display font-black text-3xl sm:text-5xl leading-[1.05] mb-8">
-            My story isn't the brand. Your healing is the <span className="text-burgundy">purpose.</span>
+            My story isn't the brand. Your healing is the <span className="text-burgundy [-webkit-text-stroke:0.5px_hsl(var(--parchment))]">purpose.</span>
           </h1>
 
           <div className="space-y-5 font-body text-base text-ink/75 leading-relaxed max-w-xl mb-10">
