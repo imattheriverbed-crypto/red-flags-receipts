@@ -13,25 +13,25 @@ function ProductCard({ product }) {
   return (
     <Link
       to={`/shop/${product.slug}`}
-      className="bg-card border border-primary/15 group flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-primary"
+      className="bg-gradient-to-b from-[#0c0c0c] to-black border border-white/10 group flex flex-col rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-primary/50"
     >
-      <div className="relative aspect-square w-full bg-ink flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-[4/5] w-full bg-gradient-to-b from-[#0a0a0a] to-black flex items-center justify-center overflow-hidden">
         <Image
           src={product.img}
           alt={product.title}
           fittingType="fit"
-          className="w-full h-full group-hover:opacity-90 transition-opacity"
+          className="w-full h-full p-6 transition-transform duration-500 ease-out group-hover:scale-[1.05]"
         />
-        <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-ink/70 border border-primary/40 px-2.5 py-1">
+        <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-black/70 backdrop-blur-sm border border-primary/40 px-2.5 py-1 rounded-full">
           <Lock className="w-3 h-3" /> Drops Aug 04 · 9PM
         </span>
       </div>
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-7 flex flex-col flex-grow">
         <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{product.tag}</span>
-        <h3 className="font-display text-lg text-parchment leading-tight mb-6">{product.title}</h3>
-        <div className="mt-auto pt-4 border-t border-primary/15 flex items-center justify-between">
+        <h3 className="font-display text-xl text-parchment leading-tight mb-6">{product.title}</h3>
+        <div className="mt-auto pt-5 border-t border-white/10 flex items-center justify-between">
           <span className="font-mono-flag text-xl text-parchment">{product.price}</span>
-          <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-primary border border-primary/40 px-4 py-2 group-hover:bg-primary group-hover:text-parchment transition-colors">
+          <span className="font-mono-flag text-[10px] uppercase tracking-[0.2em] text-primary border border-primary/40 px-4 py-2 rounded-full group-hover:bg-primary group-hover:text-parchment transition-colors">
             View Product →
           </span>
         </div>
