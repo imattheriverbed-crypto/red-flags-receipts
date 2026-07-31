@@ -18,6 +18,7 @@ import Drop from './pages/Drop';
 import Journal from './pages/Journal';
 import JournalEntry from './pages/JournalEntry';
 import ProductPage from './pages/ProductPage';
+import HelpModal from '@/components/coming-soon/HelpModal';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -71,6 +72,7 @@ function App() {
         <Router>
           <ScrollToTop />
           <AuthenticatedApp />
+          <HelpModal />
         </Router>
         <Toaster />
       </QueryClientProvider>
