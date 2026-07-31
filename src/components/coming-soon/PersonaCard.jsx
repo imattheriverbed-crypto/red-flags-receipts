@@ -12,15 +12,8 @@ export default function PersonaCard({ persona, onClose }) {
 
   return (
     <div className="flex flex-col rounded-2xl overflow-hidden shadow-lg bg-white w-full max-w-[340px]">
-      <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3 / 4' }}>
-        <Image
-          src={persona.img}
-          fittingType="fill"
-          focalPointX={persona.focalX}
-          focalPointY={persona.focalY}
-          className="w-full h-full"
-          alt={persona.name}
-        />
+      <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4 / 3' }}>
+        <Image src={persona.img} fittingType="fill" className="w-full h-full" alt={persona.name} />
       </div>
       <div className="flex flex-col items-start gap-3 p-6 bg-[#F9F4EE] flex-1">
         <span
@@ -33,7 +26,7 @@ export default function PersonaCard({ persona, onClose }) {
         <p className="font-body text-[11px] font-semibold tracking-[0.18em] uppercase" style={{ color }}>
           {persona.tagline}
         </p>
-        <p className="font-body text-sm leading-relaxed text-[#1B263B]/80">{persona.desc}</p>
+        <p className="font-body text-sm leading-relaxed text-[#1A2226]/80">{persona.desc}</p>
         <button
           onClick={() => {
             onClose();
