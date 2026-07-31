@@ -35,12 +35,12 @@ export default function PersonaCard({ persona, onClose }) {
           {persona.name}
         </h3>
         <p
-          className="font-body text-[10px] font-semibold tracking-[0.22em] uppercase"
+          className="font-body text-[10px] font-semibold tracking-[0.22em] uppercase hidden"
           style={{ color: persona.taglineColor }}>
           
           {persona.tagline}
         </p>
-        <span className="block w-12 h-px" style={{ backgroundColor: persona.taglineColor, opacity: 0.4 }} />
+        <span className="block w-12 h-px hidden" style={{ backgroundColor: persona.taglineColor, opacity: 0.4 }} />
 
         <p className="font-body text-[13px] leading-relaxed text-[#222]/85">
           {persona.desc}
