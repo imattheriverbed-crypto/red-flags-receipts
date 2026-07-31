@@ -19,6 +19,7 @@ import Journal from './pages/Journal';
 import JournalEntry from './pages/JournalEntry';
 import ProductPage from './pages/ProductPage';
 import HelpModal from '@/components/coming-soon/HelpModal';
+import Chat from './pages/Chat';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -54,6 +55,7 @@ const AuthenticatedApp = () => {
     <Route path="/business-card" element={<BusinessCard />} />
     <Route path="/shop" element={<Shop />} />
     <Route path="/shop/:slug" element={<ProductPage />} />
+    <Route path="/chat/:advisor" element={<Chat />} />
     <Route path="/collections" element={<Collections />} />
     <Route path="/collections/:slug" element={<Drop />} />
     <Route path="/journal" element={<Journal />} />

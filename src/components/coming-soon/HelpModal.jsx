@@ -1,42 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Heart, Sprout, MessageCircleQuestion } from 'lucide-react';
+import { ADVISORS as PERSONAS } from '@/data/advisors';
 import PersonaCard from './PersonaCard';
-
-const PERSONAS = [
-  {
-    name: 'Miss Path',
-    badgeBg: '#4A5D4E',
-    nameColor: '#36453B',
-    taglineColor: '#36453B',
-    buttonBg: '#4A5D4E',
-    icon: 'tree',
-    tagline: 'Wise. Experienced. No-nonsense.',
-    desc: 'Straightforward and perceptive. I ask the hard questions with care and help you see the truth so you can make empowered choices.',
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/25ae73549_12ad6075-d96e-4a62-8baa-41607a122bf8hhZXAX.PNG',
-  },
-  {
-    name: 'Emily',
-    badgeBg: '#9A81A4',
-    nameColor: '#6D5575',
-    taglineColor: '#6D5575',
-    buttonBg: '#8D7695',
-    icon: 'cap',
-    tagline: 'Thoughtful. Analytical. Grounded.',
-    desc: 'I combine education and experience. With two narcissists behind me, I help you understand the dynamics and rebuild with clarity and confidence.',
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/d857f76ea_12ad6075-d96e-4a62-8baa-41607a122bf8hhZXAX.PNG',
-  },
-  {
-    name: 'Emma',
-    badgeBg: '#C76E7E',
-    nameColor: '#C76E7E',
-    taglineColor: '#C76E7E',
-    buttonBg: '#C76E7E',
-    icon: 'star',
-    tagline: 'Witty. Warm. A smart-alec.',
-    desc: "I'll make you laugh, call it like I see it, and be the best friend who helps you see what's really going on.",
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/e935fdfd3_12ad6075-d96e-4a62-8baa-41607a122bf8hh.PNG',
-  },
-];
 
 export default function HelpModal() {
   const [open, setOpen] = useState(false);

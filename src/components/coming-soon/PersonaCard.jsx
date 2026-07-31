@@ -49,7 +49,7 @@ export default function PersonaCard({ persona, onClose }) {
         <button
           onClick={() => {
             onClose();
-            navigate(`/contact?advisor=${encodeURIComponent(persona.name)}`);
+            navigate(`/chat/${persona.slug}`);
           }}
           className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-white text-[12px] font-semibold tracking-[0.14em] uppercase transition-transform hover:scale-[1.02]"
           style={{ backgroundColor: persona.buttonBg }}
