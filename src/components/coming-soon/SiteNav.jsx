@@ -126,37 +126,42 @@ export default function SiteNav() {
           </button>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          className="md:hidden flex items-center justify-center w-10 h-10 border border-primary/40 text-parchment hover:bg-primary hover:text-parchment transition-colors"
-        >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile: logo left, toggle right */}
+        <div className="md:hidden flex items-center justify-between w-full">
+          <Link to="/home" aria-label="Red Flags Society — Home" className="flex items-center">
+            <Logo stampOnLoad />
+          </Link>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="flex items-center justify-center w-10 h-10 border border-primary/40 text-parchment hover:bg-primary hover:text-parchment transition-colors"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${open ? 'max-h-[40rem]' : 'max-h-0'}`}>
-        <div className="bg-black border-t border-primary/25 px-5 py-6 flex flex-col gap-1">
+      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${open ? 'max-h-[48rem]' : 'max-h-0'}`}>
+        <div className="bg-black border-t border-primary/25 px-5 py-4 flex flex-col divide-y divide-parchment/10">
           {[...LEFT_ITEMS, ...RIGHT_ITEMS].map((item) => (
-            <div key={item.label}>
+            <div key={item.label} className="py-1">
               <Link
                 to={item.to}
-                className={`font-mono-flag text-sm font-semibold uppercase tracking-[0.25em] py-3 border-b border-parchment/10 block transition-colors ${
+                className={`flex items-center font-mono-flag text-[13px] font-semibold uppercase tracking-[0.25em] py-3.5 min-h-[44px] transition-colors ${
                   location.pathname === item.to ? 'text-primary' : 'text-parchment/85 hover:text-primary'
                 }`}
               >
                 {item.label}
               </Link>
               {item.children && (
-                <div className="pl-4 pb-2 flex flex-col">
+                <div className="flex flex-col pl-4 pb-1">
                   {item.children.map((c) => (
                     <Link
                       key={c.to}
                       to={c.to}
-                      className="font-mono-flag text-[11px] uppercase tracking-[0.2em] py-2 text-parchment/55 hover:text-primary transition-colors"
+                      className="flex items-center font-mono-flag text-[11px] uppercase tracking-[0.2em] py-2.5 min-h-[40px] text-parchment/55 hover:text-primary transition-colors"
                     >
                       {c.label}
                     </Link>
@@ -167,7 +172,7 @@ export default function SiteNav() {
           ))}
           <Link
             to="/shop"
-            className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-3.5 text-center hover:bg-parchment hover:text-ink transition-colors"
+            className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-4 text-center min-h-[48px] hover:bg-parchment hover:text-ink transition-colors"
           >
             Shop Now
           </Link>
