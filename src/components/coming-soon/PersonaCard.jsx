@@ -38,24 +38,24 @@ export default function PersonaCard({ persona, onClose }) {
         </span>
       </button>
 
-      <div className="flex flex-col items-center gap-2.5 px-6 pb-6 pt-7 text-center hidden">
-        <p className="font-display text-base" style={{ color: persona.taglineColor }}>
-          {persona.tagline}
-        </p>
-        <p className="font-body text-[13px] leading-relaxed text-[#222]/85">
-          {persona.desc}
-        </p>
+      
 
-        <button
-          type="button"
-          onClick={go}
-          className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-white text-[12px] font-semibold tracking-[0.14em] uppercase transition-transform hover:scale-[1.02]"
-          style={{ backgroundColor: persona.buttonBg }}>
-          
-          <MessageCircle className="w-4 h-4" />
-          Talk with {persona.name}
-        </button>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     </div>);
 
 }
