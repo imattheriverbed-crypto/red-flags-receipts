@@ -31,11 +31,11 @@ export default function HelpModal() {
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <div className="relative w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#F9F4EE] p-6 sm:p-10 shadow-2xl">
+          <div className="relative w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl bg-ink p-6 sm:p-10 shadow-2xl border border-primary/25">
             <button
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full text-[#1A2226]/60 hover:text-[#1A2226] hover:bg-black/5 transition-colors z-10"
+              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full text-parchment/60 hover:text-parchment hover:bg-white/5 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -44,10 +44,11 @@ export default function HelpModal() {
             <Sprout className="absolute top-6 right-16 w-9 h-9" style={{ color: '#9FB69A' }} />
 
             <header className="text-center mb-9 pt-6">
-              <h2 className="font-display text-2xl sm:text-4xl text-[#1A2226] leading-tight">
+              <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary block mb-4">◆ Confused? ◆</span>
+              <h2 className="font-display text-2xl sm:text-4xl text-parchment leading-tight">
                 Who would you like to talk with today?
               </h2>
-              <p className="mt-3 font-body text-sm sm:text-base text-[#1A2226]/70 max-w-xl mx-auto">
+              <p className="mt-3 font-body text-sm sm:text-base text-parchment/70 max-w-xl mx-auto">
                 Each of us brings a different style of support. Choose the one that feels right for you.
               </p>
             </header>
