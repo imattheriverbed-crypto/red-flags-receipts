@@ -92,21 +92,23 @@ export default function SiteNav() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto relative flex items-center justify-between px-5 sm:px-12 py-3">
+      <div className="max-w-7xl mx-auto flex items-stretch px-5 sm:px-12 py-3">
         {/* Left links */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex flex-1 items-center justify-start gap-7">
           {LEFT_ITEMS.map((item) => (
             <DesktopItem key={item.label} item={item} pathname={location.pathname} />
           ))}
         </div>
 
         {/* Centered logo */}
-        <Link to="/home" aria-label="Red Flags Society — Home" className="absolute left-1/2 -translate-x-1/2 flex items-center shrink-0">
-          <Logo stampOnLoad />
-        </Link>
+        <div className="hidden md:flex shrink-0 items-center justify-center px-4">
+          <Link to="/home" aria-label="Red Flags Society — Home" className="flex items-center">
+            <Logo stampOnLoad />
+          </Link>
+        </div>
 
         {/* Right links + CTA + cart */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex flex-1 items-center justify-end gap-7">
           {RIGHT_ITEMS.map((item) => (
             <Link key={item.to} to={item.to} className={linkClass(item, location.pathname)}>
               {item.label}
