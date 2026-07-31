@@ -192,8 +192,12 @@ const Image = React.forwardRef(
       setImgSrc(src)
     }, [src])
 
+    // Non-Wix URLs (e.g. Shopify CDN) render as a plain <img>; without an
+    // explicit object-fit the browser stretches them to fill the box.
+    const objectFitClass = fittingType === "fit" ? "object-contain" : "object-cover"
     const imageProps = {
       ...props,
+      className: cn(props.className, objectFitClass),
       onError: () => setImgSrc(FALLBACK_IMAGE_URL),
     }
 
