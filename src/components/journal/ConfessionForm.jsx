@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Send, Check } from 'lucide-react';
 
+const CATEGORIES = [
+  'Relationship Red Flags',
+  'Family Red Flags',
+  'Friendship',
+  'Work & Career',
+  'Life Lessons',
+  'Other',
+];
+
 export default function ConfessionForm({ onSubmitted }) {
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('Other');
   const [wantsPub, setWantsPub] = useState(false);
   const [status, setStatus] = useState('idle');
 
@@ -16,12 +26,14 @@ export default function ConfessionForm({ onSubmitted }) {
       await base44.entities.Confession.create({
         body: body.trim(),
         author_display: author.trim() || null,
+        category,
         wants_publication: wantsPub,
         status: 'pending',
       });
       setStatus('done');
       setBody('');
       setAuthor('');
+      setCategory('Other');
       setWantsPub(false);
       onSubmitted?.();
     } catch {
@@ -57,6 +69,25 @@ export default function ConfessionForm({ onSubmitted }) {
         placeholder="Confess it. Yell it. Name them or don’t. This stays between you and the scarf."
         className="w-full px-4 py-3 font-body text-sm bg-black text-parchment border border-white/15 placeholder-parchment/30 focus:outline-none focus:border-primary resize-none mb-4"
       />
+      <div className="mb-5">
+        <p className="font-mono-flag text-[10px] uppercase tracking-[0.25em] text-parchment/50 mb-3">Pick a theme</p>
+        <div className="flex flex-wrap gap-2">
+          {CATEGORIES.map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => setCategory(c)}
+              className={`font-mono-flag text-[10px] uppercase tracking-[0.2em] px-3 py-2 border transition-colors ${
+                category === c
+                  ? 'border-primary text-primary bg-primary/10'
+                  : 'border-white/15 text-parchment/60 hover:border-white/40'
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="flex flex-col sm:flex-row gap-4 mb-5">
         <input
           value={author}

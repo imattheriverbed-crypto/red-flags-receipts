@@ -10,6 +10,19 @@
       "type": "string",
       "description": "Optional pen name shown if published"
     },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Relationship Red Flags",
+        "Family Red Flags",
+        "Friendship",
+        "Work & Career",
+        "Life Lessons",
+        "Other"
+      ],
+      "default": "Other",
+      "description": "Theme the confession falls under"
+    },
     "wants_publication": {
       "type": "boolean",
       "default": false,
