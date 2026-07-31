@@ -1,0 +1,79 @@
+{
+  "name": "JournalEntry",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Entry title"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly identifier"
+    },
+    "scarf_name": {
+      "type": "string",
+      "description": "Which of the 36 scarf designs this entry is about"
+    },
+    "design_number": {
+      "type": "number",
+      "description": "1-36, which design this inspiration covers"
+    },
+    "tag": {
+      "type": "string",
+      "default": "Design Inspiration"
+    },
+    "date_label": {
+      "type": "string",
+      "description": "Display label e.g. 'Design 01'"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Short teaser"
+    },
+    "body": {
+      "type": "string",
+      "description": "The inspiration text \u2014 paragraphs separated by blank lines"
+    },
+    "hero": {
+      "type": "string",
+      "description": "Image URL for the entry card"
+    },
+    "published": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "body"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.published": true
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

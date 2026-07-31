@@ -1,0 +1,56 @@
+{
+  "name": "Confession",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "string",
+      "description": "The confession / vent text"
+    },
+    "author_display": {
+      "type": "string",
+      "description": "Optional pen name shown if published"
+    },
+    "wants_publication": {
+      "type": "boolean",
+      "default": false,
+      "description": "Author opted in to be considered for publication"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "published",
+        "rejected"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "body"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.status": "published"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
