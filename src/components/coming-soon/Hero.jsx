@@ -46,7 +46,7 @@ export default function Hero() {
       ))}
 
       {/* Content */}
-      <div className="relative z-30 flex flex-col justify-center min-h-screen px-6 sm:px-12 py-28">
+      <div className="relative z-30 flex flex-col justify-start min-h-screen px-6 sm:px-12 pt-40 pb-28">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
