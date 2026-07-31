@@ -91,19 +91,24 @@ export default function ProductPage() {
               <button
                 key={i}
                 onClick={() => setActiveImg(i)}
-                className={`aspect-square w-full overflow-hidden bg-[#101010] border transition-colors ${
-                  activeImg === i ? 'border-primary' : 'border-white/25 hover:border-white/50'
+                className={`aspect-square w-full overflow-hidden rounded-xl bg-[#0c0c0c] border shadow-lg transition-all ${
+                  activeImg === i ? 'border-primary ring-1 ring-primary' : 'border-white/15 hover:border-white/40'
                 }`}
               >
-                <Image src={img} alt="" fittingType="fit" className="w-full h-full" />
+                <Image src={img} alt="" fittingType="fit" className="w-full h-full transition-transform duration-300 hover:scale-105" />
               </button>
             ))}
           </div>
 
           {/* Main image */}
-          <div className="bg-[#101010] p-5 sm:p-6">
-            <div className="aspect-square w-full overflow-hidden">
-              <Image src={images[activeImg]} alt={product.title} fittingType="fit" className="w-full h-full" />
+          <div className="relative bg-gradient-to-b from-[#0c0c0c] to-black p-6 sm:p-10 rounded-2xl shadow-2xl ring-1 ring-white/5">
+            <div className="aspect-square w-full overflow-hidden rounded-xl bg-[#0a0a0a]">
+              <Image
+                src={images[activeImg]}
+                alt={product.title}
+                fittingType="fit"
+                className="w-full h-full transition-transform duration-500 ease-out hover:scale-[1.04]"
+              />
             </div>
           </div>
 
