@@ -20,27 +20,27 @@ export default function PersonaCard({ persona, onClose }) {
           className="w-full h-full"
           alt={persona.name} />
         
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FDF7F0] to-transparent hidden" />
+        
       </div>
 
       <div className="relative flex flex-col items-center gap-2.5 px-6 pb-6 pt-9 text-center">
-        <span
-          className="absolute left-1/2 -top-7 -translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full ring-4 ring-[#FDF7F0] shadow-md hidden"
-          style={{ backgroundColor: persona.badgeBg }}>
-          
-          <Icon className="w-6 h-6 text-white" />
-        </span>
+        
 
-        <h3 className="font-display text-2xl leading-none hidden" style={{ color: persona.nameColor }}>
-          {persona.name}
-        </h3>
-        <p
-          className="font-body text-[10px] font-semibold tracking-[0.22em] uppercase hidden"
-          style={{ color: persona.taglineColor }}>
-          
-          {persona.tagline}
-        </p>
-        <span className="block w-12 h-px hidden" style={{ backgroundColor: persona.taglineColor, opacity: 0.4 }} />
+
+
+
+        
+
+        
+
+        
+        
+
+
+
+
+        
+        
 
         <p className="font-body text-[13px] leading-relaxed text-[#222]/85">
           {persona.desc}
