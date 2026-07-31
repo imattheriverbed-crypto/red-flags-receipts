@@ -7,7 +7,6 @@ import TickerTape from '@/components/coming-soon/TickerTape';
 import CountdownClock from '@/components/coming-soon/CountdownClock';
 import { Image } from '@/components/ui/image';
 import { base44 } from '@/api/base44Client';
-import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTemplates';
 import { UPCOMING, getDropBySlug } from '@/data/drops';
 
 const DROP_DATES = {
@@ -35,8 +34,8 @@ function RemindMe({ drop }) {
         source: `drop-page-${drop.slug}`,
         interested_traits: [drop.name],
       });
-      try { await base44.integrations.Core.SendEmail({ to: email, subject: "🚩 You're on the list — Red Flags & Receipts", body: buildWelcomeEmail() }); } catch {}
-      try { await base44.integrations.Core.SendEmail({ to: 'castingcallforqueens@gmail.com', subject: '🚩 New Drop Reminder', body: buildOwnerNotificationEmail({ title: 'New Drop Reminder', lines: [{ label: 'Email', value: email }, { label: 'Drop', value: drop.name }, { label: 'Source', value: 'Drop detail page' }] }) }); } catch {}
+      // Confirmation + owner notification emails are now sent automatically
+      // by the "Waitlist Confirmation Email" workflow on record creation.
       setDone(true);
     } catch {
       setDone(true);

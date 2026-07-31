@@ -1,0 +1,45 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "entity",
+      "events": [
+        "create"
+      ],
+      "entity_name": "WaitlistSignup"
+    }
+  },
+  "name": "Waitlist Confirmation Email",
+  "description": "Sends an automatic thank-you confirmation email (mentioning the August 4th launch) to every new waitlist signup, plus a notification to the brand inbox.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "waitlist_confirmation_email",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "send_confirmation": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "sendWaitlistConfirmation",
+            "args": {
+              "email": "${ .trigger.data.email }",
+              "phone": "${ .trigger.data.phone }",
+              "contact_method": "${ .trigger.data.contact_method }",
+              "source": "${ .trigger.data.source }",
+              "interested_traits": "${ .trigger.data.interested_traits }",
+              "red_flag_note": "${ .trigger.data.red_flag_note }"
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Send confirmation email",
+            "description": "Thank-you + August 4th launch date"
+          }
+        }
+      }
+    ]
+  }
+}

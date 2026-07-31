@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, Mail, MessageSquare, ChevronDown } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTemplates';
 
 const TRAITS = ['CEO OF ME', 'PETS.', 'TRAVEL.', 'FUCK YOU.', 'RECEIPTS JOURNAL', 'OUTERWEAR.', 'FITNESS.'];
 
@@ -51,33 +50,8 @@ export default function LeadCapture() {
         red_flag_note: note.trim() || null,
       });
 
-      // Best-effort welcome reply to the signer (recipient must be a registered app user)
-      if (method === 'email') {
-        try {
-          await base44.integrations.Core.SendEmail({
-            to: value,
-            subject: "🚩 You're on the list — Red Flags & Receipts",
-            body: buildWelcomeEmail(),
-          });
-        } catch (e) { /* reply is best-effort */ }
-      }
-      // Best-effort owner notification (recipient must be a registered app user)
-      try {
-        await base44.integrations.Core.SendEmail({
-          to: 'castingcallforqueens@gmail.com',
-          subject: '🚩 New Waitlist Signup',
-          body: buildOwnerNotificationEmail({
-            title: 'New Waitlist Signup',
-            lines: [
-              { label: 'Contact', value: value },
-              { label: 'Method', value: method.toUpperCase() },
-              { label: 'Interested Traits', value: traits.length ? traits.join(', ') : '—' },
-              { label: 'Red Flag Note', value: note.trim() || '—' },
-              { label: 'Source', value: 'Lead Capture (homepage)' },
-            ],
-          }),
-        });
-      } catch (e) { /* notification is best-effort */ }
+      // Confirmation + owner notification emails are now sent automatically
+      // by the "Waitlist Confirmation Email" workflow on record creation.
 
       setStatus('success');
     } catch (err) {
