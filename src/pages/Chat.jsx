@@ -66,8 +66,11 @@ export default function Chat() {
     setLoading(true);
     try {
       const history = next.map((m) => `${m.role === 'user' ? 'User' : a.name}: ${m.content}`).join('\n');
-      const prompt = `${a.systemPrompt}\n\nConversation so far:\n${history}\n\nRespond now as ${a.name}. Stay in character. Reply with only your next message.`;
-      const res = await base44.integrations.Core.InvokeLLM({ prompt, model: 'automatic' });
+      const prompt = `${a.systemPrompt}\n\nConversation so far:\n${history}\n\nRespond now as ${a.name}. Stay in character. Break your reply into several short paragraphs of 1-2 sentences each, separated by blank lines. Reply with only your next message.`;
+      const [res] = await Promise.all([
+        base44.integrations.Core.InvokeLLM({ prompt, model: 'automatic' }),
+        new Promise((r) => setTimeout(r, 1600 + Math.random() * 1400)),
+      ]);
       const reply = typeof res === 'string' ? res : String(res ?? '');
       setMessages([...next, { role: 'assistant', content: reply || '…' }]);
     } catch {

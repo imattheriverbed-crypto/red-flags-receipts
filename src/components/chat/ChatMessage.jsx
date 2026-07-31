@@ -21,7 +21,7 @@ export default function ChatMessage({ message, accent }) {
         {isUser ? (
           <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
         ) : (
-          <div className="text-sm leading-relaxed text-parchment/90 [&_p]:my-1 [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5">
+          <div className="text-sm leading-relaxed text-parchment/90 [&_p]:my-3 [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5">
             <ReactMarkdown>{message.content}</ReactMarkdown>
           </div>
         )}
