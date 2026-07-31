@@ -34,7 +34,7 @@ function RemindMe({ drop }) {
         interested_traits: [drop.name],
       });
       try { await base44.integrations.Core.SendEmail({ to: email, subject: "🚩 You're on the list — Red Flags & Receipts", body: buildWelcomeEmail() }); } catch {}
-      try { await base44.integrations.Core.SendEmail({ to: 'shopredflags@proton.me', subject: '🚩 New Drop Reminder', body: buildOwnerNotificationEmail({ title: 'New Drop Reminder', lines: [{ label: 'Email', value: email }, { label: 'Drop', value: drop.name }, { label: 'Source', value: 'Drop detail page' }] }) }); } catch {}
+      try { await base44.integrations.Core.SendEmail({ to: 'castingcallforqueens@gmail.com', subject: '🚩 New Drop Reminder', body: buildOwnerNotificationEmail({ title: 'New Drop Reminder', lines: [{ label: 'Email', value: email }, { label: 'Drop', value: drop.name }, { label: 'Source', value: 'Drop detail page' }] }) }); } catch {}
       setDone(true);
     } catch {
       setDone(true);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const DEFAULT_LAUNCH = new Date('2026-08-01T00:00:00');
+const DEFAULT_LAUNCH = new Date('2026-08-04T21:00:00');
 
 function getRemaining(target = DEFAULT_LAUNCH) {
   const now = new Date();

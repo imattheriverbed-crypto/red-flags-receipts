@@ -34,7 +34,7 @@ export default function NewsletterSignup() {
       // Best-effort owner notification (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
-          to: 'shopredflags@proton.me',
+          to: 'castingcallforqueens@gmail.com',
           subject: '🚩 New Newsletter Signup',
           body: buildOwnerNotificationEmail({
             title: 'New Newsletter Signup',

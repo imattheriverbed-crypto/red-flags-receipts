@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/80">First Drop • Aug 01</span>
+            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/80">First Drop • Aug 04 · 9PM</span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl xl:text-7xl text-parchment leading-[0.95] mb-6">

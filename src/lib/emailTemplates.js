@@ -108,9 +108,9 @@ function stepList() {
 }
 
 // Welcome email sent to the person who just signed up
-export function buildWelcomeEmail({ firstDrop = 'August 01, 2026', spot = '001', code = 'EARLYFLAG15' } = {}) {
+export function buildWelcomeEmail({ firstDrop = 'Tuesday, August 4th at 9:00 PM', spot = '001', code = 'EARLYFLAG15' } = {}) {
   return shell({
-    preheader: "You're on the list. Pre-launch spot confirmed — your August 01 discount is unlocked.",
+    preheader: "You're on the list. Pre-launch spot confirmed — your August 4th discount is unlocked.",
     hero: `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.3em;color:${ACCENT};text-transform:uppercase;margin-bottom:14px;">&#10003;&nbsp;&nbsp;PRE-LAUNCH SPOT CONFIRMED</div>
       <div style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:38px;color:${PARCHMENT};line-height:1.0;">YOU&rsquo;RE ON<br>THE <span style="color:${ACCENT};font-style:italic;">LIST</span>.</div>`,
     body: `<p style="margin:0 0 4px;">Your pre-launch spot is officially reserved. The first drop of the Red Flag scarf collection opens <strong style="color:${PARCHMENT};">${firstDrop}</strong> &mdash; and as an early subscriber, you get priority access and an exclusive discount before anyone else.</p>

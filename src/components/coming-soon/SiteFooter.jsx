@@ -25,8 +25,8 @@ export default function SiteFooter() {
             <h4 className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-4">The Drop Schedule</h4>
             <ul className="space-y-2">
               <li className="flex justify-between gap-4">
-                <span className="font-mono-flag text-xs text-parchment/60">CEO OF ME</span>
-                <span className="font-mono-flag text-xs text-primary">Aug 01</span>
+                <span className="font-mono-flag text-xs text-parchment/60">SIGNATURE COLLECTION</span>
+                <span className="font-mono-flag text-xs text-primary">Aug 04 · 9PM</span>
               </li>
               <li className="flex justify-between gap-4">
                 <span className="font-mono-flag text-xs text-parchment/60">PETS.</span>

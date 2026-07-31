@@ -51,7 +51,7 @@ function DropCard({ drop, index }) {
       // Best-effort owner notification (recipient must be a registered app user)
       try {
         await base44.integrations.Core.SendEmail({
-          to: 'shopredflags@proton.me',
+          to: 'castingcallforqueens@gmail.com',
           subject: '🚩 New Drop Reminder Set',
           body: buildOwnerNotificationEmail({
             title: 'New Drop Reminder',
