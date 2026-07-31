@@ -18,16 +18,16 @@ export default function PersonaCard({ persona, onClose }) {
           focalPointX={0.5}
           focalPointY={0.18}
           className="w-full h-full"
-          alt={persona.name}
-        />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FDF7F0] to-transparent" />
+          alt={persona.name} />
+        
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FDF7F0] to-transparent hidden" />
       </div>
 
       <div className="relative flex flex-col items-center gap-2.5 px-6 pb-6 pt-9 text-center">
         <span
           className="absolute left-1/2 -top-7 -translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full ring-4 ring-[#FDF7F0] shadow-md"
-          style={{ backgroundColor: persona.badgeBg }}
-        >
+          style={{ backgroundColor: persona.badgeBg }}>
+          
           <Icon className="w-6 h-6 text-white" />
         </span>
 
@@ -36,8 +36,8 @@ export default function PersonaCard({ persona, onClose }) {
         </h3>
         <p
           className="font-body text-[10px] font-semibold tracking-[0.22em] uppercase"
-          style={{ color: persona.taglineColor }}
-        >
+          style={{ color: persona.taglineColor }}>
+          
           {persona.tagline}
         </p>
         <span className="block w-12 h-px" style={{ backgroundColor: persona.taglineColor, opacity: 0.4 }} />
@@ -52,12 +52,12 @@ export default function PersonaCard({ persona, onClose }) {
             navigate(`/chat/${persona.slug}`);
           }}
           className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-white text-[12px] font-semibold tracking-[0.14em] uppercase transition-transform hover:scale-[1.02]"
-          style={{ backgroundColor: persona.buttonBg }}
-        >
+          style={{ backgroundColor: persona.buttonBg }}>
+          
           <MessageCircle className="w-4 h-4" />
           Talk with {persona.name}
         </button>
       </div>
-    </div>
-  );
+    </div>);
+
 }
