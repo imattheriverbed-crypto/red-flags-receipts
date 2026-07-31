@@ -2,30 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { X, Heart, Sprout, MessageCircleQuestion } from 'lucide-react';
 import PersonaCard from './PersonaCard';
 
+const SHARED_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/d7da2c72e_12ad6075-d96e-4a62-8baa-41607a122bf8.png';
+
 const PERSONAS = [
   {
     name: 'Miss Path',
-    color: '#4A675B',
+    color: '#4A6757',
     icon: 'tree',
     tagline: 'Wise. Experienced. No-nonsense.',
     desc: 'Straightforward and perceptive. I ask the hard questions with care and help you see the truth so you can make empowered choices.',
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/5db41ce44_generated_image.png',
+    img: SHARED_IMG,
+    focalX: 0.16,
+    focalY: 0.4,
   },
   {
     name: 'Emily',
-    color: '#7D6D99',
+    color: '#8D7A9E',
     icon: 'cap',
     tagline: 'Thoughtful. Analytical. Grounded.',
     desc: 'I combine education and experience. With two narcissists behind me, I help you understand the dynamics and rebuild with clarity and confidence.',
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/5dc5df234_generated_image.png',
+    img: SHARED_IMG,
+    focalX: 0.5,
+    focalY: 0.4,
   },
   {
     name: 'Emma',
-    color: '#C86A76',
+    color: '#C86F7A',
     icon: 'star',
     tagline: 'Witty. Warm. A smart-alec.',
     desc: "I'll make you laugh, call it like I see it, and be the best friend who helps you see what's really going on.",
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6b9da8d14_generated_image.png',
+    img: SHARED_IMG,
+    focalX: 0.84,
+    focalY: 0.4,
   },
 ];
 
@@ -61,7 +69,7 @@ export default function HelpModal() {
             <button
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full text-[#1A2226]/60 hover:text-[#1A2226] hover:bg-black/5 transition-colors z-10"
+              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full text-[#1B263B]/60 hover:text-[#1B263B] hover:bg-black/5 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -70,10 +78,10 @@ export default function HelpModal() {
             <Sprout className="absolute top-6 right-16 w-9 h-9" style={{ color: '#9FB69A' }} />
 
             <header className="text-center mb-9 pt-6">
-              <h2 className="font-display text-2xl sm:text-4xl text-[#1A2226] leading-tight">
+              <h2 className="font-display text-2xl sm:text-4xl text-[#1B263B] leading-tight">
                 Who would you like to talk with today?
               </h2>
-              <p className="mt-3 font-body text-sm sm:text-base text-[#1A2226]/70 max-w-xl mx-auto">
+              <p className="mt-3 font-body text-sm sm:text-base text-[#1B263B]/70 max-w-xl mx-auto">
                 Each of us brings a different style of support. Choose the one that feels right for you.
               </p>
             </header>
