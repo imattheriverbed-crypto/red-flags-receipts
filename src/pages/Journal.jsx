@@ -30,7 +30,7 @@ export default function Journal() {
           fittingType="fill"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/75 to-ink pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/95 via-ink/90 to-ink pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Journal ◆</span>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-parchment leading-[0.95] mb-6">
