@@ -11,10 +11,12 @@ import { buildWelcomeEmail, buildOwnerNotificationEmail } from '@/lib/emailTempl
 import { UPCOMING, getDropBySlug } from '@/data/drops';
 
 const DROP_DATES = {
-  'pets': '2026-08-08T12:00:00',
-  'bags': '2026-08-15T12:00:00',
-  '50-lang': '2026-08-22T12:00:00',
-  'receipts-journal': '2026-08-29T12:00:00',
+  'pets': '2026-08-08T21:00:00',
+  'travel': '2026-08-15T21:00:00',
+  'fuck-you': '2026-08-22T21:00:00',
+  'receipts-journal': '2026-08-29T21:00:00',
+  'outerwear': '2026-09-05T21:00:00',
+  'fitness': '2026-09-12T21:00:00',
 };
 
 function RemindMe({ drop }) {
