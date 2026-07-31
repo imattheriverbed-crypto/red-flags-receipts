@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import SiteFooter from '@/components/coming-soon/SiteFooter';
 import TickerTape from '@/components/coming-soon/TickerTape';
 import CollectionCard from '@/components/coming-soon/CollectionCard';
 
-import { FEATURED, UPCOMING } from '@/data/drops';
+import { FEATURED, UPCOMING, COLLECTION_CATEGORIES } from '@/data/drops';
 
 export default function Collections() {
+  const [active, setActive] = useState('All');
+  const visible = active === 'All' ? UPCOMING : UPCOMING.filter((c) => c.category === active);
+
   return (
     <div className="dark bg-ink text-parchment min-h-screen">
       <SiteNav />
@@ -37,11 +40,41 @@ export default function Collections() {
           <h2 className="font-display font-black text-2xl sm:text-3xl text-parchment">Upcoming Drops</h2>
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/40">Little by little</span>
         </div>
+
+        {/* Category filter */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {COLLECTION_CATEGORIES.map((cat) => {
+            const isActive = active === cat;
+            const count = cat === 'All' ? UPCOMING.length : UPCOMING.filter((c) => c.category === cat).length;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                className={`font-mono-flag text-[11px] uppercase tracking-[0.22em] px-4 py-2.5 transition-colors border ${
+                  isActive
+                    ? 'bg-primary text-parchment border-primary'
+                    : 'border-primary/30 text-parchment/70 hover:text-primary hover:border-primary/60'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  {cat}
+                  <span className={isActive ? 'text-parchment/70' : 'text-parchment/35'}>{count}</span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {UPCOMING.map((c) => (
+          {visible.map((c) => (
             <CollectionCard key={c.name} collection={c} to={`/collections/${c.slug}`} />
           ))}
         </div>
+        {visible.length === 0 && (
+          <p className="font-mono-flag text-xs uppercase tracking-[0.2em] text-parchment/50 text-center py-16">
+            No collections in this category yet.
+          </p>
+        )}
       </section>
 
       {/* Manifesto strip */}

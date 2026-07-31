@@ -15,6 +15,8 @@ export const FEATURED = {
   img: 'https://cdn.shopify.com/s/files/1/0762/8036/5223/files/6717550338414912274_2048.jpg?v=1785328351',
 };
 
+export const COLLECTION_CATEGORIES = ['All', 'Apparel', 'Accessories', 'Stationery', 'Outerwear', 'Activewear'];
+
 export const UPCOMING = [
   {
     slug: 'pets',
@@ -25,6 +27,7 @@ export const UPCOMING = [
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/86e0cee69_generated_image.png',
     desc: 'Ramsey approved. Apparel for the ones who love you unconditionally — outfit your sidekick in pieces that speak their language.',
     products: ['Signature Bandana', 'Sidekick Tee', 'Good Boy Hoodie', 'Collar Charm'],
+    category: 'Accessories',
   },
   {
     slug: 'travel',
@@ -35,6 +38,7 @@ export const UPCOMING = [
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/8f33092b5_generated_image.png',
     desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you — wherever you go.',
     products: ['Receipts Tote', 'Warning Crossbody', '36-Flag Backpack', 'Carry-On Flag'],
+    category: 'Accessories',
   },
   {
     slug: 'fuck-you',
@@ -45,6 +49,7 @@ export const UPCOMING = [
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/8c9f2a956_generated_image.png',
     desc: 'Two ways to close the chapter — "go fuck yourself" in 50 languages, or "bless your heart" with a smile. Distressed screen print. Choose your goodbye.',
     products: ['50 Languages Tee', 'Bless Your Heart Tee', 'GFY Hoodie', 'Goodbye Cap'],
+    category: 'Apparel',
   },
   {
     slug: 'receipts-journal',
@@ -55,6 +60,7 @@ export const UPCOMING = [
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/c119e4112_generated_image.png',
     desc: 'An exclusive, extensive recorder of receipts. Track the patterns, save the evidence, protect your peace — 100+ pages designed to help you see it clear and take your power back.',
     products: ['Receipts Journal', 'Evidence Notebook', 'Pattern Tracker', 'Red Flag Pen Set'],
+    category: 'Stationery',
   },
   {
     slug: 'outerwear',
@@ -65,6 +71,7 @@ export const UPCOMING = [
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/04f5f7b63_generated_image.png',
     desc: 'Trenches, bombers & coats lined in the warning print. Wrap yourself in the red flags you survived — outerwear that tells the story before you say a word.',
     products: ['Warning Trench', 'Flag-Lined Bomber', 'Receipts Overcoat', 'Signal Cape'],
+    category: 'Outerwear',
   },
   {
     slug: 'fitness',
@@ -75,6 +82,7 @@ export const UPCOMING = [
     img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/f8d3eb67f_generated_image.png',
     desc: 'Activewear for the comeback. Sports bras, leggings & wraps built for the version of you that trains through the heartbreak. Sweat out the receipts.',
     products: ['Power Sports Bra', 'Flag Sash Leggings', 'Survival Hoodie', 'Reset Cap'],
+    category: 'Activewear',
   },
 ];
 
