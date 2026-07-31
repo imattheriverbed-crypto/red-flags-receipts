@@ -42,8 +42,6 @@ export default function ComingSoon() {
         </div>
       </section>
 
-      <TickerTape variant="red" />
-
       <LeadCapture />
 
       <ProductGallery />
