@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Check, ExternalLink } from 'lucide-react';
+import { Check, ExternalLink, ChevronRight } from 'lucide-react';
 import SiteNav from '@/components/coming-soon/SiteNav';
 import NewsletterBanner from '@/components/coming-soon/NewsletterBanner';
 import ProductFooter from '@/components/coming-soon/ProductFooter';
@@ -67,6 +67,22 @@ export default function ProductPage() {
       <SiteNav />
 
       <div className="w-[90%] max-w-[1600px] mx-auto pt-28 pb-16">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 mb-6 font-mono-flag text-[11px] uppercase tracking-[0.22em]">
+          <Link to="/shop" className="text-parchment/55 hover:text-primary transition-colors">Shop</Link>
+          {product.tag && (
+            <>
+              <ChevronRight className="w-3 h-3 text-parchment/30" />
+              <Link to={`/shop?cat=${encodeURIComponent(product.tag)}`} className="text-parchment/55 hover:text-primary transition-colors">{product.tag}</Link>
+            </>
+          )}
+          <ChevronRight className="w-3 h-3 text-parchment/30" />
+          <span className="text-primary truncate">{product.title}</span>
+        </nav>
+
+        {/* Page title */}
+        <h1 className="font-bebas text-4xl sm:text-5xl lg:text-6xl leading-[0.95] mb-8">{product.title}</h1>
+
         {/* Product */}
         <section className="grid lg:grid-cols-[110px_1.2fr_0.9fr] gap-8 lg:gap-10">
           {/* Thumbnails */}
