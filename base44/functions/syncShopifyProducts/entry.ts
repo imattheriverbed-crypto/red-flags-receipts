@@ -98,6 +98,12 @@ export default async function(req) {
         body: JSON.stringify({ query: PRODUCTS_QUERY }),
       });
 
+      // Surface the GraphQL failure so we can diagnose the token, then continue to fallback
+      if (!res.ok) {
+        let detail = "";
+        try { detail = (await res.text()).slice(0, 200); } catch {}
+        return Response.json({ error: `Storefront API ${res.status}`, detail, source: "storefront" }, { status: 502 });
+      }
       if (res.ok) {
         const json = await res.json();
         if (!json.errors) {
