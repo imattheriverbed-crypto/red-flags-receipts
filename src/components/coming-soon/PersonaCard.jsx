@@ -25,13 +25,13 @@ export default function PersonaCard({ persona, onClose }) {
 
       <div className="relative flex flex-col items-center gap-2.5 px-6 pb-6 pt-9 text-center">
         <span
-          className="absolute left-1/2 -top-7 -translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full ring-4 ring-[#FDF7F0] shadow-md"
+          className="absolute left-1/2 -top-7 -translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full ring-4 ring-[#FDF7F0] shadow-md hidden"
           style={{ backgroundColor: persona.badgeBg }}>
           
           <Icon className="w-6 h-6 text-white" />
         </span>
 
-        <h3 className="font-display text-2xl leading-none" style={{ color: persona.nameColor }}>
+        <h3 className="font-display text-2xl leading-none hidden" style={{ color: persona.nameColor }}>
           {persona.name}
         </h3>
         <p
