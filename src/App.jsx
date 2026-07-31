@@ -18,6 +18,7 @@ import Drop from './pages/Drop';
 import Journal from './pages/Journal';
 import JournalEntry from './pages/JournalEntry';
 import JournalAdmin from './pages/admin/JournalAdmin';
+import Confess from './pages/Confess';
 import ProductPage from './pages/ProductPage';
 import HelpModal from '@/components/coming-soon/HelpModal';
 import Chat from './pages/Chat';
@@ -62,6 +63,7 @@ const AuthenticatedApp = () => {
     <Route path="/journal" element={<Journal />} />
     <Route path="/journal/:slug" element={<JournalEntry />} />
     <Route path="/admin/journal" element={<JournalAdmin />} />
+    <Route path="/confess" element={<Confess />} />
     <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

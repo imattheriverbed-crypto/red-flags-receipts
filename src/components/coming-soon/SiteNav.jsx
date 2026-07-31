@@ -34,6 +34,7 @@ const LEFT_ITEMS = [
 ];
 
 const RIGHT_ITEMS = [
+  { label: 'Confess', to: '/confess' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ];
