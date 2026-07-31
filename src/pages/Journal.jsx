@@ -23,8 +23,14 @@ export default function Journal() {
     <div className="dark bg-ink text-parchment min-h-screen">
       <SiteNav />
 
-      <header className="relative pt-40 pb-12 px-6 sm:px-12 text-center overflow-hidden grain-overlay">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-ink pointer-events-none" />
+      <header className="relative pt-40 pb-12 px-6 sm:px-12 text-center overflow-hidden grain-overlay min-h-[80vh] flex items-center">
+        <Image
+          src="https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8d3a47c3_e6607e27-c3a1-41cb-a949-96de1e2aa472.png"
+          alt=""
+          fittingType="fill"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/75 to-ink pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">◆ The Journal ◆</span>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-parchment leading-[0.95] mb-6">
