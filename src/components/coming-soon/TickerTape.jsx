@@ -7,7 +7,7 @@ export default function TickerTape({ variant = 'dark' }) {
   const items = Array.from({ length: 6 });
 
   return (
-    <div className={`relative overflow-hidden ticker-fade ${bg} border-y border-primary/30 py-3 select-none`}>
+    <div className={`relative overflow-hidden ticker-fade ${bg} border-y border-primary/30 py-3 select-none opacity-50`}>
       <div className="ticker-track flex whitespace-nowrap">
         {[...items, ...items].map((_, i) => (
           <span key={i} className="font-mono-flag text-xs sm:text-sm uppercase tracking-[0.3em] flex items-center gap-6 px-6">
