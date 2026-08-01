@@ -98,7 +98,7 @@ export default async function(req) {
         body: JSON.stringify({ query: PRODUCTS_QUERY }),
       });
 
-      // Storefront failed (bad token, 401, etc.) — fall through to the public feed
+      // Storefront failed (bad token, 401, etc.) — fall through to the admin API
       if (!res.ok) {
         // (diagnostic only; the fallback below handles it)
         try { await res.text(); } catch {}
@@ -143,10 +143,67 @@ export default async function(req) {
       }
     }
   } catch (e) {
+    // fall through to admin API
+  }
+
+  // 2) Fallback: Admin GraphQL API (shpat_... token)
+  try {
+    const adminToken = secrets.get("SHOPIFY_ADMIN_TOKEN");
+    if (adminToken) {
+      const url = `https://${SHOP_DOMAIN}/admin/api/${API_VERSION}/graphql.json`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Shopify-Access-Token": adminToken,
+        },
+        body: JSON.stringify({ query: PRODUCTS_QUERY }),
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (!json.errors) {
+          const edges = json.data?.products?.edges || [];
+          const products = edges.map(({ node }) => {
+            const images = (node.images?.edges || []).map((e) => e.node.url).filter(Boolean);
+            const img = images[0] || node.featuredImage?.url || "";
+            const variants = (node.variants?.edges || []).map((e) => {
+              const v = e.node;
+              return {
+                title: v.title,
+                available: v.availableForSale,
+                price: formatPrice(v.price, "USD"),
+                options: v.selectedOptions || [],
+              };
+            });
+            const minP = node.priceRange?.minVariantPrice;
+            const maxP = node.priceRange?.maxVariantPrice;
+            let price = formatPrice(minP?.amount, minP?.currencyCode);
+            if (maxP && Number(maxP.amount) !== Number(minP?.amount)) {
+              price = `${price} – ${formatPrice(maxP.amount, maxP.currencyCode)}`;
+            }
+            const tag = normalizeTag(node.productType, node.tags);
+            const href = node.onlineStoreUrl || `https://${SHOP_DOMAIN}/products/${node.handle}`;
+            return {
+              tag,
+              title: node.title,
+              price,
+              img,
+              href,
+              slug: node.handle,
+              description: node.description || "",
+              images,
+              variants,
+            };
+          });
+          return Response.json({ products, count: products.length, source: "admin" });
+        }
+      }
+    }
+  } catch (e) {
     // fall through to public feed
   }
 
-  // 2) Fallback: public products.json feed (no auth required)
+  // 3) Fallback: public products.json feed (no auth required)
   try {
     const r = await fetch(`https://${SHOP_DOMAIN}/products.json?limit=250`);
     if (r.ok) {
