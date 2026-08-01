@@ -66,9 +66,9 @@ export default function ProductPage() {
     <div className="dark bg-[#050505] text-white font-body min-h-screen">
       <SiteNav />
 
-      <div className="w-[90%] max-w-[1600px] mx-auto pt-28 pb-16">
+      <div className="w-[90%] max-w-[1600px] mx-auto pt-40 pb-16">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 mb-6 font-mono-flag text-[11px] uppercase tracking-[0.22em]">
+        <nav className="flex flex-wrap items-center gap-2 mb-6 font-mono-flag text-[11px] uppercase tracking-[0.22em]">
           <Link to="/shop" className="text-parchment/55 hover:text-primary transition-colors">Shop</Link>
           {product.tag && (
             <>
@@ -77,7 +77,7 @@ export default function ProductPage() {
             </>
           )}
           <ChevronRight className="w-3 h-3 text-parchment/30" />
-          <span className="text-primary truncate">{product.title}</span>
+          <span className="text-primary">{product.title}</span>
         </nav>
 
         {/* Page title */}
