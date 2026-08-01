@@ -8,6 +8,8 @@ const EMPOWERMENT_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e30
 const PETS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/96ea557da_generated_image.png';
 const TOTE_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/92a01dd29_Copilot_20260729_125659.png';
 const JOURNAL_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/6d8774117_RedFlagsreceiptsjournalmockup.png';
+const FITNESS_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/2e6159c61_generated_image.png';
+const SHOES_IMG = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/35deffe39_generated_image.png';
 
 const DROPS = [
   { trait: 'CEO OF ME', desc: 'I hired me. I trust me. I choose me. For the one who left, leveled up, and built a life they love.', img: EMPOWERMENT_IMG, drop: 'Aug 01', tone: 'empower' },
@@ -15,6 +17,8 @@ const DROPS = [
   { trait: 'BAGS.', desc: 'Totes, backpacks, purses & luggage. Some lessons become scars. Some become style. Carry the flags with you.', img: TOTE_IMG, drop: 'Aug 15', tone: 'bags', fit: true },
   { trait: '50 LANGUAGES × BLESS YOUR HEART', desc: 'Two ways to close the chapter — "go fuck yourself" in 50 languages, or "bless your heart" with a smile. Distressed screen print. Choose your goodbye.', img: LANGUAGES_IMG, drop: 'Aug 22', fit: true },
   { trait: 'RECEIPTS JOURNAL', desc: 'An exclusive, extensive recorder of receipts. Track the patterns, save the evidence, protect your peace — 100+ pages designed to help you see it clear and take your power back.', img: JOURNAL_IMG, drop: 'Aug 29', tone: 'journal', fit: true },
+  { trait: 'WORKOUT.', desc: 'Train like the comeback depends on it — because it does. Performance activewear for the one who sweats out the stress and rebuilds stronger.', img: FITNESS_IMG, drop: 'Sep 05', tone: 'fitness', fit: true },
+  { trait: 'SHOES.', desc: 'Walk away from the red flags in style. Every step a reminder you left the chaos behind — footwear built for the comeback.', img: SHOES_IMG, drop: 'Sep 12', tone: 'shoes', fit: true },
 ];
 
 function DropCard({ drop, index }) {
@@ -81,7 +85,7 @@ function DropCard({ drop, index }) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
         <div className="absolute top-4 left-4 flex items-center gap-2">
           <span className="font-mono-flag text-[9px] uppercase tracking-[0.2em] text-parchment bg-primary px-3 py-1">
-            {drop.tone === 'empower' ? 'Empowerment Drop' : drop.tone === 'pets' ? 'Pet Drop' : drop.tone === 'bags' ? 'Bag Drop' : drop.tone === 'journal' ? 'Receipts Journal Drop' : `Drop ${drop.drop}`}
+            {drop.tone === 'empower' ? 'Empowerment Drop' : drop.tone === 'pets' ? 'Pet Drop' : drop.tone === 'bags' ? 'Bag Drop' : drop.tone === 'journal' ? 'Receipts Journal Drop' : drop.tone === 'fitness' ? 'Workout Drop' : drop.tone === 'shoes' ? 'Shoes Drop' : `Drop ${drop.drop}`}
           </span>
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-5">
