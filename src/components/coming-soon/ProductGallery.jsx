@@ -75,7 +75,7 @@ function DropCard({ drop, index }) {
   };
 
   return (
-    <div className="flex-shrink-0 w-[80vw] sm:w-[380px] snap-center group">
+    <div className="group">
       <div className="relative aspect-[3/4] overflow-hidden bg-ink border-2 border-primary">
         <img src={drop.img} alt={drop.trait} className={`w-full h-full ${drop.fit ? 'object-contain object-top' : 'object-cover'} transition-transform duration-700 group-hover:scale-105`} />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
@@ -140,7 +140,7 @@ export default function ProductGallery() {
         </div>
       </div>
 
-      <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-6 sm:px-12 pb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 sm:px-12 pb-6">
         {DROPS.map((drop, i) => (
           <DropCard key={i} drop={drop} index={i} />
         ))}
