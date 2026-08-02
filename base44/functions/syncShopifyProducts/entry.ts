@@ -1,6 +1,6 @@
 import { secrets } from "base44:runtime";
 
-const SHOP_DOMAIN = "ciekr2-j1.myshopify.com";
+const SHOP_DOMAIN = "shopredflags.myshopify.com";
 const API_VERSION = "2024-10";
 
 const PRODUCTS_QUERY = `query {
