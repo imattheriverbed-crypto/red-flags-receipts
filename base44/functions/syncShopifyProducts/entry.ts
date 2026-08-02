@@ -1,6 +1,6 @@
 import { secrets } from "base44:runtime";
 
-const SHOP_DOMAIN = "shopredflags.myshopify.com";
+const SHOP_DOMAIN = "https://red-flags-and-receipts.printify.me/";
 const API_VERSION = "2024-10";
 
 const PRODUCTS_QUERY = `query {
