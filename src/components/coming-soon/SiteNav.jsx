@@ -310,7 +310,7 @@ export default function SiteNav() {
           ))}
 
           <a
-            href="https://buymeacoffee.com/YOURUSERNAME"
+            href="https://buymeacoffee.com/redflags"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] border border-primary text-primary px-5 py-4 text-center min-h-[48px] hover:bg-primary hover:text-parchment transition-colors"
