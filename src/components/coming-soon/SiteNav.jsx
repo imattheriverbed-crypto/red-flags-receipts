@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag, ChevronDown } from 'lucide-react';
@@ -41,20 +40,10 @@ const RIGHT_ITEMS = [
 ];
 
 function linkClass(item, pathname) {
-  const active =
-    pathname === item.to ||
-    (item.children && pathname.startsWith(item.to));
-
-  const base =
-    'font-mono-flag text-[11px] font-semibold uppercase tracking-[0.28em] transition-colors';
-
-  if (item.label === 'Shop') {
-    return `${base} text-primary`;
-  }
-
-  return active
-    ? `${base} text-primary`
-    : `${base} text-parchment/85 hover:text-primary`;
+  const active = pathname === item.to || (item.children && pathname.startsWith(item.to));
+  const base = 'font-mono-flag text-[11px] font-semibold uppercase tracking-[0.28em] transition-colors';
+  if (item.label === 'Shop') return `${base} text-primary`;
+  return active ? `${base} text-primary` : `${base} text-parchment/85 hover:text-primary`;
 }
 
 function DesktopItem({ item, pathname }) {
@@ -65,26 +54,21 @@ function DesktopItem({ item, pathname }) {
       </Link>
     );
   }
-
   return (
     <div className="relative group">
-      <Link
-        to={item.to}
-        className={`${linkClass(item, pathname)} flex items-center gap-1`}
-      >
+      <Link to={item.to} className={`${linkClass(item, pathname)} flex items-center gap-1`}>
         {item.label}
         <ChevronDown className="w-3 h-3 mt-px transition-transform group-hover:rotate-180" />
       </Link>
-
       <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
         <div className="bg-black border border-primary/30 min-w-[210px] py-2 shadow-xl">
-          {item.children.map((child) => (
+          {item.children.map((c) => (
             <Link
-              key={child.to}
-              to={child.to}
+              key={c.to}
+              to={c.to}
               className="block px-5 py-2.5 font-mono-flag text-[11px] uppercase tracking-[0.22em] text-parchment/75 hover:text-primary hover:bg-primary/5 transition-colors"
             >
-              {child.label}
+              {c.label}
             </Link>
           ))}
         </div>
@@ -97,9 +81,7 @@ export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname, location.search]);
+  useEffect(() => { setOpen(false); }, [location.pathname, location.search]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-primary/25">
@@ -110,138 +92,84 @@ export default function SiteNav() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto flex items-stretch px-5 sm:px-12 py-3">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-10 py-3">
         {/* Left links */}
-        <div className="hidden md:flex flex-1 items-center justify-start gap-7">
+        <div className="hidden md:flex items-center justify-start gap-6">
           {LEFT_ITEMS.map((item) => (
-            <DesktopItem
-              key={item.label}
-              item={item}
-              pathname={location.pathname}
-            />
+            <DesktopItem key={item.label} item={item} pathname={location.pathname} />
           ))}
         </div>
 
         {/* Centered logo */}
-        <div className="hidden md:flex shrink-0 items-center justify-center px-4">
-          <Link
-            to="/home"
-            aria-label="Red Flags Society — Home"
-            className="flex items-center"
-          >
+        <div className="hidden md:flex items-center justify-center px-10">
+          <Link to="/home" aria-label="Red Flags Society — Home" className="flex items-center">
             <Logo stampOnLoad />
           </Link>
         </div>
 
-        {/* Right links + membership + CTA + cart */}
-        <div className="hidden md:flex flex-1 items-center justify-end gap-7">
+        {/* Right links + CTA + cart */}
+        <div className="hidden md:flex items-center justify-end gap-6">
           {RIGHT_ITEMS.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={linkClass(item, location.pathname)}
-            >
+            <Link key={item.to} to={item.to} className={linkClass(item, location.pathname)}>
               {item.label}
             </Link>
           ))}
-
-          <a
-            href="https://buymeacoffee.com/redflags"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono-flag text-[11px] font-semibold uppercase tracking-[0.22em] text-parchment/85 hover:text-primary transition-colors whitespace-nowrap"
-          >
-            Become a Member
-          </a>
-
           <Link
             to="/shop"
             className="font-mono-flag text-[11px] font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-2.5 hover:bg-parchment hover:text-ink transition-colors whitespace-nowrap"
           >
             Shop Now
           </Link>
-
-          <button
-            aria-label="Cart"
-            className="relative flex items-center justify-center w-9 h-9 text-parchment hover:text-primary transition-colors"
-          >
+          <button aria-label="Cart" className="relative flex items-center justify-center w-9 h-9 text-parchment hover:text-primary transition-colors">
             <ShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 bg-primary text-parchment text-[9px] font-bold leading-none rounded-full w-4 h-4 flex items-center justify-center">
-              0
-            </span>
+            <span className="absolute -top-1 -right-1 bg-primary text-parchment text-[9px] font-bold leading-none rounded-full w-4 h-4 flex items-center justify-center">0</span>
           </button>
         </div>
 
         {/* Mobile: logo left, toggle right */}
         <div className="md:hidden flex items-center justify-between w-full">
-          <Link
-            to="/home"
-            aria-label="Red Flags Society — Home"
-            className="flex items-center"
-          >
+          <Link to="/home" aria-label="Red Flags Society — Home" className="flex items-center">
             <Logo stampOnLoad />
           </Link>
-
           <button
-            onClick={() => setOpen((value) => !value)}
+            onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
             className="flex items-center justify-center w-10 h-10 border border-primary/40 text-parchment hover:bg-primary hover:text-parchment transition-colors"
           >
-            {open ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-          open ? 'max-h-[52rem]' : 'max-h-0'
-        }`}
-      >
+      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${open ? 'max-h-[48rem]' : 'max-h-0'}`}>
         <div className="bg-black border-t border-primary/25 px-5 py-4 flex flex-col divide-y divide-parchment/10">
           {[...LEFT_ITEMS, ...RIGHT_ITEMS].map((item) => (
             <div key={item.label} className="py-1">
               <Link
                 to={item.to}
                 className={`flex items-center font-mono-flag text-[13px] font-semibold uppercase tracking-[0.25em] py-3.5 min-h-[44px] transition-colors ${
-                  location.pathname === item.to
-                    ? 'text-primary'
-                    : 'text-parchment/85 hover:text-primary'
+                  location.pathname === item.to ? 'text-primary' : 'text-parchment/85 hover:text-primary'
                 }`}
               >
                 {item.label}
               </Link>
-
               {item.children && (
                 <div className="flex flex-col pl-4 pb-1">
-                  {item.children.map((child) => (
+                  {item.children.map((c) => (
                     <Link
-                      key={child.to}
-                      to={child.to}
+                      key={c.to}
+                      to={c.to}
                       className="flex items-center font-mono-flag text-[11px] uppercase tracking-[0.2em] py-2.5 min-h-[40px] text-parchment/55 hover:text-primary transition-colors"
                     >
-                      {child.label}
+                      {c.label}
                     </Link>
                   ))}
                 </div>
               )}
             </div>
           ))}
-
-          <a
-            href="https://buymeacoffee.com/redflags"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] border border-primary text-primary px-5 py-4 text-center min-h-[48px] hover:bg-primary hover:text-parchment transition-colors"
-          >
-            Become a Member
-          </a>
-
           <Link
             to="/shop"
             className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-4 text-center min-h-[48px] hover:bg-parchment hover:text-ink transition-colors"
