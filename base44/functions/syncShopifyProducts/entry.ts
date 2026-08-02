@@ -55,7 +55,7 @@ function fromProductsJson(list) {
     const img = images[0] || "";
     const variants = (p.variants || []).map((v) => ({
       title: v.title,
-      available: v.available,
+      available: v.availableforSale,
       price: formatPrice(v.price, "USD"),
       options: [],
     }));
