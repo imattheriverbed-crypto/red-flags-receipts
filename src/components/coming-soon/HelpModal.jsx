@@ -21,7 +21,7 @@ export default function HelpModal() {
     <>
       <button
         onClick={() => setOpen(true)}
-        aria-label="Confused?"
+        aria-label="Confused about your situation?  Start here"
         className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-primary text-white px-5 py-3.5 shadow-xl ring-1 ring-white/20 transition-transform hover:scale-105"
       >
         <MessageCircleQuestion className="w-5 h-5" />
