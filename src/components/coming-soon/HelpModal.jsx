@@ -25,7 +25,7 @@ export default function HelpModal() {
         className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-primary text-white px-5 py-3.5 shadow-xl ring-1 ring-white/20 transition-transform hover:scale-105"
       >
         <MessageCircleQuestion className="w-5 h-5" />
-        <span className="font-body text-xs font-semibold uppercase tracking-[0.15em] hidden sm:inline">Confused?</span>
+        <span className="font-body text-xs font-semibold uppercase tracking-[0.15em] hidden sm:inline">Confused about your situation?  Start here</span>
       </button>
 
       {open && (
