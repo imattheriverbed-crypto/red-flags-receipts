@@ -1,99 +1,77 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import CountdownClock from './CountdownClock';
+import { Flag, ReceiptText, Globe2, LockKeyhole, ArrowRight } from 'lucide-react';
 
-const SLIDES = [
-  {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png',
-    headline: (<>THE WARNING BECOMES <span className="text-primary">THE PARTY</span>.</>),
-  },
-  {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/66e1a3d73_generated_image.png',
-    headline: (<>WEAR THE <span className="text-primary">WARNING</span>.</>),
-  },
-  {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/eed049deb_generated_image.png',
-    headline: (<>NOT FOR <span className="text-primary">EVERYONE</span>. MADE FOR YOU.</>),
-  },
-  {
-    img: 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/ef6328d93_generated_image.png',
-    headline: (<>SURVIVED <span className="text-primary">IT</span>. WEAR IT.</>),
-  },
-];
+const HERO_IMAGE = 'https://media.base44.com/images/public/6a5a113aa6cf7e3091bf0eec/a8bd5e8c0_generated_image.png';
 
 export default function Hero() {
   const navigate = useNavigate();
-  const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % SLIDES.length), 6000);
-    return () => clearInterval(t);
-  }, []);
+  const features = [
+    { icon: Flag, title: 'Signature Designs', copy: 'Bold pieces that speak.' },
+    { icon: ReceiptText, title: 'Real Receipts', copy: 'Inspired by the truth.' },
+    { icon: Globe2, title: 'Worldwide Shipping', copy: 'We ship everywhere.' },
+    { icon: LockKeyhole, title: 'Secure Checkout', copy: 'Safe, simple, secure.' },
+  ];
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-ink grain-overlay">
-      {/* Slides */}
-      {SLIDES.map((s, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{ opacity: i === index ? 1 : 0 }}
-        >
-          <img src={s.img} alt="" className="w-full h-full object-cover object-[50%_25%]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/40" />
-        </div>
-      ))}
+    <section className="bg-[#f3f0ec] text-black pt-[118px] md:pt-[132px]">
+      <div className="grid lg:grid-cols-[0.92fr_1.08fr] min-h-[680px] lg:min-h-[760px]">
+        <div className="flex items-center px-7 sm:px-12 lg:px-20 xl:px-24 py-16 lg:py-20">
+          <div className="max-w-[610px]">
+            <p className="font-mono-flag text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-primary mb-8">
+              Red Flags &amp; Receipts™
+            </p>
 
-      {/* Content */}
-      <div className="relative z-30 flex flex-col justify-start min-h-screen px-6 sm:px-12 pt-40 pb-28">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-2 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/80">First Drop • Aug 04 · 9PM</span>
-          </div>
+            <h1 className="font-display font-black uppercase text-[clamp(4rem,8vw,8.5rem)] leading-[0.78] tracking-[-0.055em] mb-8">
+              <span className="block">We Saw</span>
+              <span className="block">The Signs.</span>
+              <span className="block text-primary mt-3">We Made</span>
+              <span className="block text-primary">An Outfit.</span>
+            </h1>
 
-          <h1 className="font-display font-black text-4xl sm:text-6xl xl:text-7xl text-parchment leading-[0.95] mb-6">
-            {SLIDES[index].headline}
-          </h1>
+            <div className="w-14 h-[3px] bg-black mb-6" />
 
-          <p className="font-body text-xs sm:text-sm uppercase tracking-[0.25em] text-parchment/70 max-w-md mb-3">
-            Luxury streetwear inspired by the red flags we survived.
-          </p>
-          <p className="font-mono-flag text-[10px] uppercase tracking-[0.3em] text-parchment/50 mb-10">
-            Scarves • Apparel • Journals • Limited Drops
-          </p>
+            <p className="font-body text-lg sm:text-xl mb-8">
+              Wear the warning. Keep the receipt.
+            </p>
 
-          <div className="mb-10">
-            <CountdownClock variant="boxed" />
-          </div>
-
-          <div className="flex flex-wrap items-center gap-4">
             <button
               onClick={() => navigate('/shop')}
-              className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.2em] bg-primary text-parchment px-8 py-3.5 hover:bg-parchment hover:text-ink transition-colors duration-300"
+              className="group inline-flex items-center gap-6 bg-primary text-white px-8 py-4 font-mono-flag text-xs sm:text-sm uppercase tracking-[0.18em] hover:bg-black transition-colors"
             >
               Shop The Drop
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
-            <button
-              onClick={() => navigate('/about')}
-              className="font-mono-flag text-[11px] sm:text-xs uppercase tracking-[0.2em] bg-transparent border border-parchment/40 text-parchment px-8 py-3.5 hover:bg-parchment hover:text-ink hover:border-parchment transition-colors duration-300"
-            >
-              Our Story
-            </button>
+          </div>
+        </div>
+
+        <div className="relative min-h-[520px] lg:min-h-full overflow-hidden bg-[#ddd7d0]">
+          <img
+            src={HERO_IMAGE}
+            alt="Red Flags & Receipts editorial fashion campaign"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f3f0ec]/25 via-transparent to-transparent lg:block hidden" />
+          <div className="absolute right-8 sm:right-12 bottom-10 bg-white/85 backdrop-blur-sm px-5 py-4 rotate-[-2deg] shadow-sm max-w-[190px]">
+            <p className="font-display italic text-xl leading-tight">Not my fault—</p>
+            <p className="font-display italic text-xl leading-tight"><span className="text-primary underline">I saw</span> the signs.</p>
           </div>
         </div>
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            aria-label={`Slide ${i + 1}`}
-            className={`h-1 transition-all duration-300 ${i === index ? 'w-10 bg-primary' : 'w-5 bg-parchment/30 hover:bg-parchment/60'}`}
-          />
+      <div className="bg-black text-white grid grid-cols-2 lg:grid-cols-4 border-t border-white/10">
+        {features.map(({ icon: Icon, title, copy }, index) => (
+          <div
+            key={title}
+            className={`flex items-center gap-4 px-5 sm:px-8 py-6 lg:py-7 ${index % 2 === 0 ? 'border-r border-white/15' : ''} lg:border-r lg:last:border-r-0 border-b lg:border-b-0 border-white/15`}
+          >
+            <Icon className="w-7 h-7 text-primary shrink-0" strokeWidth={1.7} />
+            <div>
+              <p className="font-mono-flag text-[10px] sm:text-[11px] uppercase tracking-[0.17em] font-bold">{title}</p>
+              <p className="font-body text-xs sm:text-sm text-white/65 mt-1">{copy}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>
