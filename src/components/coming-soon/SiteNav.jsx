@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
+import CartDrawer from '@/components/CartDrawer';
+import { useCart } from '@/lib/CartContext';
 
 const LEFT_ITEMS = [
   { label: 'Home', to: '/home' },
@@ -48,12 +50,9 @@ function linkClass(item, pathname) {
 
 function DesktopItem({ item, pathname }) {
   if (!item.children) {
-    return (
-      <Link to={item.to} className={linkClass(item, pathname)}>
-        {item.label}
-      </Link>
-    );
+    return <Link to={item.to} className={linkClass(item, pathname)}>{item.label}</Link>;
   }
+
   return (
     <div className="relative group">
       <Link to={item.to} className={`${linkClass(item, pathname)} flex items-center gap-1`}>
@@ -63,11 +62,7 @@ function DesktopItem({ item, pathname }) {
       <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
         <div className="bg-black border border-primary/30 min-w-[210px] py-2 shadow-xl">
           {item.children.map((c) => (
-            <Link
-              key={c.to}
-              to={c.to}
-              className="block px-5 py-2.5 font-mono-flag text-[11px] uppercase tracking-[0.22em] text-parchment/75 hover:text-primary hover:bg-primary/5 transition-colors"
-            >
+            <Link key={c.to} to={c.to} className="block px-5 py-2.5 font-mono-flag text-[11px] uppercase tracking-[0.22em] text-parchment/75 hover:text-primary hover:bg-primary/5 transition-colors">
               {c.label}
             </Link>
           ))}
@@ -80,104 +75,82 @@ function DesktopItem({ item, pathname }) {
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { itemCount, openCart } = useCart();
 
   useEffect(() => { setOpen(false); }, [location.pathname, location.search]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-primary/25">
-      {/* Announcement strip */}
-      <div className="w-full bg-primary">
-        <p className="text-center font-mono-flag text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-parchment py-1.5">
-          ♦ First Drop · Aug 04 · 9PM ♦
-        </p>
-      </div>
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-10 py-3">
-        {/* Left links */}
-        <div className="hidden md:flex items-center justify-start gap-6">
-          {LEFT_ITEMS.map((item) => (
-            <DesktopItem key={item.label} item={item} pathname={location.pathname} />
-          ))}
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-primary/25">
+        <div className="w-full bg-primary">
+          <p className="text-center font-mono-flag text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-parchment py-1.5">
+            ♦ DROP 01 IS LIVE · SHOP NOW ♦
+          </p>
         </div>
 
-        {/* Centered logo */}
-        <div className="hidden md:flex items-center justify-center px-10">
-          <Link to="/home" aria-label="Red Flags Society — Home" className="flex items-center">
-            <Logo stampOnLoad />
-          </Link>
-        </div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-10 py-3">
+          <div className="hidden md:flex items-center justify-start gap-6">
+            {LEFT_ITEMS.map((item) => <DesktopItem key={item.label} item={item} pathname={location.pathname} />)}
+          </div>
 
-        {/* Right links + CTA + cart */}
-        <div className="hidden md:flex items-center justify-end gap-6">
-          {RIGHT_ITEMS.map((item) => (
-            <Link key={item.to} to={item.to} className={linkClass(item, location.pathname)}>
-              {item.label}
+          <div className="hidden md:flex items-center justify-center px-10">
+            <Link to="/home" aria-label="Red Flags & Receipts — Home" className="flex items-center">
+              <Logo stampOnLoad />
             </Link>
-          ))}
-          <Link
-            to="/shop"
-            className="font-mono-flag text-[11px] font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-2.5 hover:bg-parchment hover:text-ink transition-colors whitespace-nowrap"
-          >
-            Shop Now
-          </Link>
-          <button aria-label="Cart" className="relative flex items-center justify-center w-9 h-9 text-parchment hover:text-primary transition-colors">
-            <ShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 bg-primary text-parchment text-[9px] font-bold leading-none rounded-full w-4 h-4 flex items-center justify-center">0</span>
-          </button>
-        </div>
+          </div>
 
-        {/* Mobile: logo left, toggle right */}
-        <div className="md:hidden flex items-center justify-between w-full">
-          <Link to="/home" aria-label="Red Flags Society — Home" className="flex items-center">
-            <Logo stampOnLoad />
-          </Link>
-          <button
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            className="flex items-center justify-center w-10 h-10 border border-primary/40 text-parchment hover:bg-primary hover:text-parchment transition-colors"
-          >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-      </div>
+          <div className="hidden md:flex items-center justify-end gap-6">
+            {RIGHT_ITEMS.map((item) => (
+              <Link key={item.to} to={item.to} className={linkClass(item, location.pathname)}>{item.label}</Link>
+            ))}
+            <Link to="/shop" className="font-mono-flag text-[11px] font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-2.5 hover:bg-parchment hover:text-ink transition-colors whitespace-nowrap">
+              Shop Now
+            </Link>
+            <button onClick={openCart} aria-label={`Cart with ${itemCount} items`} className="relative flex items-center justify-center w-9 h-9 text-parchment hover:text-primary transition-colors">
+              <ShoppingBag className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 bg-primary text-parchment text-[9px] font-bold leading-none rounded-full min-w-4 h-4 px-1 flex items-center justify-center">{itemCount}</span>
+            </button>
+          </div>
 
-      {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${open ? 'max-h-[48rem]' : 'max-h-0'}`}>
-        <div className="bg-black border-t border-primary/25 px-5 py-4 flex flex-col divide-y divide-parchment/10">
-          {[...LEFT_ITEMS, ...RIGHT_ITEMS].map((item) => (
-            <div key={item.label} className="py-1">
-              <Link
-                to={item.to}
-                className={`flex items-center font-mono-flag text-[13px] font-semibold uppercase tracking-[0.25em] py-3.5 min-h-[44px] transition-colors ${
-                  location.pathname === item.to ? 'text-primary' : 'text-parchment/85 hover:text-primary'
-                }`}
-              >
-                {item.label}
-              </Link>
-              {item.children && (
-                <div className="flex flex-col pl-4 pb-1">
-                  {item.children.map((c) => (
-                    <Link
-                      key={c.to}
-                      to={c.to}
-                      className="flex items-center font-mono-flag text-[11px] uppercase tracking-[0.2em] py-2.5 min-h-[40px] text-parchment/55 hover:text-primary transition-colors"
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+          <div className="md:hidden flex items-center justify-between w-full">
+            <Link to="/home" aria-label="Red Flags & Receipts — Home" className="flex items-center">
+              <Logo stampOnLoad />
+            </Link>
+            <div className="flex items-center gap-2">
+              <button onClick={openCart} aria-label={`Cart with ${itemCount} items`} className="relative flex items-center justify-center w-10 h-10 text-parchment hover:text-primary transition-colors">
+                <ShoppingBag className="w-5 h-5" />
+                {itemCount > 0 && <span className="absolute top-0 right-0 bg-primary text-parchment text-[9px] font-bold rounded-full min-w-4 h-4 px-1 flex items-center justify-center">{itemCount}</span>}
+              </button>
+              <button onClick={() => setOpen((v) => !v)} aria-label="Toggle menu" aria-expanded={open} className="flex items-center justify-center w-10 h-10 border border-primary/40 text-parchment hover:bg-primary hover:text-parchment transition-colors">
+                {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
             </div>
-          ))}
-          <Link
-            to="/shop"
-            className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-4 text-center min-h-[48px] hover:bg-parchment hover:text-ink transition-colors"
-          >
-            Shop Now
-          </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+
+        <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${open ? 'max-h-[48rem]' : 'max-h-0'}`}>
+          <div className="bg-black border-t border-primary/25 px-5 py-4 flex flex-col divide-y divide-parchment/10">
+            {[...LEFT_ITEMS, ...RIGHT_ITEMS].map((item) => (
+              <div key={item.label} className="py-1">
+                <Link to={item.to} className={`flex items-center font-mono-flag text-[13px] font-semibold uppercase tracking-[0.25em] py-3.5 min-h-[44px] transition-colors ${location.pathname === item.to ? 'text-primary' : 'text-parchment/85 hover:text-primary'}`}>
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <div className="flex flex-col pl-4 pb-1">
+                    {item.children.map((c) => (
+                      <Link key={c.to} to={c.to} className="flex items-center font-mono-flag text-[11px] uppercase tracking-[0.2em] py-2.5 min-h-[40px] text-parchment/55 hover:text-primary transition-colors">{c.label}</Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <Link to="/shop" className="mt-4 font-mono-flag text-sm font-semibold uppercase tracking-[0.22em] bg-primary text-parchment px-5 py-4 text-center min-h-[48px] hover:bg-parchment hover:text-ink transition-colors">
+              Shop Now
+            </Link>
+          </div>
+        </div>
+      </nav>
+      <CartDrawer />
+    </>
   );
 }
