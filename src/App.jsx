@@ -7,6 +7,7 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { CartProvider } from '@/lib/CartContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import CommerceLinkBridge from './components/CommerceLinkBridge';
 // Add page imports here
 import ComingSoon from './pages/ComingSoon';
 import FlagIntro from './pages/FlagIntro';
@@ -72,6 +73,7 @@ function App() {
         <CartProvider>
           <Router>
             <ScrollToTop />
+            <CommerceLinkBridge />
             <AuthenticatedApp />
             <HelpModal />
           </Router>
