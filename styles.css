@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+:root{--black:#070707;--gold:#d8a64a;--gold2:#f2c66f;--red:#7c1118;--cream:#f4ead8;--muted:#b8ad9c;--line:rgba(216,166,74,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--cream);font-family:Montserrat,Arial,sans-serif}
+.hero{position:relative;min-height:92vh;display:grid;place-items:center;overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;background:url('assets/receipts-room.png') center/cover no-repeat;transform:scale(1.02)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.48) 45%,rgba(0,0,0,.9))}
+.hero-content{position:relative;z-index:2;padding:40px 24px;max-width:900px}.eyebrow{font-size:.78rem;letter-spacing:.36em;color:var(--gold2);font-weight:600}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif}h1{font-size:clamp(4rem,10vw,8rem);margin:.08em 0;line-height:.9;font-weight:600}
+.intro{font-size:clamp(1.05rem,2vw,1.35rem);margin:18px 0 32px}.enter-btn,.talk-btn,.primary{display:inline-block;border:1px solid var(--gold);background:linear-gradient(180deg,#e4b75f,#b98029);color:#080808;text-decoration:none;padding:16px 24px;letter-spacing:.18em;font-weight:700;cursor:pointer;transition:.25s}
+.enter-btn:hover,.talk-btn:hover,.primary:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(216,166,74,.2)}
+.choose{padding:90px 6vw 110px;background:radial-gradient(circle at top,#1b100d 0,transparent 35%),var(--black)}
+.section-heading{max-width:760px;margin:0 auto 55px;text-align:center}.section-heading h2,.handoff h2{font-size:clamp(2.8rem,6vw,5rem);margin:10px 0 14px}
+.section-heading>p:last-child{color:var(--muted);line-height:1.7}.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1500px;margin:0 auto}
+.character-card{position:relative;min-height:610px;padding:34px 28px;border:1px solid var(--line);background:linear-gradient(180deg,#14100e,#0b0b0b 65%);display:flex;flex-direction:column;overflow:hidden;transition:.3s}
+.character-card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold))}
+.character-card:hover{transform:translateY(-8px);border-color:rgba(216,166,74,.65);box-shadow:0 22px 45px rgba(0,0,0,.35)}
+.card-number{position:absolute;right:22px;top:18px;font-family:"Cormorant Garamond";font-size:2rem;color:rgba(216,166,74,.25)}
+.avatar{width:94px;height:94px;border-radius:50%;display:grid;place-items:center;margin:14px 0 25px;border:1px solid var(--gold);font-family:"Cormorant Garamond";font-size:2rem;color:var(--gold2);background:radial-gradient(circle,#241711,#090909)}
+.role{font-size:.72rem;letter-spacing:.28em;color:var(--gold);margin:0 0 8px}.character-card h3{font-size:3.1rem;margin:0;line-height:1}
+.tagline{font-family:"Cormorant Garamond";font-size:1.45rem;font-style:italic;color:var(--gold2);margin:10px 0 18px}.description{color:#d7cfc2;line-height:1.75;font-size:.94rem}
+.best-for{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-size:.78rem;line-height:1.6;color:#c9bca8}.best-for span{display:block;color:var(--gold);letter-spacing:.18em;font-size:.68rem;margin-bottom:5px}
+.talk-btn{margin-top:20px;width:100%;padding:14px 12px;font-size:.72rem}.handoff{padding:95px 24px;text-align:center;background:#0d0908;border-top:1px solid var(--line)}
+.handoff p{max-width:800px;margin:12px auto;color:#d2c6b4;line-height:1.8}.handoff .small{font-size:.86rem;color:#9f9383}
+.modal{display:none;position:fixed;inset:0;z-index:20}.modal.open{display:block}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
+.modal-card{position:relative;z-index:2;width:min(560px,calc(100% - 32px));margin:12vh auto;padding:42px;background:#0f0d0c;border:1px solid var(--gold);text-align:center}
+.modal-card h2{font-size:3rem;margin:12px 0}.modal-card p{color:#cfc4b4;line-height:1.7}.close{position:absolute;right:14px;top:10px;background:none;border:0;color:var(--gold2);font-size:2rem;cursor:pointer}.primary{margin-top:18px}
+@media(max-width:1100px){.character-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.hero{min-height:78vh}.character-grid{grid-template-columns:1fr}.character-card{min-height:auto}.choose{padding:70px 18px}}
