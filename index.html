@@ -1,89 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Receipts Room | Red Flags & Receipts</title>
-<meta name="description" content="Choose who you need right now: Em, Emma, Miss Path, or Mr. Goodson.">
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Red Flags & Receipts</title>
+<style>
+:root{
+  --black:#050505;
+  --red:#b5121b;
+  --gold:#c9a454;
+  --white:#ffffff;
+  --muted:#d7cfc4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(201,164,84,.10),transparent 38%),
+    #050505;
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+.page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px;
+}
+.wrap{
+  width:min(1120px,94%);
+  text-align:center;
+}
+.brand{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+h1{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,6vw,76px);
+  line-height:.95;
+}
+.intro{
+  margin:16px auto 34px;
+  color:#d8d0c5;
+  font-size:17px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.card{
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  text-align:left;
+  padding:28px;
+  border:1px solid rgba(201,164,84,.55);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00)),
+    #0d0d0d;
+  transition:.25s ease;
+}
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--gold);
+  background:#121212;
+}
+.card .num{
+  color:var(--red);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:auto;
+}
+.card h2{
+  margin:0 0 8px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:34px;
+  line-height:1;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.45;
+}
+.arrow{
+  margin-top:18px;
+  color:var(--gold);
+  font-size:20px;
+}
+.note{
+  margin-top:28px;
+  color:#777;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .page{padding:34px 16px}
+  .grid{grid-template-columns:1fr}
+  .card{min-height:190px}
+  .intro{font-size:15px}
+}
+</style>
 </head>
 <body>
-<main>
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="eyebrow">RED FLAGS & RECEIPTS PRESENTS</p>
-    <h1>The Receipts Room</h1>
-    <p class="intro">Four perspectives. Your receipts. Your call.</p>
-    <a class="enter-btn" href="#choose">WHO DO YOU NEED RIGHT NOW?</a>
+
+<main class="page">
+  <div class="wrap">
+
+    <div class="brand">Red Flags & Receipts</div>
+    <h1>WHERE WOULD YOU LIKE TO GO?</h1>
+    <p class="intro">Choose your next move.</p>
+
+    <div class="grid">
+
+      <a class="card" href="LINK_SHOP_PAGE" target="_top">
+        <div class="num">01</div>
+        <h2>Shop</h2>
+        <p>Wear the message</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="card" href="LINK_RECEIPTS_PAGE" target="_top">
+        <div class="num">02</div>
+        <h2>Receipts</h2>
+        <p>Make sense of what happened</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="card" href="LINK_COMMUNITY_PAGE" target="_top">
+        <div class="num">03</div>
+        <h2>Community</h2>
+        <p>Find your people</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="card" href="LINK_FOUNDATION_PAGE" target="_top">
+        <div class="num">04</div>
+        <h2>Foundation</h2>
+        <p>Turn awareness into action</p>
+        <div class="arrow">→</div>
+      </a>
+
+    </div>
+
+    <div class="note">Same Girl. Higher Standards.</div>
+
   </div>
-</section>
-
-<section class="choose" id="choose">
-  <div class="section-heading">
-    <p class="eyebrow">CHOOSE YOUR PERSON</p>
-    <h2>Who do you need right now?</h2>
-    <p>Pick a personality based on what you need—not what you think you should need.</p>
-  </div>
-
-  <div class="character-grid">
-    <article class="character-card">
-      <div class="card-number">01</div><div class="avatar">E</div>
-      <p class="role">THE BEST FRIEND</p><h3>Em</h3>
-      <p class="tagline">“Tell me everything.”</p>
-      <p class="description">Quick, funny, perceptive and slightly savage when the moment deserves it. Em separates facts from feelings and helps you figure out what actually happened.</p>
-      <div class="best-for"><span>BEST FOR</span>texts, dating drama, mixed signals, quick perspective</div>
-      <button class="talk-btn" data-character="Em">TALK TO EM</button>
-    </article>
-
-    <article class="character-card">
-      <div class="card-number">02</div><div class="avatar">EA</div>
-      <p class="role">THE EDITOR</p><h3>Emma</h3>
-      <p class="tagline">“Let’s find what fits.”</p>
-      <p class="description">Polished, feminine and discerning. Emma is the one you ask when you want the right piece, the right gift, or the right way to pull the whole thing together.</p>
-      <div class="best-for"><span>BEST FOR</span>shopping, styling, gifts, bundles, what-to-wear</div>
-      <button class="talk-btn" data-character="Emma">TALK TO EMMA</button>
-    </article>
-
-    <article class="character-card">
-      <div class="card-number">03</div><div class="avatar">MP</div>
-      <p class="role">THE GUIDE</p><h3>Miss Path</h3>
-      <p class="tagline">“Let’s find your direction.”</p>
-      <p class="description">Calm, wise and a little mysterious. Miss Path helps you slow things down, notice what keeps repeating, and decide what you want to do next.</p>
-      <div class="best-for"><span>BEST FOR</span>reflection, journaling, boundaries, life direction</div>
-      <button class="talk-btn" data-character="Miss Path">TALK TO MISS PATH</button>
-    </article>
-
-    <article class="character-card">
-      <div class="card-number">04</div><div class="avatar">MG</div>
-      <p class="role">THE ANALYST</p><h3>Mr. Goodson</h3>
-      <p class="tagline">“Show me the receipts.”</p>
-      <p class="description">Controlled, observant and dryly funny. Mr. Goodson is less interested in promises than patterns. He looks at what was said, what happened next, and what the evidence actually shows.</p>
-      <div class="best-for"><span>BEST FOR</span>patterns, contradictions, manipulation, behavior analysis</div>
-      <button class="talk-btn" data-character="Mr. Goodson">TALK TO MR. GOODSON</button>
-    </article>
-  </div>
-</section>
-
-<section class="handoff">
-  <p class="eyebrow">NO PRESSURE. NO PERFORMANCE.</p>
-  <h2>You can switch rooms anytime.</h2>
-  <p>Start with Em. Hand the receipts to Mr. Goodson. Ask Miss Path what it means for you. Let Emma rescue the outfit afterward.</p>
-  <p class="small">They help first. Products only come up when they actually fit the conversation.</p>
-</section>
 </main>
 
-<div class="modal" id="characterModal" aria-hidden="true">
-  <div class="modal-backdrop"></div>
-  <div class="modal-card">
-    <button class="close" aria-label="Close">×</button>
-    <p class="eyebrow">THE RECEIPTS ROOM</p>
-    <h2 id="modalTitle"></h2>
-    <p id="modalCopy"></p>
-    <button class="primary" id="startChat">ENTER THE ROOM</button>
-  </div>
-</div>
-<script src="script.js"></script>
 </body>
 </html>
